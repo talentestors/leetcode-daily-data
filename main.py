@@ -1,11 +1,27 @@
-from pathlib import Path
-
 import json
+import re
 import httpx
+from pathlib import Path
+from datetime import datetime
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential,
+    retry_if_exception_type,
+)
 
-query_url = "https://leetcode.cn/graphql/"
+# Configuration
+QUERY_URL = "https://leetcode.cn/graphql"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Referer": "https://leetcode.cn/",
+    "Origin": "https://leetcode.cn",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+}
 
-query_daily = """
+QUERY_DAILY = """
 query CalendarTaskSchedule($days: Int!) {
     calendarTaskSchedule(days: $days) {
         dailyQuestions { 
@@ -14,9 +30,11 @@ query CalendarTaskSchedule($days: Int!) {
             link 
         }
     }
-}""".strip()
+}
+""".strip()
 
-query_daily_details = """query questionData($titleSlug: String!) {
+QUERY_DAILY_DETAILS = """
+query questionData($titleSlug: String!) {
   question(titleSlug: $titleSlug) {
     questionId
     questionFrontendId
@@ -31,78 +49,146 @@ query_daily_details = """query questionData($titleSlug: String!) {
       name
       slug
       translatedName
-      __typename
     }
   }
-}""".strip()
+}
+""".strip()
+
+
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=1, max=10),
+    retry=retry_if_exception_type(
+        (httpx.RequestError, httpx.HTTPStatusError, json.JSONDecodeError)
+    ),
+)
+def request(url, data, timeout=15.0):
+    """HTTP request with retry and error handling"""
+    try:
+        response = httpx.post(
+            url, json=data, headers=HEADERS, timeout=timeout, follow_redirects=True
+        )
+        response.raise_for_status()
+
+        # Check if response is JSON
+        content_type = response.headers.get("content-type", "")
+        if "application/json" not in content_type.lower():
+            raise ValueError(f"Unexpected content type: {content_type}")
+
+        return response.json()
+    except httpx.HTTPStatusError as e:
+        error_detail = e.response.text[:500] if e.response else "No response body"
+        raise Exception(f"HTTP error {e.response.status_code}: {error_detail}") from e
+    except json.JSONDecodeError as e:
+        raise Exception(f"JSON decode error: {e.doc[:500]}") from e
+
+
+def clean_html_content(html_content: str) -> str:
+    """Clean HTML content by removing tags and special characters"""
+    if not html_content:
+        return ""
+
+    text = html_content
+    text = re.sub(r"\n", "", text)
+    text = re.sub(r"\t", "", text)
+    text = (
+        text.replace("&nbsp;", " ")
+        .replace("&lt;", "<")
+        .replace("&gt;", ">")
+        .replace("&amp;", "&")
+        .replace("&quot;", '"')
+        .replace("&apos;", "'")
+    )
+    return text
+
+
+def save_json(filepath: Path, data: dict):
+    """Safely save JSON file"""
+    try:
+        filepath.parent.mkdir(parents=True, exist_ok=True)
+        with filepath.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        return True
+    except Exception as e:
+        print(f"Error saving file: {e}")
+        return False
 
 
 def main():
+    """Main function"""
+    fpath = Path("data/daily.json")
+
     try:
-        dailyQuestion = request(
-            url=query_url,
-            data={
+        print("Fetching fresh data from LeetCode...")
+
+        # Fetch daily question information
+        daily_response = request(
+            QUERY_URL,
+            {
                 "operationName": "CalendarTaskSchedule",
                 "variables": {"days": 0},
-                "query": query_daily,
+                "query": QUERY_DAILY,
             },
-        )["data"]["calendarTaskSchedule"]["dailyQuestions"][0]
+        )
 
-        question_content = request(
-            url=query_url,
-            data={
+        daily_questions = (
+            daily_response.get("data", {})
+            .get("calendarTaskSchedule", {})
+            .get("dailyQuestions", [])
+        )
+        if not daily_questions:
+            raise ValueError("No daily questions found in response")
+
+        daily_question = daily_questions[0]
+
+        # Fetch question details
+        question_response = request(
+            QUERY_URL,
+            {
                 "operationName": "questionData",
-                "variables": {"titleSlug": dailyQuestion["slug"]},
-                "query": query_daily_details,
+                "variables": {"titleSlug": daily_question["slug"]},
+                "query": QUERY_DAILY_DETAILS,
             },
-        )["data"]["question"]
+        )
+
+        question_data = question_response.get("data", {}).get("question", {})
+        if not question_data:
+            raise ValueError("No question data found in response")
+
+        # Clean and construct final data
+        cleaned_content = clean_html_content(question_data.get("translatedContent", ""))
 
         data = {
-            "id": question_content["questionFrontendId"],
-            "title": question_content["title"],
-            "title_zh": question_content["translatedTitle"],
-            "slug": dailyQuestion["slug"],
-            "link": dailyQuestion["link"],
-            "content": question_content["content"],
-            "translatedContent": question_content["translatedContent"],
-            "difficulty": question_content["difficulty"],
-            "topicTags": question_content["topicTags"],
+            "id": question_data.get("questionFrontendId", ""),
+            "title": question_data.get("title", ""),
+            "title_zh": question_data.get("translatedTitle", ""),
+            "slug": daily_question.get("slug", ""),
+            "link": daily_question.get("link", ""),
+            "content": clean_html_content(question_data.get("content", "")),
+            "translatedContent": cleaned_content,
+            "difficulty": question_data.get("difficulty", ""),
+            "topicTags": [
+                {
+                    "name": tag.get("name", ""),
+                    "slug": tag.get("slug", ""),
+                    "translatedName": tag.get("translatedName", ""),
+                }
+                for tag in question_data.get("topicTags", [])
+            ],
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "timestamp": datetime.now().isoformat(),
         }
 
-        fpath = Path("data/daily.json")
+        # Save data
+        if save_json(fpath, data):
+            print(f"Successfully saved to {fpath}")
+            print(f"Data preview: {str(data)[:200]}\n")
+            print(f"Content: {data['translatedContent']}")
+        else:
+            print("Failed to save data")
 
-        save_json(fpath, data)
-        print(fpath)
-        print(str(data)[:500])
     except Exception as e:
-        print(e)
-
-
-def request(url, data):
-    Headers = {
-        "origin": "https://leetcode.cn",
-        "referer": "https://leetcode.cn/",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
-        "content-type": "application/json",
-        "accept": "*/*",
-        "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
-        "accept-encoding": "gzip, deflate, br, zstd",
-    }
-    response = httpx.post(
-        url,
-        json=data,
-        headers=Headers
-    )
-    if response.status_code == 200:
-        return response.json()
-    else:
-        raise httpx.ReadError(response.text)
-
-
-def save_json(filepath: Path, args):
-    if not Path.exists(filepath):
-        Path.mkdir(filepath.parent)
-    filepath.write_text(json.dumps(args, ensure_ascii=False, indent=2), encoding="utf8")
+        print(f"Error in main process: {e}")
 
 
 if __name__ == "__main__":
