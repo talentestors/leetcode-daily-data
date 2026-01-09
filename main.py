@@ -1,5 +1,6 @@
 import json
 import re
+import asyncio
 import httpx
 from pathlib import Path
 from datetime import datetime
@@ -62,25 +63,28 @@ query questionData($titleSlug: String!) {
         (httpx.RequestError, httpx.HTTPStatusError, json.JSONDecodeError)
     ),
 )
-def request(url, data, timeout=15.0):
-    """HTTP request with retry and error handling"""
-    try:
-        response = httpx.post(
-            url, json=data, headers=HEADERS, timeout=timeout, follow_redirects=True
-        )
-        response.raise_for_status()
+async def request_async(url, data, timeout=15.0):
+    """Async HTTP request with retry and error handling"""
+    async with httpx.AsyncClient(
+        http2=True, headers=HEADERS, timeout=timeout
+    ) as client:
+        try:
+            response = await client.post(url, json=data, follow_redirects=True)
+            response.raise_for_status()
 
-        # Check if response is JSON
-        content_type = response.headers.get("content-type", "")
-        if "application/json" not in content_type.lower():
-            raise ValueError(f"Unexpected content type: {content_type}")
+            # Check if response is JSON
+            content_type = response.headers.get("content-type", "")
+            if "application/json" not in content_type.lower():
+                raise ValueError(f"Unexpected content type: {content_type}")
 
-        return response.json()
-    except httpx.HTTPStatusError as e:
-        error_detail = e.response.text[:500] if e.response else "No response body"
-        raise Exception(f"HTTP error {e.response.status_code}: {error_detail}") from e
-    except json.JSONDecodeError as e:
-        raise Exception(f"JSON decode error: {e.doc[:500]}") from e
+            return response.json()
+        except httpx.HTTPStatusError as e:
+            error_detail = e.response.text[:500] if e.response else "No response body"
+            raise Exception(
+                f"HTTP error {e.response.status_code}: {error_detail}"
+            ) from e
+        except json.JSONDecodeError as e:
+            raise Exception(f"JSON decode error: {e.doc[:500]}") from e
 
 
 def clean_html_content(html_content: str) -> str:
@@ -114,15 +118,15 @@ def save_json(filepath: Path, data: dict):
         return False
 
 
-def main():
-    """Main function"""
+async def main_async():
+    """Async main function"""
     fpath = Path("data/daily.json")
 
     try:
         print("Fetching fresh data from LeetCode...")
 
         # Fetch daily question information
-        daily_response = request(
+        daily_response = await request_async(
             QUERY_URL,
             {
                 "operationName": "CalendarTaskSchedule",
@@ -142,7 +146,7 @@ def main():
         daily_question = daily_questions[0]
 
         # Fetch question details
-        question_response = request(
+        question_response = await request_async(
             QUERY_URL,
             {
                 "operationName": "questionData",
@@ -179,7 +183,7 @@ def main():
             "timestamp": datetime.now().isoformat(),
         }
 
-        # Save data
+        # Save data (file I/O remains synchronous)
         if save_json(fpath, data):
             print(f"Successfully saved to {fpath}")
             print(f"Data preview: {str(data)[:200]}\n")
@@ -192,4 +196,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Run the async main function
+    asyncio.run(main_async())
