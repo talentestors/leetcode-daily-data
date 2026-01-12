@@ -1,9 +1,9 @@
 [project]
 name = "leetcode-daily-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "LeetCode API - LeetCode questions sorted by likes - Daily updated LeetCode database"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.14,<4.0"
 dependencies = [
     "httpx[brotli,http2,zstd]>=0.28.1",
     "tenacity>=9.1.2",
