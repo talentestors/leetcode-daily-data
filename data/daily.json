@@ -1,29 +1,24 @@
 {
-  "id": "1266",
-  "title": "Minimum Time Visiting All Points",
-  "title_zh": "访问所有点的最小时间",
-  "slug": "minimum-time-visiting-all-points",
-  "link": "https://leetcode.cn/problems/minimum-time-visiting-all-points/",
-  "content": "<p>On a 2D plane, there are <code>n</code> points with integer coordinates <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>. Return <em>the <strong>minimum time</strong> in seconds to visit all the points in the order given by </em><code>points</code>.</p><p>You can move according to these rules:</p><ul><li>In <code>1</code> second, you can either:<ul><li>move vertically by one unit,</li><li>move horizontally by one unit, or</li><li>move diagonally <code>sqrt(2)</code> units (in other words, move one unit vertically then one unit horizontally in <code>1</code> second).</li></ul></li><li>You have to visit the points in the same order as they appear in the array.</li><li>You are allowed to pass through points that appear later in the order, but these do not count as visits.</li></ul><p> </p><p><strong class=\"example\">Example 1:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/11/14/1626_example_1.PNG\" style=\"width: 500px; height: 428px;\" /><pre><strong>Input:</strong> points = [[1,1],[3,4],[-1,0]]<strong>Output:</strong> 7<strong>Explanation: </strong>One optimal path is <strong>[1,1]</strong> -> [2,2] -> [3,3] -> <strong>[3,4] </strong>-> [2,3] -> [1,2] -> [0,1] -> <strong>[-1,0]</strong>   Time from [1,1] to [3,4] = 3 seconds Time from [3,4] to [-1,0] = 4 secondsTotal time = 7 seconds</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> points = [[3,2],[-2,2]]<strong>Output:</strong> 5</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>points.length == n</code></li><li><code>1 <= n <= 100</code></li><li><code>points[i].length == 2</code></li><li><code>-1000 <= points[i][0], points[i][1] <= 1000</code></li></ul>",
-  "translatedContent": "<p>平面上有 <code>n</code> 个点，点的位置用整数坐标表示 <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> 。请你计算访问所有这些点需要的 <strong>最小时间</strong>（以秒为单位）。</p><p>你需要按照下面的规则在平面上移动：</p><ul><li>每一秒内，你可以：<ul><li>沿水平方向移动一个单位长度，或者</li><li>沿竖直方向移动一个单位长度，或者</li><li>跨过对角线移动 <code>sqrt(2)</code> 个单位长度（可以看作在一秒内向水平和竖直方向各移动一个单位长度）。</li></ul></li><li>必须按照数组中出现的顺序来访问这些点。</li><li>在访问某个点时，可以经过该点后面出现的点，但经过的那些点不算作有效访问。</li></ul><p> </p><p><strong>示例 1：</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.cn/aliyun-lc-upload/uploads/2019/11/24/1626_example_1.png\" style=\"height: 428px; width: 500px;\" /></p><pre><strong>输入：</strong>points = [[1,1],[3,4],[-1,0]]<strong>输出：</strong>7<strong>解释：</strong>一条最佳的访问路径是： <strong>[1,1]</strong> -> [2,2] -> [3,3] -> <strong>[3,4] </strong>-> [2,3] -> [1,2] -> [0,1] -> <strong>[-1,0]</strong>   从 [1,1] 到 [3,4] 需要 3 秒 从 [3,4] 到 [-1,0] 需要 4 秒一共需要 7 秒</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>points = [[3,2],[-2,2]]<strong>输出：</strong>5</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>points.length == n</code></li><li><code>1 <= n <= 100</code></li><li><code>points[i].length == 2</code></li><li><code>-1000 <= points[i][0], points[i][1] <= 1000</code></li></ul>",
-  "difficulty": "Easy",
+  "id": "3453",
+  "title": "Separate Squares I",
+  "title_zh": "分割正方形 I",
+  "slug": "separate-squares-i",
+  "link": "https://leetcode.cn/problems/separate-squares-i/",
+  "content": "<p>You are given a 2D integer array <code>squares</code>. Each <code>squares[i] = [x<sub>i</sub>, y<sub>i</sub>, l<sub>i</sub>]</code> represents the coordinates of the bottom-left point and the side length of a square parallel to the x-axis.</p><p>Find the <strong>minimum</strong> y-coordinate value of a horizontal line such that the total area of the squares above the line <em>equals</em> the total area of the squares below the line.</p><p>Answers within <code>10<sup>-5</sup></code> of the actual answer will be accepted.</p><p><strong>Note</strong>: Squares <strong>may</strong> overlap. Overlapping areas should be counted <strong>multiple times</strong>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">squares = [[0,0,1],[2,2,1]]</span></p><p><strong>Output:</strong> <span class=\"example-io\">1.00000</span></p><p><strong>Explanation:</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2025/01/06/4062example1drawio.png\" style=\"width: 378px; height: 352px;\" /></p><p>Any horizontal line between <code>y = 1</code> and <code>y = 2</code> will have 1 square unit above it and 1 square unit below it. The lowest option is 1.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">squares = [[0,0,2],[1,1,1]]</span></p><p><strong>Output:</strong> <span class=\"example-io\">1.16667</span></p><p><strong>Explanation:</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2025/01/15/4062example2drawio.png\" style=\"width: 378px; height: 352px;\" /></p><p>The areas are:</p><ul><li>Below the line: <code>7/6 * 2 (Red) + 1/6 (Blue) = 15/6 = 2.5</code>.</li><li>Above the line: <code>5/6 * 2 (Red) + 5/6 (Blue) = 15/6 = 2.5</code>.</li></ul><p>Since the areas above and below the line are equal, the output is <code>7/6 = 1.16667</code>.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= squares.length <= 5 * 10<sup>4</sup></code></li><li><code>squares[i] = [x<sub>i</sub>, y<sub>i</sub>, l<sub>i</sub>]</code></li><li><code>squares[i].length == 3</code></li><li><code>0 <= x<sub>i</sub>, y<sub>i</sub> <= 10<sup>9</sup></code></li><li><code>1 <= l<sub>i</sub> <= 10<sup>9</sup></code></li><li>The total area of all the squares will not exceed <code>10<sup>12</sup></code>.</li></ul>",
+  "translatedContent": "<p>给你一个二维整数数组 <code>squares</code> ，其中 <code>squares[i] = [x<sub>i</sub>, y<sub>i</sub>, l<sub>i</sub>]</code> 表示一个与 x 轴平行的正方形的左下角坐标和正方形的边长。</p><p>找到一个<strong>最小的</strong> y 坐标，它对应一条水平线，该线需要满足它以上正方形的总面积 <strong>等于</strong> 该线以下正方形的总面积。</p><p>答案如果与实际答案的误差在 <code>10<sup>-5</sup></code> 以内，将视为正确答案。</p><p><strong>注意</strong>：正方形 <strong>可能会 </strong>重叠。重叠区域应该被 <strong>多次计数 </strong>。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">squares = [[0,0,1],[2,2,1]]</span></p><p><strong>输出：</strong> <span class=\"example-io\">1.00000</span></p><p><strong>解释：</strong></p><p><img alt=\"\" src=\"https://pic.leetcode.cn/1739609465-UaFzhk-4062example1drawio.png\" style=\"width: 378px; height: 352px;\" /></p><p>任何在 <code>y = 1</code> 和 <code>y = 2</code> 之间的水平线都会有 1 平方单位的面积在其上方，1 平方单位的面积在其下方。最小的 y 坐标是 1。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">squares = [[0,0,2],[1,1,1]]</span></p><p><strong>输出：</strong> <span class=\"example-io\">1.16667</span></p><p><strong>解释：</strong></p><p><img alt=\"\" src=\"https://pic.leetcode.cn/1739609527-TWqefZ-4062example2drawio.png\" style=\"width: 378px; height: 352px;\" /></p><p>面积如下：</p><ul><li>线下的面积：<code>7/6 * 2 (红色) + 1/6 (蓝色) = 15/6 = 2.5</code>。</li><li>线上的面积：<code>5/6 * 2 (红色) + 5/6 (蓝色) = 15/6 = 2.5</code>。</li></ul><p>由于线以上和线以下的面积相等，输出为 <code>7/6 = 1.16667</code>。</p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= squares.length <= 5 * 10<sup>4</sup></code></li><li><code>squares[i] = [x<sub>i</sub>, y<sub>i</sub>, l<sub>i</sub>]</code></li><li><code>squares[i].length == 3</code></li><li><code>0 <= x<sub>i</sub>, y<sub>i</sub> <= 10<sup>9</sup></code></li><li><code>1 <= l<sub>i</sub> <= 10<sup>9</sup></code></li><li>所有正方形的总面积不超过 <code>10<sup>12</sup></code>。</li></ul>",
+  "difficulty": "Medium",
   "topicTags": [
-    {
-      "name": "Geometry",
-      "slug": "geometry",
-      "translatedName": "几何"
-    },
     {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
     },
     {
-      "name": "Math",
-      "slug": "math",
-      "translatedName": "数学"
+      "name": "Binary Search",
+      "slug": "binary-search",
+      "translatedName": "二分查找"
     }
   ],
-  "date": "2026-01-12",
-  "timestamp": "2026-01-12T01:46:35.435867"
+  "date": "2026-01-13",
+  "timestamp": "2026-01-13T02:12:22.863424"
 }
