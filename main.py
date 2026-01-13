@@ -1,5 +1,6 @@
 import json
 import re
+import zoneinfo
 import asyncio
 import httpx
 from pathlib import Path
@@ -179,8 +180,7 @@ async def main_async():
                 }
                 for tag in question_data.get("topicTags", [])
             ],
-            "date": datetime.now().strftime("%Y-%m-%d"),
-            "timestamp": datetime.now().isoformat(),
+            "date": datetime.now(zoneinfo.ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d"),
         }
 
         # Save data (file I/O remains synchronous)
