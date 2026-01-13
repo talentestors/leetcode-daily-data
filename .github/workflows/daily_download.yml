@@ -2,7 +2,7 @@ name: Daily Download
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 16 * * *' # UTC+8 0:00
   workflow_dispatch:
 permissions:
   contents: write
