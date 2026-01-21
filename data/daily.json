@@ -1,23 +1,48 @@
 {
-  "id": "3315",
-  "title": "Construct the Minimum Bitwise Array II",
-  "title_zh": "构造最小位运算数组 II",
-  "slug": "construct-the-minimum-bitwise-array-ii",
-  "link": "https://leetcode.cn/problems/construct-the-minimum-bitwise-array-ii/",
-  "content": "<p>You are given an array <code>nums</code> consisting of <code>n</code> <span data-keyword=\"prime-number\">prime</span> integers.</p><p>You need to construct an array <code>ans</code> of length <code>n</code>, such that, for each index <code>i</code>, the bitwise <code>OR</code> of <code>ans[i]</code> and <code>ans[i] + 1</code> is equal to <code>nums[i]</code>, i.e. <code>ans[i] OR (ans[i] + 1) == nums[i]</code>.</p><p>Additionally, you must <strong>minimize</strong> each value of <code>ans[i]</code> in the resulting array.</p><p>If it is <em>not possible</em> to find such a value for <code>ans[i]</code> that satisfies the <strong>condition</strong>, then set <code>ans[i] = -1</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [2,3,5,7]</span></p><p><strong>Output:</strong> <span class=\"example-io\">[-1,1,4,3]</span></p><p><strong>Explanation:</strong></p><ul><li>For <code>i = 0</code>, as there is no value for <code>ans[0]</code> that satisfies <code>ans[0] OR (ans[0] + 1) = 2</code>, so <code>ans[0] = -1</code>.</li><li>For <code>i = 1</code>, the smallest <code>ans[1]</code> that satisfies <code>ans[1] OR (ans[1] + 1) = 3</code> is <code>1</code>, because <code>1 OR (1 + 1) = 3</code>.</li><li>For <code>i = 2</code>, the smallest <code>ans[2]</code> that satisfies <code>ans[2] OR (ans[2] + 1) = 5</code> is <code>4</code>, because <code>4 OR (4 + 1) = 5</code>.</li><li>For <code>i = 3</code>, the smallest <code>ans[3]</code> that satisfies <code>ans[3] OR (ans[3] + 1) = 7</code> is <code>3</code>, because <code>3 OR (3 + 1) = 7</code>.</li></ul></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [11,13,31]</span></p><p><strong>Output:</strong> <span class=\"example-io\">[9,12,15]</span></p><p><strong>Explanation:</strong></p><ul><li>For <code>i = 0</code>, the smallest <code>ans[0]</code> that satisfies <code>ans[0] OR (ans[0] + 1) = 11</code> is <code>9</code>, because <code>9 OR (9 + 1) = 11</code>.</li><li>For <code>i = 1</code>, the smallest <code>ans[1]</code> that satisfies <code>ans[1] OR (ans[1] + 1) = 13</code> is <code>12</code>, because <code>12 OR (12 + 1) = 13</code>.</li><li>For <code>i = 2</code>, the smallest <code>ans[2]</code> that satisfies <code>ans[2] OR (ans[2] + 1) = 31</code> is <code>15</code>, because <code>15 OR (15 + 1) = 31</code>.</li></ul></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 100</code></li><li><code>2 <= nums[i] <= 10<sup>9</sup></code></li><li><code>nums[i]</code> is a prime number.</li></ul>",
-  "translatedContent": "<p>给你一个长度为 <code>n</code> 的<span data-keyword=\"prime\">质数</span>数组 <code>nums</code> 。你的任务是返回一个长度为 <code>n</code> 的数组 <code>ans</code> ，对于每个下标 <code>i</code> ，以下<strong> 条件</strong> 均成立：</p><ul><li><code>ans[i] OR (ans[i] + 1) == nums[i]</code></li></ul><p>除此以外，你需要 <strong>最小化</strong> 结果数组里每一个 <code>ans[i]</code> 。</p><p>如果没法找到符合 <strong>条件</strong> 的 <code>ans[i]</code> ，那么 <code>ans[i] = -1</code> 。</p><p><strong>质数</strong> 指的是一个大于 1 的自然数，且它只有 1 和自己两个因数。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>nums = [2,3,5,7]</span></p><p><span class=\"example-io\"><b>输出：</b>[-1,1,4,3]</span></p><p><b>解释：</b></p><ul><li>对于 <code>i = 0</code> ，不存在 <code>ans[0]</code> 满足 <code>ans[0] OR (ans[0] + 1) = 2</code> ，所以 <code>ans[0] = -1</code> 。</li><li>对于 <code>i = 1</code> ，满足 <code>ans[1] OR (ans[1] + 1) = 3</code> 的最小 <code>ans[1]</code> 为 <code>1</code> ，因为 <code>1 OR (1 + 1) = 3</code> 。</li><li>对于 <code>i = 2</code> ，满足 <code>ans[2] OR (ans[2] + 1) = 5</code> 的最小 <code>ans[2]</code> 为 <code>4</code> ，因为 <code>4 OR (4 + 1) = 5</code> 。</li><li>对于 <code>i = 3</code> ，满足 <code>ans[3] OR (ans[3] + 1) = 7</code> 的最小 <code>ans[3]</code> 为 <code>3</code> ，因为 <code>3 OR (3 + 1) = 7</code> 。</li></ul></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>nums = [11,13,31]</span></p><p><span class=\"example-io\"><b>输出：</b>[9,12,15]</span></p><p><b>解释：</b></p><ul><li>对于 <code>i = 0</code> ，满足 <code>ans[0] OR (ans[0] + 1) = 11</code> 的最小 <code>ans[0]</code> 为 <code>9</code> ，因为 <code>9 OR (9 + 1) = 11</code> 。</li><li>对于 <code>i = 1</code> ，满足 <code>ans[1] OR (ans[1] + 1) = 13</code> 的最小 <code>ans[1]</code> 为 <code>12</code> ，因为 <code>12 OR (12 + 1) = 13</code> 。</li><li>对于 <code>i = 2</code> ，满足 <code>ans[2] OR (ans[2] + 1) = 31</code> 的最小 <code>ans[2]</code> 为 <code>15</code> ，因为 <code>15 OR (15 + 1) = 31</code> 。</li></ul></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums.length <= 100</code></li><li><code>2 <= nums[i] <= 10<sup>9</sup></code></li><li><code>nums[i]</code> 是一个质数。</li></ul>",
-  "difficulty": "Medium",
+  "id": "3507",
+  "title": "Minimum Pair Removal to Sort Array I",
+  "title_zh": "移除最小数对使数组有序 I",
+  "slug": "minimum-pair-removal-to-sort-array-i",
+  "link": "https://leetcode.cn/problems/minimum-pair-removal-to-sort-array-i/",
+  "content": "<p>Given an array <code>nums</code>, you can perform the following operation any number of times:</p><ul><li>Select the <strong>adjacent</strong> pair with the <strong>minimum</strong> sum in <code>nums</code>. If multiple such pairs exist, choose the leftmost one.</li><li>Replace the pair with their sum.</li></ul><p>Return the <strong>minimum number of operations</strong> needed to make the array <strong>non-decreasing</strong>.</p><p>An array is said to be <strong>non-decreasing</strong> if each element is greater than or equal to its previous element (if it exists).</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [5,2,3,1]</span></p><p><strong>Output:</strong> <span class=\"example-io\">2</span></p><p><strong>Explanation:</strong></p><ul><li>The pair <code>(3,1)</code> has the minimum sum of 4. After replacement, <code>nums = [5,2,4]</code>.</li><li>The pair <code>(2,4)</code> has the minimum sum of 6. After replacement, <code>nums = [5,6]</code>.</li></ul><p>The array <code>nums</code> became non-decreasing in two operations.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,2]</span></p><p><strong>Output:</strong> <span class=\"example-io\">0</span></p><p><strong>Explanation:</strong></p><p>The array <code>nums</code> is already sorted.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 50</code></li><li><code>-1000 <= nums[i] <= 1000</code></li></ul>",
+  "translatedContent": "<p>给你一个数组 <code>nums</code>，你可以执行以下操作任意次数：</p><ul><li>选择 <strong>相邻 </strong>元素对中 <strong>和最小</strong> 的一对。如果存在多个这样的对，选择最左边的一个。</li><li>用它们的和替换这对元素。</li></ul><p>返回将数组变为 <strong>非递减 </strong>所需的 <strong>最小操作次数 </strong>。</p><p>如果一个数组中每个元素都大于或等于它前一个元素（如果存在的话），则称该数组为<strong>非递减</strong>。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">nums = [5,2,3,1]</span></p><p><strong>输出：</strong> <span class=\"example-io\">2</span></p><p><strong>解释：</strong></p><ul><li>元素对 <code>(3,1)</code> 的和最小，为 4。替换后 <code>nums = [5,2,4]</code>。</li><li>元素对 <code>(2,4)</code> 的和为 6。替换后 <code>nums = [5,6]</code>。</li></ul><p>数组 <code>nums</code> 在两次操作后变为非递减。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">nums = [1,2,2]</span></p><p><strong>输出：</strong> <span class=\"example-io\">0</span></p><p><strong>解释：</strong></p><p>数组 <code>nums</code> 已经是非递减的。</p></div><p> </p><p><b>提示：</b></p><ul><li><code>1 <= nums.length <= 50</code></li><li><code>-1000 <= nums[i] <= 1000</code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
-    {
-      "name": "Bit Manipulation",
-      "slug": "bit-manipulation",
-      "translatedName": "位运算"
-    },
     {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
+    },
+    {
+      "name": "Hash Table",
+      "slug": "hash-table",
+      "translatedName": "哈希表"
+    },
+    {
+      "name": "Linked List",
+      "slug": "linked-list",
+      "translatedName": "链表"
+    },
+    {
+      "name": "Doubly-Linked List",
+      "slug": "doubly-linked-list",
+      "translatedName": "双向链表"
+    },
+    {
+      "name": "Ordered Set",
+      "slug": "ordered-set",
+      "translatedName": "有序集合"
+    },
+    {
+      "name": "Simulation",
+      "slug": "simulation",
+      "translatedName": "模拟"
+    },
+    {
+      "name": "Heap (Priority Queue)",
+      "slug": "heap-priority-queue",
+      "translatedName": "堆（优先队列）"
     }
   ],
-  "date": "2026-01-21"
+  "date": "2026-01-22"
 }
