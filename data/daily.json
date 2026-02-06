@@ -1,28 +1,28 @@
 {
-  "id": "3634",
-  "title": "Minimum Removals to Balance Array",
-  "title_zh": "使数组平衡的最少移除数目",
-  "slug": "minimum-removals-to-balance-array",
-  "link": "https://leetcode.cn/problems/minimum-removals-to-balance-array/",
-  "content": "<p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p><p>An array is considered <strong>balanced</strong> if the value of its <strong>maximum</strong> element is <strong>at most</strong> <code>k</code> times the <strong>minimum</strong> element.</p><p>You may remove <strong>any</strong> number of elements from <code>nums</code>​​​​​​​ without making it <strong>empty</strong>.</p><p>Return the <strong>minimum</strong> number of elements to remove so that the remaining array is balanced.</p><p><strong>Note:</strong> An array of size 1 is considered balanced as its maximum and minimum are equal, and the condition always holds true.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [2,1,5], k = 2</span></p><p><strong>Output:</strong> <span class=\"example-io\">1</span></p><p><strong>Explanation:</strong></p><ul><li>Remove <code>nums[2] = 5</code> to get <code>nums = [2, 1]</code>.</li><li>Now <code>max = 2</code>, <code>min = 1</code> and <code>max <= min * k</code> as <code>2 <= 1 * 2</code>. Thus, the answer is 1.</li></ul></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [1,6,2,9], k = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\">2</span></p><p><strong>Explanation:</strong></p><ul><li>Remove <code>nums[0] = 1</code> and <code>nums[3] = 9</code> to get <code>nums = [6, 2]</code>.</li><li>Now <code>max = 6</code>, <code>min = 2</code> and <code>max <= min * k</code> as <code>6 <= 2 * 3</code>. Thus, the answer is 2.</li></ul></div><p><strong class=\"example\">Example 3:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [4,6], k = 2</span></p><p><strong>Output:</strong> <span class=\"example-io\">0</span></p><p><strong>Explanation:</strong></p><ul><li>Since <code>nums</code> is already balanced as <code>6 <= 4 * 2</code>, no elements need to be removed.</li></ul></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li><li><code>1 <= k <= 10<sup>5</sup></code></li></ul>",
-  "translatedContent": "<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code>。</p><p>如果一个数组的 <strong>最大 </strong>元素的值 <strong>至多 </strong>是其 <strong>最小 </strong>元素的 <code>k</code> 倍，则该数组被称为是 <strong>平衡 </strong>的。</p><p>你可以从 <code>nums</code> 中移除 <strong>任意 </strong>数量的元素，但不能使其变为 <strong>空 </strong>数组。</p><p>返回为了使剩余数组平衡，需要移除的元素的 <strong>最小 </strong>数量。</p><p><strong>注意：</strong>大小为 1 的数组被认为是平衡的，因为其最大值和最小值相等，且条件总是成立。</p><p> </p><p><strong class=\"example\">示例 1:</strong></p><div class=\"example-block\"><p><strong>输入：</strong><span class=\"example-io\">nums = [2,1,5], k = 2</span></p><p><strong>输出：</strong><span class=\"example-io\">1</span></p><p><strong>解释：</strong></p><ul><li>移除 <code>nums[2] = 5</code> 得到 <code>nums = [2, 1]</code>。</li><li>现在 <code>max = 2</code>, <code>min = 1</code>，且 <code>max <= min * k</code>，因为 <code>2 <= 1 * 2</code>。因此，答案是 1。</li></ul></div><p><strong class=\"example\">示例 2:</strong></p><div class=\"example-block\"><p><strong>输入：</strong><span class=\"example-io\">nums = [1,6,2,9], k = 3</span></p><p><strong>输出：</strong><span class=\"example-io\">2</span></p><p><strong>解释：</strong></p><ul><li>移除 <code>nums[0] = 1</code> 和 <code>nums[3] = 9</code> 得到 <code>nums = [6, 2]</code>。</li><li>现在 <code>max = 6</code>, <code>min = 2</code>，且 <code>max <= min * k</code>，因为 <code>6 <= 2 * 3</code>。因此，答案是 2。</li></ul></div><p><strong class=\"example\">示例 3:</strong></p><div class=\"example-block\"><p><strong>输入：</strong><span class=\"example-io\">nums = [4,6], k = 2</span></p><p><strong>输出：</strong><span class=\"example-io\">0</span></p><p><strong>解释：</strong></p><ul><li>由于 <code>nums</code> 已经平衡，因为 <code>6 <= 4 * 2</code>，所以不需要移除任何元素。</li></ul></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li><li><code>1 <= k <= 10<sup>5</sup></code></li></ul>",
+  "id": "1653",
+  "title": "Minimum Deletions to Make String Balanced",
+  "title_zh": "使字符串平衡的最少删除次数",
+  "slug": "minimum-deletions-to-make-string-balanced",
+  "link": "https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/",
+  "content": "<p>You are given a string <code>s</code> consisting only of characters <code>&#39;a&#39;</code> and <code>&#39;b&#39;</code>​​​​.</p><p>You can delete any number of characters in <code>s</code> to make <code>s</code> <strong>balanced</strong>. <code>s</code> is <strong>balanced</strong> if there is no pair of indices <code>(i,j)</code> such that <code>i < j</code> and <code>s[i] = &#39;b&#39;</code> and <code>s[j]= &#39;a&#39;</code>.</p><p>Return <em>the <strong>minimum</strong> number of deletions needed to make </em><code>s</code><em> <strong>balanced</strong></em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"aababbab\"<strong>Output:</strong> 2<strong>Explanation:</strong> You can either:Delete the characters at 0-indexed positions 2 and 6 (\"aa<u>b</u>abb<u>a</u>b\" -> \"aaabbb\"), orDelete the characters at 0-indexed positions 3 and 6 (\"aab<u>a</u>bb<u>a</u>b\" -> \"aabbbb\").</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"bbaaaaabb\"<strong>Output:</strong> 2<strong>Explanation:</strong> The only solution is to delete the first two characters.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s[i]</code> is <code>&#39;a&#39;</code> or <code>&#39;b&#39;</code>​​.</li></ul>",
+  "translatedContent": "<p>给你一个字符串 <code>s</code> ，它仅包含字符 <code>'a'</code> 和 <code>'b'</code>​​​​ 。</p><p>你可以删除 <code>s</code> 中任意数目的字符，使得 <code>s</code> <strong>平衡</strong> 。当不存在下标对 <code>(i,j)</code> 满足 <code>i < j</code> ，且 <code>s[i] = 'b'</code> 的同时 <code>s[j]= 'a'</code> ，此时认为 <code>s</code> 是 <strong>平衡 </strong>的。</p><p>请你返回使 <code>s</code> <strong>平衡</strong> 的 <strong>最少</strong> 删除次数。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>s = \"aababbab\"<b>输出：</b>2<b>解释：</b>你可以选择以下任意一种方案：下标从 0 开始，删除第 2 和第 6 个字符（\"aa<strong>b</strong>abb<strong>a</strong>b\" -> \"aaabbb\"），下标从 0 开始，删除第 3 和第 6 个字符（\"aab<strong>a</strong>bb<strong>a</strong>b\" -> \"aabbbb\"）。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>s = \"bbaaaaabb\"<b>输出：</b>2<b>解释：</b>唯一的最优解是删除最前面两个字符。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s[i]</code> 要么是 <code>'a'</code> 要么是 <code>'b'</code>​<strong> </strong>。​</li></ul>",
   "difficulty": "Medium",
   "topicTags": [
     {
-      "name": "Array",
-      "slug": "array",
-      "translatedName": "数组"
+      "name": "Stack",
+      "slug": "stack",
+      "translatedName": "栈"
     },
     {
-      "name": "Sorting",
-      "slug": "sorting",
-      "translatedName": "排序"
+      "name": "String",
+      "slug": "string",
+      "translatedName": "字符串"
     },
     {
-      "name": "Sliding Window",
-      "slug": "sliding-window",
-      "translatedName": "滑动窗口"
+      "name": "Dynamic Programming",
+      "slug": "dynamic-programming",
+      "translatedName": "动态规划"
     }
   ],
-  "date": "2026-02-06"
+  "date": "2026-02-07"
 }
