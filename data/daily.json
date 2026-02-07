@@ -1,28 +1,28 @@
 {
-  "id": "1653",
-  "title": "Minimum Deletions to Make String Balanced",
-  "title_zh": "使字符串平衡的最少删除次数",
-  "slug": "minimum-deletions-to-make-string-balanced",
-  "link": "https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/",
-  "content": "<p>You are given a string <code>s</code> consisting only of characters <code>&#39;a&#39;</code> and <code>&#39;b&#39;</code>​​​​.</p><p>You can delete any number of characters in <code>s</code> to make <code>s</code> <strong>balanced</strong>. <code>s</code> is <strong>balanced</strong> if there is no pair of indices <code>(i,j)</code> such that <code>i < j</code> and <code>s[i] = &#39;b&#39;</code> and <code>s[j]= &#39;a&#39;</code>.</p><p>Return <em>the <strong>minimum</strong> number of deletions needed to make </em><code>s</code><em> <strong>balanced</strong></em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"aababbab\"<strong>Output:</strong> 2<strong>Explanation:</strong> You can either:Delete the characters at 0-indexed positions 2 and 6 (\"aa<u>b</u>abb<u>a</u>b\" -> \"aaabbb\"), orDelete the characters at 0-indexed positions 3 and 6 (\"aab<u>a</u>bb<u>a</u>b\" -> \"aabbbb\").</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"bbaaaaabb\"<strong>Output:</strong> 2<strong>Explanation:</strong> The only solution is to delete the first two characters.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s[i]</code> is <code>&#39;a&#39;</code> or <code>&#39;b&#39;</code>​​.</li></ul>",
-  "translatedContent": "<p>给你一个字符串 <code>s</code> ，它仅包含字符 <code>'a'</code> 和 <code>'b'</code>​​​​ 。</p><p>你可以删除 <code>s</code> 中任意数目的字符，使得 <code>s</code> <strong>平衡</strong> 。当不存在下标对 <code>(i,j)</code> 满足 <code>i < j</code> ，且 <code>s[i] = 'b'</code> 的同时 <code>s[j]= 'a'</code> ，此时认为 <code>s</code> 是 <strong>平衡 </strong>的。</p><p>请你返回使 <code>s</code> <strong>平衡</strong> 的 <strong>最少</strong> 删除次数。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>s = \"aababbab\"<b>输出：</b>2<b>解释：</b>你可以选择以下任意一种方案：下标从 0 开始，删除第 2 和第 6 个字符（\"aa<strong>b</strong>abb<strong>a</strong>b\" -> \"aaabbb\"），下标从 0 开始，删除第 3 和第 6 个字符（\"aab<strong>a</strong>bb<strong>a</strong>b\" -> \"aabbbb\"）。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>s = \"bbaaaaabb\"<b>输出：</b>2<b>解释：</b>唯一的最优解是删除最前面两个字符。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s[i]</code> 要么是 <code>'a'</code> 要么是 <code>'b'</code>​<strong> </strong>。​</li></ul>",
-  "difficulty": "Medium",
+  "id": "110",
+  "title": "Balanced Binary Tree",
+  "title_zh": "平衡二叉树",
+  "slug": "balanced-binary-tree",
+  "link": "https://leetcode.cn/problems/balanced-binary-tree/",
+  "content": "<p>Given a binary tree, determine if it is <span data-keyword=\"height-balanced\"><strong>height-balanced</strong></span>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/06/balance_1.jpg\" style=\"width: 342px; height: 221px;\" /><pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]<strong>Output:</strong> true</pre><p><strong class=\"example\">Example 2:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/06/balance_2.jpg\" style=\"width: 452px; height: 301px;\" /><pre><strong>Input:</strong> root = [1,2,2,3,3,null,null,4,4]<strong>Output:</strong> false</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> root = []<strong>Output:</strong> true</pre><p> </p><p><strong>Constraints:</strong></p><ul><li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li><li><code>-10<sup>4</sup> <= Node.val <= 10<sup>4</sup></code></li></ul>",
+  "translatedContent": "<p>给定一个二叉树，判断它是否是 <span data-keyword=\"height-balanced\">平衡二叉树</span>  </p><p> </p><p><strong>示例 1：</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/06/balance_1.jpg\" style=\"width: 342px; height: 221px;\" /><pre><strong>输入：</strong>root = [3,9,20,null,null,15,7]<strong>输出：</strong>true</pre><p><strong>示例 2：</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/06/balance_2.jpg\" style=\"width: 452px; height: 301px;\" /><pre><strong>输入：</strong>root = [1,2,2,3,3,null,null,4,4]<strong>输出：</strong>false</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>root = []<strong>输出：</strong>true</pre><p> </p><p><strong>提示：</strong></p><ul><li>树中的节点数在范围 <code>[0, 5000]</code> 内</li><li><code>-10<sup>4</sup> <= Node.val <= 10<sup>4</sup></code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
     {
-      "name": "Stack",
-      "slug": "stack",
-      "translatedName": "栈"
+      "name": "Tree",
+      "slug": "tree",
+      "translatedName": "树"
     },
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
+      "name": "Depth-First Search",
+      "slug": "depth-first-search",
+      "translatedName": "深度优先搜索"
     },
     {
-      "name": "Dynamic Programming",
-      "slug": "dynamic-programming",
-      "translatedName": "动态规划"
+      "name": "Binary Tree",
+      "slug": "binary-tree",
+      "translatedName": "二叉树"
     }
   ],
-  "date": "2026-02-07"
+  "date": "2026-02-08"
 }
