@@ -1,11 +1,11 @@
 {
-  "id": "67",
-  "title": "Add Binary",
-  "title_zh": "二进制求和",
-  "slug": "add-binary",
-  "link": "https://leetcode.cn/problems/add-binary/",
-  "content": "<p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> a = \"11\", b = \"1\"<strong>Output:</strong> \"100\"</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> a = \"1010\", b = \"1011\"<strong>Output:</strong> \"10101\"</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= a.length, b.length <= 10<sup>4</sup></code></li><li><code>a</code> and <code>b</code> consist only of <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code> characters.</li><li>Each string does not contain leading zeros except for the zero itself.</li></ul>",
-  "translatedContent": "<p>给你两个二进制字符串 <code>a</code> 和 <code>b</code> ，以二进制字符串的形式返回它们的和。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入:</strong>a = \"11\", b = \"1\"<strong>输出：</strong>\"100\"</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>a = \"1010\", b = \"1011\"<strong>输出：</strong>\"10101\"</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= a.length, b.length <= 10<sup>4</sup></code></li><li><code>a</code> 和 <code>b</code> 仅由字符 <code>'0'</code> 或 <code>'1'</code> 组成</li><li>字符串如果不是 <code>\"0\"</code> ，就不含前导零</li></ul>",
+  "id": "190",
+  "title": "Reverse Bits",
+  "title_zh": "颠倒二进制位",
+  "slug": "reverse-bits",
+  "link": "https://leetcode.cn/problems/reverse-bits/",
+  "content": "<p>Reverse bits of a given 32 bits signed integer.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">n = 43261596</span></p><p><strong>Output:</strong> <span class=\"example-io\">964176192</span></p><p><strong>Explanation:</strong></p><table><tbody><tr><th>Integer</th><th>Binary</th></tr><tr><td>43261596</td><td>00000010100101000001111010011100</td></tr><tr><td>964176192</td><td>00111001011110000010100101000000</td></tr></tbody></table></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">n = 2147483644</span></p><p><strong>Output:</strong> <span class=\"example-io\">1073741822</span></p><p><strong>Explanation:</strong></p><table><tbody><tr><th>Integer</th><th>Binary</th></tr><tr><td>2147483644</td><td>01111111111111111111111111111100</td></tr><tr><td>1073741822</td><td>00111111111111111111111111111110</td></tr></tbody></table></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>0 <= n <= 2<sup>31</sup> - 2</code></li><li><code>n</code> is even.</li></ul><p> </p><p><strong>Follow up:</strong> If this function is called many times, how would you optimize it?</p>",
+  "translatedContent": "<p>颠倒给定的 32 位有符号整数的二进制位。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>n = 43261596</span></p><p><span class=\"example-io\"><b>输出：</b>964176192</span></p><p><strong>解释：</strong></p><table><tbody><tr><th>整数</th><th>二进制</th></tr><tr><td>43261596</td><td>00000010100101000001111010011100</td></tr><tr><td>964176192</td><td>00111001011110000010100101000000</td></tr></tbody></table></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>n = 2147483644</span></p><p><span class=\"example-io\"><b>输出：</b>1073741822</span></p><p><strong>解释：</strong></p><table><tbody><tr><th>整数</th><th>二进制</th></tr><tr><td>2147483644</td><td>01111111111111111111111111111100</td></tr><tr><td>1073741822</td><td>00111111111111111111111111111110</td></tr></tbody></table></div><p> </p><p><strong>提示：</strong></p><ul><li><code>0 <= n <= 2<sup>31</sup> - 2</code></li><li><code>n</code> 为偶数</li></ul><p> </p><p><strong>进阶</strong>: 如果多次调用这个函数，你将如何优化你的算法？</p>",
   "difficulty": "Easy",
   "topicTags": [
     {
@@ -14,20 +14,10 @@
       "translatedName": "位运算"
     },
     {
-      "name": "Math",
-      "slug": "math",
-      "translatedName": "数学"
-    },
-    {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
-    },
-    {
-      "name": "Simulation",
-      "slug": "simulation",
-      "translatedName": "模拟"
+      "name": "Divide and Conquer",
+      "slug": "divide-and-conquer",
+      "translatedName": "分治"
     }
   ],
-  "date": "2026-02-15"
+  "date": "2026-02-16"
 }
