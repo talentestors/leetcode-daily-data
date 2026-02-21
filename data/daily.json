@@ -1,23 +1,18 @@
 {
-  "id": "762",
-  "title": "Prime Number of Set Bits in Binary Representation",
-  "title_zh": "二进制表示中质数个计算置位",
-  "slug": "prime-number-of-set-bits-in-binary-representation",
-  "link": "https://leetcode.cn/problems/prime-number-of-set-bits-in-binary-representation/",
-  "content": "<p>Given two integers <code>left</code> and <code>right</code>, return <em>the <strong>count</strong> of numbers in the <strong>inclusive</strong> range </em><code>[left, right]</code><em> having a <strong>prime number of set bits</strong> in their binary representation</em>.</p><p>Recall that the <strong>number of set bits</strong> an integer has is the number of <code>1</code>&#39;s present when written in binary.</p><ul><li>For example, <code>21</code> written in binary is <code>10101</code>, which has <code>3</code> set bits.</li></ul><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> left = 6, right = 10<strong>Output:</strong> 4<strong>Explanation:</strong>6  -> 110 (2 set bits, 2 is prime)7  -> 111 (3 set bits, 3 is prime)8  -> 1000 (1 set bit, 1 is not prime)9  -> 1001 (2 set bits, 2 is prime)10 -> 1010 (2 set bits, 2 is prime)4 numbers have a prime number of set bits.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> left = 10, right = 15<strong>Output:</strong> 5<strong>Explanation:</strong>10 -> 1010 (2 set bits, 2 is prime)11 -> 1011 (3 set bits, 3 is prime)12 -> 1100 (2 set bits, 2 is prime)13 -> 1101 (3 set bits, 3 is prime)14 -> 1110 (3 set bits, 3 is prime)15 -> 1111 (4 set bits, 4 is not prime)5 numbers have a prime number of set bits.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= left <= right <= 10<sup>6</sup></code></li><li><code>0 <= right - left <= 10<sup>4</sup></code></li></ul>",
-  "translatedContent": "<p>给你两个整数 <code>left</code> 和 <code>right</code> ，在闭区间 <code>[left, right]</code> 范围内，统计并返回 <strong>计算置位位数为质数</strong> 的整数个数。</p><p><strong>计算置位位数</strong> 就是二进制表示中 <code>1</code> 的个数。</p><ul><li>例如， <code>21</code> 的二进制表示 <code>10101</code> 有 <code>3</code> 个计算置位。</li></ul><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>left = 6, right = 10<strong>输出：</strong>4<strong>解释：</strong>6 -> 110 (2 个计算置位，2 是质数)7 -> 111 (3 个计算置位，3 是质数)9 -> 1001 (2 个计算置位，2 是质数)10-> 1010 (2 个计算置位，2 是质数)共计 4 个计算置位为质数的数字。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>left = 10, right = 15<strong>输出：</strong>5<strong>解释：</strong>10 -> 1010 (2 个计算置位, 2 是质数)11 -> 1011 (3 个计算置位, 3 是质数)12 -> 1100 (2 个计算置位, 2 是质数)13 -> 1101 (3 个计算置位, 3 是质数)14 -> 1110 (3 个计算置位, 3 是质数)15 -> 1111 (4 个计算置位, 4 不是质数)共计 5 个计算置位为质数的数字。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= left <= right <= 10<sup>6</sup></code></li><li><code>0 <= right - left <= 10<sup>4</sup></code></li></ul>",
+  "id": "868",
+  "title": "Binary Gap",
+  "title_zh": "二进制间距",
+  "slug": "binary-gap",
+  "link": "https://leetcode.cn/problems/binary-gap/",
+  "content": "<p>Given a positive integer <code>n</code>, find and return <em>the <strong>longest distance</strong> between any two <strong>adjacent</strong> </em><code>1</code><em>&#39;s in the binary representation of </em><code>n</code><em>. If there are no two adjacent </em><code>1</code><em>&#39;s, return </em><code>0</code><em>.</em></p><p>Two <code>1</code>&#39;s are <strong>adjacent</strong> if there are only <code>0</code>&#39;s separating them (possibly no <code>0</code>&#39;s). The <b>distance</b> between two <code>1</code>&#39;s is the absolute difference between their bit positions. For example, the two <code>1</code>&#39;s in <code>\"1001\"</code> have a distance of 3.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> n = 22<strong>Output:</strong> 2<strong>Explanation:</strong> 22 in binary is \"10110\".The first adjacent pair of 1&#39;s is \"<u>1</u>0<u>1</u>10\" with a distance of 2.The second adjacent pair of 1&#39;s is \"10<u>11</u>0\" with a distance of 1.The answer is the largest of these two distances, which is 2.Note that \"<u>1</u>01<u>1</u>0\" is not a valid pair since there is a 1 separating the two 1&#39;s underlined.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> n = 8<strong>Output:</strong> 0<strong>Explanation:</strong> 8 in binary is \"1000\".There are not any adjacent pairs of 1&#39;s in the binary representation of 8, so we return 0.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> n = 5<strong>Output:</strong> 2<strong>Explanation:</strong> 5 in binary is \"101\".</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= n <= 10<sup>9</sup></code></li></ul>",
+  "translatedContent": "<p>给定一个正整数 <code>n</code>，找到并返回 <code>n</code> 的二进制表示中两个 <strong>相邻</strong> 1 之间的<strong> 最长距离 </strong>。如果不存在两个相邻的 1，返回 <code>0</code> 。</p><p>如果只有 <code>0</code> 将两个 <code>1</code> 分隔开（可能不存在 <code>0</code> ），则认为这两个 1 彼此 <strong>相邻</strong> 。两个 <code>1</code> 之间的距离是它们的二进制表示中位置的绝对差。例如，<code>\"1001\"</code> 中的两个 <code>1</code> 的距离为 3 。</p><p> </p><ul></ul><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>n = 22<strong>输出：</strong>2<strong>解释：</strong>22 的二进制是 \"10110\" 。在 22 的二进制表示中，有三个 1，组成两对相邻的 1 。第一对相邻的 1 中，两个 1 之间的距离为 2 。第二对相邻的 1 中，两个 1 之间的距离为 1 。答案取两个距离之中最大的，也就是 2 。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>n = 8<strong>输出：</strong>0<strong>解释：</strong>8 的二进制是 \"1000\" 。在 8 的二进制表示中没有相邻的两个 1，所以返回 0 。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>n = 5<strong>输出：</strong>2<strong>解释：</strong>5 的二进制是 \"101\" 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= n <= 10<sup>9</sup></code></li></ul>",
   "difficulty": "Easy",
   "topicTags": [
     {
       "name": "Bit Manipulation",
       "slug": "bit-manipulation",
       "translatedName": "位运算"
-    },
-    {
-      "name": "Math",
-      "slug": "math",
-      "translatedName": "数学"
     }
   ],
-  "date": "2026-02-21"
+  "date": "2026-02-22"
 }
