@@ -1,23 +1,28 @@
 {
-  "id": "1415",
-  "title": "The k-th Lexicographical String of All Happy Strings of Length n",
-  "title_zh": "长度为 n 的开心字符串中字典序第 k 小的字符串",
-  "slug": "the-k-th-lexicographical-string-of-all-happy-strings-of-length-n",
-  "link": "https://leetcode.cn/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/",
-  "content": "<p>A <strong>happy string</strong> is a string that:</p><ul><li>consists only of letters of the set <code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code>.</li><li><code>s[i] != s[i + 1]</code> for all values of <code>i</code> from <code>1</code> to <code>s.length - 1</code> (string is 1-indexed).</li></ul><p>For example, strings <strong>\"abc\", \"ac\", \"b\"</strong> and <strong>\"abcbabcbcb\"</strong> are all happy strings and strings <strong>\"aa\", \"baa\"</strong> and <strong>\"ababbc\"</strong> are not happy strings.</p><p>Given two integers <code>n</code> and <code>k</code>, consider a list of all happy strings of length <code>n</code> sorted in lexicographical order.</p><p>Return <em>the kth string</em> of this list or return an <strong>empty string</strong> if there are less than <code>k</code> happy strings of length <code>n</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> n = 1, k = 3<strong>Output:</strong> \"c\"<strong>Explanation:</strong> The list [\"a\", \"b\", \"c\"] contains all happy strings of length 1. The third string is \"c\".</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> n = 1, k = 4<strong>Output:</strong> \"\"<strong>Explanation:</strong> There are only 3 happy strings of length 1.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> n = 3, k = 9<strong>Output:</strong> \"cab\"<strong>Explanation:</strong> There are 12 different happy string of length 3 [\"aba\", \"abc\", \"aca\", \"acb\", \"bab\", \"bac\", \"bca\", \"bcb\", \"cab\", \"cac\", \"cba\", \"cbc\"]. You will find the 9<sup>th</sup> string = \"cab\"</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= n <= 10</code></li><li><code>1 <= k <= 100</code></li></ul>",
-  "translatedContent": "<p>一个 「开心字符串」定义为：</p><ul><li>仅包含小写字母 <code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code>.</li><li>对所有在 <code>1</code> 到 <code>s.length - 1</code> 之间的 <code>i</code> ，满足 <code>s[i] != s[i + 1]</code> （字符串的下标从 1 开始）。</li></ul><p>比方说，字符串 <strong>\"abc\"</strong>，<strong>\"ac\"，\"b\"</strong> 和 <strong>\"abcbabcbcb\"</strong> 都是开心字符串，但是 <strong>\"aa\"</strong>，<strong>\"baa\"</strong> 和 <strong>\"ababbc\"</strong> 都不是开心字符串。</p><p>给你两个整数 <code>n</code> 和 <code>k</code> ，你需要将长度为 <code>n</code> 的所有开心字符串按字典序排序。</p><p>请你返回排序后的第 k 个开心字符串，如果长度为 <code>n</code> 的开心字符串少于 <code>k</code> 个，那么请你返回 <strong>空字符串</strong> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>n = 1, k = 3<strong>输出：</strong>\"c\"<strong>解释：</strong>列表 [\"a\", \"b\", \"c\"] 包含了所有长度为 1 的开心字符串。按照字典序排序后第三个字符串为 \"c\" 。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>n = 1, k = 4<strong>输出：</strong>\"\"<strong>解释：</strong>长度为 1 的开心字符串只有 3 个。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>n = 3, k = 9<strong>输出：</strong>\"cab\"<strong>解释：</strong>长度为 3 的开心字符串总共有 12 个 [\"aba\", \"abc\", \"aca\", \"acb\", \"bab\", \"bac\", \"bca\", \"bcb\", \"cab\", \"cac\", \"cba\", \"cbc\"] 。第 9 个字符串为 \"cab\"</pre><p><strong>示例 4：</strong></p><pre><strong>输入：</strong>n = 2, k = 7<strong>输出：</strong>\"\"</pre><p><strong>示例 5：</strong></p><pre><strong>输入：</strong>n = 10, k = 100<strong>输出：</strong>\"abacbabacb\"</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= n <= 10</code></li><li><code>1 <= k <= 100</code></li></ul><p> </p>",
-  "difficulty": "Medium",
+  "id": "1622",
+  "title": "Fancy Sequence",
+  "title_zh": "奇妙序列",
+  "slug": "fancy-sequence",
+  "link": "https://leetcode.cn/problems/fancy-sequence/",
+  "content": "<p>Write an API that generates fancy sequences using the <code>append</code>, <code>addAll</code>, and <code>multAll</code> operations.</p><p>Implement the <code>Fancy</code> class:</p><ul><li><code>Fancy()</code> Initializes the object with an empty sequence.</li><li><code>void append(val)</code> Appends an integer <code>val</code> to the end of the sequence.</li><li><code>void addAll(inc)</code> Increments all existing values in the sequence by an integer <code>inc</code>.</li><li><code>void multAll(m)</code> Multiplies all existing values in the sequence by an integer <code>m</code>.</li><li><code>int getIndex(idx)</code> Gets the current value at index <code>idx</code> (0-indexed) of the sequence <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>. If the index is greater or equal than the length of the sequence, return <code>-1</code>.</li></ul><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input</strong>[\"Fancy\", \"append\", \"addAll\", \"append\", \"multAll\", \"getIndex\", \"addAll\", \"append\", \"multAll\", \"getIndex\", \"getIndex\", \"getIndex\"][[], [2], [3], [7], [2], [0], [3], [10], [2], [0], [1], [2]]<strong>Output</strong>[null, null, null, null, null, 10, null, null, null, 26, 34, 20]<strong>Explanation</strong>Fancy fancy = new Fancy();fancy.append(2);   // fancy sequence: [2]fancy.addAll(3);   // fancy sequence: [2+3] -> [5]fancy.append(7);   // fancy sequence: [5, 7]fancy.multAll(2);  // fancy sequence: [5*2, 7*2] -> [10, 14]fancy.getIndex(0); // return 10fancy.addAll(3);   // fancy sequence: [10+3, 14+3] -> [13, 17]fancy.append(10);  // fancy sequence: [13, 17, 10]fancy.multAll(2);  // fancy sequence: [13*2, 17*2, 10*2] -> [26, 34, 20]fancy.getIndex(0); // return 26fancy.getIndex(1); // return 34fancy.getIndex(2); // return 20</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= val, inc, m <= 100</code></li><li><code>0 <= idx <= 10<sup>5</sup></code></li><li>At most <code>10<sup>5</sup></code> calls total will be made to <code>append</code>, <code>addAll</code>, <code>multAll</code>, and <code>getIndex</code>.</li></ul>",
+  "translatedContent": "<p>请你实现三个 API <code>append</code>，<code>addAll</code> 和 <code>multAll</code> 来实现奇妙序列。</p><p>请实现 <code>Fancy</code> 类 ：</p><ul><li><code>Fancy()</code> 初始化一个空序列对象。</li><li><code>void append(val)</code> 将整数 <code>val</code> 添加在序列末尾。</li><li><code>void addAll(inc)</code> 将所有序列中的现有数值都增加 <code>inc</code> 。</li><li><code>void multAll(m)</code> 将序列中的所有现有数值都乘以整数 <code>m</code> 。</li><li><code>int getIndex(idx)</code> 得到下标为 <code>idx</code> 处的数值（下标从 0 开始），并将结果对 <code>10<sup>9</sup> + 7</code> 取余。如果下标大于等于序列的长度，请返回 <code>-1</code> 。</li></ul><p> </p><p><strong>示例：</strong></p><pre><strong>输入：</strong>[\"Fancy\", \"append\", \"addAll\", \"append\", \"multAll\", \"getIndex\", \"addAll\", \"append\", \"multAll\", \"getIndex\", \"getIndex\", \"getIndex\"][[], [2], [3], [7], [2], [0], [3], [10], [2], [0], [1], [2]]<strong>输出：</strong>[null, null, null, null, null, 10, null, null, null, 26, 34, 20]<strong>解释：</strong>Fancy fancy = new Fancy();fancy.append(2);   // 奇妙序列：[2]fancy.addAll(3);   // 奇妙序列：[2+3] -> [5]fancy.append(7);   // 奇妙序列：[5, 7]fancy.multAll(2);  // 奇妙序列：[5*2, 7*2] -> [10, 14]fancy.getIndex(0); // 返回 10fancy.addAll(3);   // 奇妙序列：[10+3, 14+3] -> [13, 17]fancy.append(10);  // 奇妙序列：[13, 17, 10]fancy.multAll(2);  // 奇妙序列：[13*2, 17*2, 10*2] -> [26, 34, 20]fancy.getIndex(0); // 返回 26fancy.getIndex(1); // 返回 34fancy.getIndex(2); // 返回 20</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= val, inc, m <= 100</code></li><li><code>0 <= idx <= 10<sup>5</sup></code></li><li>总共最多会有 <code>10<sup>5</sup></code> 次对 <code>append</code>，<code>addAll</code>，<code>multAll</code> 和 <code>getIndex</code> 的调用。</li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
+      "name": "Design",
+      "slug": "design",
+      "translatedName": "设计"
     },
     {
-      "name": "Backtracking",
-      "slug": "backtracking",
-      "translatedName": "回溯"
+      "name": "Segment Tree",
+      "slug": "segment-tree",
+      "translatedName": "线段树"
+    },
+    {
+      "name": "Math",
+      "slug": "math",
+      "translatedName": "数学"
     }
   ],
-  "date": "2026-03-14"
+  "date": "2026-03-15"
 }
