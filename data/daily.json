@@ -1,28 +1,28 @@
 {
-  "id": "1665",
-  "title": "Minimum Initial Energy to Finish Tasks",
-  "title_zh": "完成所有任务的最少初始能量",
-  "slug": "minimum-initial-energy-to-finish-tasks",
-  "link": "https://leetcode.cn/problems/minimum-initial-energy-to-finish-tasks/",
-  "content": "<p>You are given an array <code>tasks</code> where <code>tasks[i] = [actual<sub>i</sub>, minimum<sub>i</sub>]</code>:</p><ul><li><code>actual<sub>i</sub></code> is the actual amount of energy you <strong>spend to finish</strong> the <code>i<sup>th</sup></code> task.</li><li><code>minimum<sub>i</sub></code> is the minimum amount of energy you <strong>require to begin</strong> the <code>i<sup>th</sup></code> task.</li></ul><p>For example, if the task is <code>[10, 12]</code> and your current energy is <code>11</code>, you cannot start this task. However, if your current energy is <code>13</code>, you can complete this task, and your energy will be <code>3</code> after finishing it.</p><p>You can finish the tasks in <strong>any order</strong> you like.</p><p>Return <em>the <strong>minimum</strong> initial amount of energy you will need</em> <em>to finish all the tasks</em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> tasks = [[1,2],[2,4],[4,8]]<strong>Output:</strong> 8<strong>Explanation:</strong>Starting with 8 energy, we finish the tasks in the following order:    - 3rd task. Now energy = 8 - 4 = 4.    - 2nd task. Now energy = 4 - 2 = 2.    - 1st task. Now energy = 2 - 1 = 1.Notice that even though we have leftover energy, starting with 7 energy does not work because we cannot do the 3rd task.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> tasks = [[1,3],[2,4],[10,11],[10,12],[8,9]]<strong>Output:</strong> 32<strong>Explanation:</strong>Starting with 32 energy, we finish the tasks in the following order:    - 1st task. Now energy = 32 - 1 = 31.    - 2nd task. Now energy = 31 - 2 = 29.    - 3rd task. Now energy = 29 - 10 = 19.    - 4th task. Now energy = 19 - 10 = 9.    - 5th task. Now energy = 9 - 8 = 1.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> tasks = [[1,7],[2,8],[3,9],[4,10],[5,11],[6,12]]<strong>Output:</strong> 27<strong>Explanation:</strong>Starting with 27 energy, we finish the tasks in the following order:    - 5th task. Now energy = 27 - 5 = 22.    - 2nd task. Now energy = 22 - 2 = 20.    - 3rd task. Now energy = 20 - 3 = 17.    - 1st task. Now energy = 17 - 1 = 16.    - 4th task. Now energy = 16 - 4 = 12.    - 6th task. Now energy = 12 - 6 = 6.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= tasks.length <= 10<sup>5</sup></code></li><li><code>1 <= actual<sub>​i</sub> <= minimum<sub>i</sub> <= 10<sup>4</sup></code></li></ul>",
-  "translatedContent": "<p>给你一个任务数组 <code>tasks</code> ，其中 <code>tasks[i] = [actual<sub>i</sub>, minimum<sub>i</sub>]</code> ：</p><ul><li><code>actual<sub>i</sub></code> 是完成第 <code>i</code> 个任务 <strong>需要耗费</strong> 的实际能量。</li><li><code>minimum<sub>i</sub></code> 是开始第 <code>i</code> 个任务前需要达到的最低能量。</li></ul><p>比方说，如果任务为 <code>[10, 12]</code> 且你当前的能量为 <code>11</code> ，那么你不能开始这个任务。如果你当前的能量为 <code>13</code> ，你可以完成这个任务，且完成它后剩余能量为 <code>3</code> 。</p><p>你可以按照 <strong>任意顺序</strong> 完成任务。</p><p>请你返回完成所有任务的 <strong>最少</strong> 初始能量。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>tasks = [[1,2],[2,4],[4,8]]<b>输出：</b>8<strong>解释：</strong>一开始有 8 能量，我们按照如下顺序完成任务：    - 完成第 3 个任务，剩余能量为 8 - 4 = 4 。    - 完成第 2 个任务，剩余能量为 4 - 2 = 2 。    - 完成第 1 个任务，剩余能量为 2 - 1 = 1 。注意到尽管我们有能量剩余，但是如果一开始只有 7 能量是不能完成所有任务的，因为我们无法开始第 3 个任务。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>tasks = [[1,3],[2,4],[10,11],[10,12],[8,9]]<b>输出：</b>32<strong>解释：</strong>一开始有 32 能量，我们按照如下顺序完成任务：    - 完成第 1 个任务，剩余能量为 32 - 1 = 31 。    - 完成第 2 个任务，剩余能量为 31 - 2 = 29 。    - 完成第 3 个任务，剩余能量为 29 - 10 = 19 。    - 完成第 4 个任务，剩余能量为 19 - 10 = 9 。    - 完成第 5 个任务，剩余能量为 9 - 8 = 1 。</pre><p><strong>示例 3：</strong></p><pre><b>输入：</b>tasks = [[1,7],[2,8],[3,9],[4,10],[5,11],[6,12]]<b>输出：</b>27<strong>解释：</strong>一开始有 27 能量，我们按照如下顺序完成任务：    - 完成第 5 个任务，剩余能量为 27 - 5 = 22 。    - 完成第 2 个任务，剩余能量为 22 - 2 = 20 。    - 完成第 3 个任务，剩余能量为 20 - 3 = 17 。    - 完成第 1 个任务，剩余能量为 17 - 1 = 16 。    - 完成第 4 个任务，剩余能量为 16 - 4 = 12 。    - 完成第 6 个任务，剩余能量为 12 - 6 = 6 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= tasks.length <= 10<sup>5</sup></code></li><li><code>1 <= actual<sub>​i</sub> <= minimum<sub>i</sub> <= 10<sup>4</sup></code></li></ul>",
-  "difficulty": "Hard",
+  "id": "1674",
+  "title": "Minimum Moves to Make Array Complementary",
+  "title_zh": "使数组互补的最少操作次数",
+  "slug": "minimum-moves-to-make-array-complementary",
+  "link": "https://leetcode.cn/problems/minimum-moves-to-make-array-complementary/",
+  "content": "<p>You are given an integer array <code>nums</code> of <strong>even</strong> length <code>n</code> and an integer <code>limit</code>. In one move, you can replace any integer from <code>nums</code> with another integer between <code>1</code> and <code>limit</code>, inclusive.</p><p>The array <code>nums</code> is <strong>complementary</strong> if for all indices <code>i</code> (<strong>0-indexed</strong>), <code>nums[i] + nums[n - 1 - i]</code> equals the same number. For example, the array <code>[1,2,3,4]</code> is complementary because for all indices <code>i</code>, <code>nums[i] + nums[n - 1 - i] = 5</code>.</p><p>Return the <em><strong>minimum</strong> number of moves required to make </em><code>nums</code><em> <strong>complementary</strong></em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums = [1,2,4,3], limit = 4<strong>Output:</strong> 1<strong>Explanation:</strong> In 1 move, you can change nums to [1,2,<u>2</u>,3] (underlined elements are changed).nums[0] + nums[3] = 1 + 3 = 4.nums[1] + nums[2] = 2 + 2 = 4.nums[2] + nums[1] = 2 + 2 = 4.nums[3] + nums[0] = 3 + 1 = 4.Therefore, nums[i] + nums[n-1-i] = 4 for every i, so nums is complementary.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums = [1,2,2,1], limit = 2<strong>Output:</strong> 2<strong>Explanation:</strong> In 2 moves, you can change nums to [<u>2</u>,2,2,<u>2</u>]. You cannot change any number to 3 since 3 > limit.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> nums = [1,2,1,2], limit = 2<strong>Output:</strong> 0<strong>Explanation:</strong> nums is already complementary.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>n == nums.length</code></li><li><code>2 <= n <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= limit <= 10<sup>5</sup></code></li><li><code>n</code> is even.</li></ul>",
+  "translatedContent": "<p>给你一个长度为<strong> 偶数</strong> <code>n</code> 的整数数组 <code>nums</code> 和一个整数 <code>limit</code> 。每一次操作，你可以将 <code>nums</code> 中的任何整数替换为 <code>1</code> 到 <code>limit</code> 之间的另一个整数。</p><p>如果对于所有下标 <code>i</code>（<strong>下标从 </strong><code>0</code><strong> 开始</strong>），<code>nums[i] + nums[n - 1 - i]</code> 都等于同一个数，则数组 <code>nums</code> 是 <strong>互补的</strong> 。例如，数组 <code>[1,2,3,4]</code> 是互补的，因为对于所有下标 <code>i</code> ，<code>nums[i] + nums[n - 1 - i] = 5</code> 。</p><p>返回使数组 <strong>互补</strong> 的 <strong>最少</strong> 操作次数。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>nums = [1,2,4,3], limit = 4<strong>输出：</strong>1<strong>解释：</strong>经过 1 次操作，你可以将数组 nums 变成 [1,2,<strong>2</strong>,3]（加粗元素是变更的数字）：nums[0] + nums[3] = 1 + 3 = 4.nums[1] + nums[2] = 2 + 2 = 4.nums[2] + nums[1] = 2 + 2 = 4.nums[3] + nums[0] = 3 + 1 = 4.对于每个 i ，nums[i] + nums[n-1-i] = 4 ，所以 nums 是互补的。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>nums = [1,2,2,1], limit = 2<strong>输出：</strong>2<strong>解释：</strong>经过 2 次操作，你可以将数组 nums 变成 [<strong>2</strong>,2,2,<strong>2</strong>] 。你不能将任何数字变更为 3 ，因为 3 > limit 。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>nums = [1,2,1,2], limit = 2<strong>输出：</strong>0<strong>解释：</strong>nums 已经是互补的。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>n == nums.length</code></li><li><code>2 <= n <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= limit <= 10<sup>5</sup></code></li><li><code>n</code> 是偶数。</li></ul>",
+  "difficulty": "Medium",
   "topicTags": [
-    {
-      "name": "Greedy",
-      "slug": "greedy",
-      "translatedName": "贪心"
-    },
     {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
     },
     {
-      "name": "Sorting",
-      "slug": "sorting",
-      "translatedName": "排序"
+      "name": "Hash Table",
+      "slug": "hash-table",
+      "translatedName": "哈希表"
+    },
+    {
+      "name": "Prefix Sum",
+      "slug": "prefix-sum",
+      "translatedName": "前缀和"
     }
   ],
-  "date": "2026-05-12"
+  "date": "2026-05-13"
 }
