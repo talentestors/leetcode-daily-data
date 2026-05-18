@@ -1,18 +1,13 @@
 {
-  "id": "1345",
-  "title": "Jump Game IV",
-  "title_zh": "跳跃游戏 IV",
-  "slug": "jump-game-iv",
-  "link": "https://leetcode.cn/problems/jump-game-iv/",
-  "content": "<p>Given an array of integers <code>arr</code>, you are initially positioned at the first index of the array.</p><p>In one step you can jump from index <code>i</code> to index:</p><ul><li><code>i + 1</code> where: <code>i + 1 < arr.length</code>.</li><li><code>i - 1</code> where: <code>i - 1 >= 0</code>.</li><li><code>j</code> where: <code>arr[i] == arr[j]</code> and <code>i != j</code>.</li></ul><p>Return <em>the minimum number of steps</em> to reach the <strong>last index</strong> of the array.</p><p>Notice that you can not jump outside of the array at any time.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> arr = [100,-23,-23,404,100,23,23,23,3,404]<strong>Output:</strong> 3<strong>Explanation:</strong> You need three jumps from index 0 --> 4 --> 3 --> 9. Note that index 9 is the last index of the array.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> arr = [7]<strong>Output:</strong> 0<strong>Explanation:</strong> Start index is the last index. You do not need to jump.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> arr = [7,6,9,6,9,6,9,7]<strong>Output:</strong> 1<strong>Explanation:</strong> You can jump directly from index 0 to index 7 which is last index of the array.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= arr.length <= 5 * 10<sup>4</sup></code></li><li><code>-10<sup>8</sup> <= arr[i] <= 10<sup>8</sup></code></li></ul>",
-  "translatedContent": "<p>给你一个整数数组 <code>arr</code> ，你一开始在数组的第一个元素处（下标为 0）。</p><p>每一步，你可以从下标 <code>i</code> 跳到下标 <code>i + 1</code> 、<code>i - 1</code> 或者 <code>j</code> ：</p><ul><li><code>i + 1</code> 需满足：<code>i + 1 < arr.length</code></li><li><code>i - 1</code> 需满足：<code>i - 1 >= 0</code></li><li><code>j</code> 需满足：<code>arr[i] == arr[j]</code> 且 <code>i != j</code></li></ul><p>请你返回到达数组最后一个元素的下标处所需的 <strong>最少操作次数</strong> 。</p><p>注意：任何时候你都不能跳到数组外面。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>arr = [100,-23,-23,404,100,23,23,23,3,404]<strong>输出：</strong>3<strong>解释：</strong>那你需要跳跃 3 次，下标依次为 0 --> 4 --> 3 --> 9 。下标 9 为数组的最后一个元素的下标。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>arr = [7]<strong>输出：</strong>0<strong>解释：</strong>一开始就在最后一个元素处，所以你不需要跳跃。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>arr = [7,6,9,6,9,6,9,7]<strong>输出：</strong>1<strong>解释：</strong>你可以直接从下标 0 处跳到下标 7 处，也就是数组的最后一个元素处。</pre><p> </p><p><strong>提示：</strong></p><meta charset=\"UTF-8\" /><ul><li><code>1 <= arr.length <= 5 * 10<sup>4</sup></code></li><li><code>-10<sup>8</sup> <= arr[i] <= 10<sup>8</sup></code></li></ul>",
-  "difficulty": "Hard",
+  "id": "2540",
+  "title": "Minimum Common Value",
+  "title_zh": "最小公共值",
+  "slug": "minimum-common-value",
+  "link": "https://leetcode.cn/problems/minimum-common-value/",
+  "content": "<p>Given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in non-decreasing order, return <em>the <strong>minimum integer common</strong> to both arrays</em>. If there is no common integer amongst <code>nums1</code> and <code>nums2</code>, return <code>-1</code>.</p><p>Note that an integer is said to be <strong>common</strong> to <code>nums1</code> and <code>nums2</code> if both arrays have <strong>at least one</strong> occurrence of that integer.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums1 = [1,2,3], nums2 = [2,4]<strong>Output:</strong> 2<strong>Explanation:</strong> The smallest element common to both arrays is 2, so we return 2.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums1 = [1,2,3,6], nums2 = [2,3,4,5]<strong>Output:</strong> 2<strong>Explanation:</strong> There are two common elements in the array 2 and 3 out of which 2 is the smallest, so 2 is returned.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums1.length, nums2.length <= 10<sup>5</sup></code></li><li><code>1 <= nums1[i], nums2[j] <= 10<sup>9</sup></code></li><li>Both <code>nums1</code> and <code>nums2</code> are sorted in <strong>non-decreasing</strong> order.</li></ul>",
+  "translatedContent": "<p>给你两个整数数组 <code>nums1</code> 和 <code>nums2</code> ，它们已经按非降序排序，请你返回两个数组的 <strong>最小公共整数</strong> 。如果两个数组 <code>nums1</code> 和 <code>nums2</code> 没有公共整数，请你返回 <code>-1</code> 。</p><p>如果一个整数在两个数组中都 <strong>至少出现一次</strong> ，那么这个整数是数组 <code>nums1</code> 和 <code>nums2</code> <strong>公共</strong> 的。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>nums1 = [1,2,3], nums2 = [2,4]<b>输出：</b>2<b>解释：</b>两个数组的最小公共元素是 2 ，所以我们返回 2 。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>nums1 = [1,2,3,6], nums2 = [2,3,4,5]<b>输出：</b>2<b>解释：</b>两个数组中的公共元素是 2 和 3 ，2 是较小值，所以返回 2 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums1.length, nums2.length <= 10<sup>5</sup></code></li><li><code>1 <= nums1[i], nums2[j] <= 10<sup>9</sup></code></li><li><code>nums1</code> 和 <code>nums2</code> 都是 <strong>非降序</strong> 的。</li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
-    {
-      "name": "Breadth-First Search",
-      "slug": "breadth-first-search",
-      "translatedName": "广度优先搜索"
-    },
     {
       "name": "Array",
       "slug": "array",
@@ -22,7 +17,17 @@
       "name": "Hash Table",
       "slug": "hash-table",
       "translatedName": "哈希表"
+    },
+    {
+      "name": "Two Pointers",
+      "slug": "two-pointers",
+      "translatedName": "双指针"
+    },
+    {
+      "name": "Binary Search",
+      "slug": "binary-search",
+      "translatedName": "二分查找"
     }
   ],
-  "date": "2026-05-18"
+  "date": "2026-05-19"
 }
