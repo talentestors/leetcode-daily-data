@@ -1,33 +1,18 @@
 {
-  "id": "2685",
-  "title": "Count the Number of Complete Components",
-  "title_zh": "统计完全连通分量的数量",
-  "slug": "count-the-number-of-complete-components",
-  "link": "https://leetcode.cn/problems/count-the-number-of-complete-components/",
-  "content": "<p>You are given an integer <code>n</code>. There is an <strong>undirected</strong> graph with <code>n</code> vertices, numbered from <code>0</code> to <code>n - 1</code>. You are given a 2D integer array <code>edges</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> denotes that there exists an <strong>undirected</strong> edge connecting vertices <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code>.</p><p>Return <em>the number of <strong>complete connected components</strong> of the graph</em>.</p><p>A <strong>connected component</strong> is a subgraph of a graph in which there exists a path between any two vertices, and no vertex of the subgraph shares an edge with a vertex outside of the subgraph.</p><p>A connected component is said to be <b>complete</b> if there exists an edge between every pair of its vertices.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><p><strong class=\"example\"><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2023/04/11/screenshot-from-2023-04-11-23-31-23.png\" style=\"width: 671px; height: 270px;\" /></strong></p><pre><strong>Input:</strong> n = 6, edges = [[0,1],[0,2],[1,2],[3,4]]<strong>Output:</strong> 3<strong>Explanation:</strong> From the picture above, one can see that all of the components of this graph are complete.</pre><p><strong class=\"example\">Example 2:</strong></p><p><strong class=\"example\"><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2023/04/11/screenshot-from-2023-04-11-23-32-00.png\" style=\"width: 671px; height: 270px;\" /></strong></p><pre><strong>Input:</strong> n = 6, edges = [[0,1],[0,2],[1,2],[3,4],[3,5]]<strong>Output:</strong> 1<strong>Explanation:</strong> The component containing vertices 0, 1, and 2 is complete since there is an edge between every pair of two vertices. On the other hand, the component containing vertices 3, 4, and 5 is not complete since there is no edge between vertices 4 and 5. Thus, the number of complete components in this graph is 1.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= n <= 50</code></li><li><code>0 <= edges.length <= n * (n - 1) / 2</code></li><li><code>edges[i].length == 2</code></li><li><code>0 <= a<sub>i</sub>, b<sub>i</sub> <= n - 1</code></li><li><code>a<sub>i</sub> != b<sub>i</sub></code></li><li>There are no repeated edges.</li></ul>",
-  "translatedContent": "<p>给你一个整数 <code>n</code> 。现有一个包含 <code>n</code> 个顶点的 <strong>无向</strong> 图，顶点按从 <code>0</code> 到 <code>n - 1</code> 编号。给你一个二维整数数组 <code>edges</code> 其中 <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> 表示顶点 <code>a<sub>i</sub></code> 和 <code>b<sub>i</sub></code> 之间存在一条 <strong>无向</strong> 边。</p><p>返回图中 <strong>完全连通分量</strong> 的数量。</p><p>如果在子图中任意两个顶点之间都存在路径，并且子图中没有任何一个顶点与子图外部的顶点共享边，则称其为 <strong>连通分量</strong> 。</p><p>如果连通分量中每对节点之间都存在一条边，则称其为 <strong>完全连通分量</strong> 。</p><p> </p><p><strong>示例 1：</strong></p><p><strong><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2023/04/11/screenshot-from-2023-04-11-23-31-23.png\" style=\"width: 671px; height: 270px;\" /></strong></p><pre><strong>输入：</strong>n = 6, edges = [[0,1],[0,2],[1,2],[3,4]]<strong>输出：</strong>3<strong>解释：</strong>如上图所示，可以看到此图所有分量都是完全连通分量。</pre><p><strong>示例 2：</strong></p><p><strong><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2023/04/11/screenshot-from-2023-04-11-23-32-00.png\" style=\"width: 671px; height: 270px;\" /></strong></p><pre><strong>输入：</strong>n = 6, edges = [[0,1],[0,2],[1,2],[3,4],[3,5]]<strong>输出：</strong>1<strong>解释：</strong>包含节点 0、1 和 2 的分量是完全连通分量，因为每对节点之间都存在一条边。包含节点 3 、4 和 5 的分量不是完全连通分量，因为节点 4 和 5 之间不存在边。因此，在图中完全连接分量的数量是 1 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= n <= 50</code></li><li><code>0 <= edges.length <= n * (n - 1) / 2</code></li><li><code>edges[i].length == 2</code></li><li><code>0 <= a<sub>i</sub>, b<sub>i</sub> <= n - 1</code></li><li><code>a<sub>i</sub> != b<sub>i</sub></code></li><li>不存在重复的边</li></ul>",
+  "id": "1291",
+  "title": "Sequential Digits",
+  "title_zh": "顺次数",
+  "slug": "sequential-digits",
+  "link": "https://leetcode.cn/problems/sequential-digits/",
+  "content": "<p>An integer has <em>sequential digits</em> if and only if each digit in the number is one more than the previous digit.</p><p>Return a <strong>sorted</strong> list of all the integers in the range <code>[low, high]</code> inclusive that have sequential digits.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> low = 100, high = 300<strong>Output:</strong> [123,234]</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> low = 1000, high = 13000<strong>Output:</strong> [1234,2345,3456,4567,5678,6789,12345]</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>10 <= low <= high <= 10^9</code></li></ul>",
+  "translatedContent": "<p>我们定义「顺次数」为：每一位上的数字都比前一位上的数字大 <code>1</code> 的整数。</p><p>请你返回由 <code>[low, high]</code> 范围内所有顺次数组成的 <strong>有序</strong> 列表（从小到大排序）。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输出：</strong>low = 100, high = 300<strong>输出：</strong>[123,234]</pre><p><strong>示例 2：</strong></p><pre><strong>输出：</strong>low = 1000, high = 13000<strong>输出：</strong>[1234,2345,3456,4567,5678,6789,12345]</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>10 <= low <= high <= 10^9</code></li></ul>",
   "difficulty": "Medium",
   "topicTags": [
     {
-      "name": "Depth-First Search",
-      "slug": "depth-first-search",
-      "translatedName": "深度优先搜索"
-    },
-    {
-      "name": "Breadth-First Search",
-      "slug": "breadth-first-search",
-      "translatedName": "广度优先搜索"
-    },
-    {
-      "name": "Union Find",
-      "slug": "union-find",
-      "translatedName": "并查集"
-    },
-    {
-      "name": "Graph",
-      "slug": "graph",
-      "translatedName": "图"
+      "name": "Enumeration",
+      "slug": "enumeration",
+      "translatedName": "枚举"
     }
   ],
-  "date": "2026-07-11"
+  "date": "2026-07-13"
 }
