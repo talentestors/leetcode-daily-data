@@ -1,6 +1,7 @@
 import json
 import re
 import os
+import sys  # 新增：引入 sys 模块用于退出程序
 import zoneinfo
 import asyncio
 import httpx
@@ -218,10 +219,12 @@ async def main_async():
             # print(f"Content: {data['translatedContent']}") # 避免输出过长
         else:
             print("Failed to save data")
+            sys.exit(1)  # 新增：保存文件失败时，抛出异常终止工作流
 
     except Exception as e:
         print(f"Error in main process: {e}")
-
+        sys.exit(1)  # 新增：发生任何未预期异常时，抛出异常终止工作流
+    
 
 if __name__ == "__main__":
     asyncio.run(main_async())
