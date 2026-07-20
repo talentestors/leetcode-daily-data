@@ -1,33 +1,28 @@
 {
-  "id": "1081",
-  "title": "Smallest Subsequence of Distinct Characters",
-  "title_zh": "不同字符的最小子序列",
-  "slug": "smallest-subsequence-of-distinct-characters",
-  "link": "https://leetcode.cn/problems/smallest-subsequence-of-distinct-characters/",
-  "content": "<p>Given a string <code>s</code>, return <em>the </em><span data-keyword=\"lexicographically-smaller-string\"><em>lexicographically smallest</em></span> <span data-keyword=\"subsequence-string\"><em>subsequence</em></span><em> of</em> <code>s</code> <em>that contains all the distinct characters of</em> <code>s</code> <em>exactly once</em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"bcabc\"<strong>Output:</strong> \"abc\"</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"cbacdcbc\"<strong>Output:</strong> \"acdb\"</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 1000</code></li><li><code>s</code> consists of lowercase English letters.</li></ul><p> </p><strong>Note:</strong> This question is the same as 316: <a href=\"https://leetcode.com/problems/remove-duplicate-letters/\" target=\"_blank\">https://leetcode.com/problems/remove-duplicate-letters/</a>",
-  "translatedContent": "<p>返回 <code>s</code> 字典序最小的<span data-keyword=\"subsequence-array\">子序列</span>，该子序列包含 <code>s</code> 的所有不同字符，且只包含一次。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong><code>s = \"bcabc\"</code><strong>输出<code>：</code></strong><code>\"abc\"</code></pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong><code>s = \"cbacdcbc\"</code><strong>输出：</strong><code>\"acdb\"</code></pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 1000</code></li><li><code>s</code> 由小写英文字母组成</li></ul><p> </p><p><strong>注意：</strong>该题与 316 <a href=\"https://leetcode.cn/problems/remove-duplicate-letters/\">https://leetcode.cn/problems/remove-duplicate-letters/</a> 相同</p>",
-  "difficulty": "Medium",
+  "id": "1260",
+  "title": "Shift 2D Grid",
+  "title_zh": "二维网格迁移",
+  "slug": "shift-2d-grid",
+  "link": "https://leetcode.cn/problems/shift-2d-grid/",
+  "content": "<p>Given a 2D <code>grid</code> of size <code>m x n</code> and an integer <code>k</code>. You need to shift the <code>grid</code> <code>k</code> times.</p><p>In one shift operation:</p><ul><li>Element at <code>grid[i][j]</code> moves to <code>grid[i][j + 1]</code>.</li><li>Element at <code>grid[i][n - 1]</code> moves to <code>grid[i + 1][0]</code>.</li><li>Element at <code>grid[m - 1][n - 1]</code> moves to <code>grid[0][0]</code>.</li></ul><p>Return the <em>2D grid</em> after applying shift operation <code>k</code> times.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/11/05/e1.png\" style=\"width: 400px; height: 178px;\" /><pre><strong>Input:</strong> <code>grid</code> = [[1,2,3],[4,5,6],[7,8,9]], k = 1<strong>Output:</strong> [[9,1,2],[3,4,5],[6,7,8]]</pre><p><strong class=\"example\">Example 2:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/11/05/e2.png\" style=\"width: 400px; height: 166px;\" /><pre><strong>Input:</strong> <code>grid</code> = [[3,8,1,9],[19,7,2,5],[4,6,11,10],[12,0,21,13]], k = 4<strong>Output:</strong> [[12,0,21,13],[3,8,1,9],[19,7,2,5],[4,6,11,10]]</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> <code>grid</code> = [[1,2,3],[4,5,6],[7,8,9]], k = 9<strong>Output:</strong> [[1,2,3],[4,5,6],[7,8,9]]</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>1 <= m <= 50</code></li><li><code>1 <= n <= 50</code></li><li><code>-1000 <= grid[i][j] <= 1000</code></li><li><code>0 <= k <= 100</code></li></ul>",
+  "translatedContent": "<p>给你一个 <code>m</code> 行 <code>n</code> 列的二维网格 <code>grid</code> 和一个整数 <code>k</code>。你需要将 <code>grid</code> 迁移 <code>k</code> 次。</p><p>每次「迁移」操作将会引发下述活动：</p><ul><li>位于 <code>grid[i][j]</code>（<code>j < n - 1</code>）的元素将会移动到 <code>grid[i][j + 1]</code>。</li><li>位于 <code>grid[i][n - 1]</code> 的元素将会移动到 <code>grid[i + 1][0]</code>。</li><li>位于 <code>grid[m - 1][n - 1]</code> 的元素将会移动到 <code>grid[0][0]</code>。</li></ul><p>请你返回 <code>k</code> 次迁移操作后最终得到的 <strong>二维网格</strong>。</p><p> </p><p><strong>示例 1：</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.cn/aliyun-lc-upload/uploads/2019/11/16/e1-1.png\" style=\"height: 158px; width: 400px;\" /></p><pre><strong>输入：</strong>grid = [[1,2,3],[4,5,6],[7,8,9]], k = 1<strong>输出：</strong>[[9,1,2],[3,4,5],[6,7,8]]</pre><p><strong>示例 2：</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.cn/aliyun-lc-upload/uploads/2019/11/16/e2-1.png\" style=\"height: 166px; width: 400px;\" /></p><pre><strong>输入：</strong>grid = [[3,8,1,9],[19,7,2,5],[4,6,11,10],[12,0,21,13]], k = 4<strong>输出：</strong>[[12,0,21,13],[3,8,1,9],[19,7,2,5],[4,6,11,10]]</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>grid = [[1,2,3],[4,5,6],[7,8,9]], k = 9<strong>输出：</strong>[[1,2,3],[4,5,6],[7,8,9]]</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>1 <= m <= 50</code></li><li><code>1 <= n <= 50</code></li><li><code>-1000 <= grid[i][j] <= 1000</code></li><li><code>0 <= k <= 100</code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
     {
-      "name": "Stack",
-      "slug": "stack",
-      "translatedName": "栈"
+      "name": "Array",
+      "slug": "array",
+      "translatedName": "数组"
     },
     {
-      "name": "Greedy",
-      "slug": "greedy",
-      "translatedName": "贪心"
+      "name": "Matrix",
+      "slug": "matrix",
+      "translatedName": "矩阵"
     },
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
-    },
-    {
-      "name": "Monotonic Stack",
-      "slug": "monotonic-stack",
-      "translatedName": "单调栈"
+      "name": "Simulation",
+      "slug": "simulation",
+      "translatedName": "模拟"
     }
   ],
-  "date": "2026-07-19"
+  "date": "2026-07-20"
 }
