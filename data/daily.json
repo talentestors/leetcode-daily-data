@@ -1,22 +1,17 @@
 {
-  "id": "1140",
-  "title": "Stone Game II",
-  "title_zh": "石子游戏 II",
-  "slug": "stone-game-ii",
-  "link": "https://leetcode.cn/problems/stone-game-ii/",
-  "content": "<p>Alice and Bob continue their games with piles of stones. There are a number of piles <strong>arranged in a row</strong>, and each pile has a positive integer number of stones <code>piles[i]</code>. The objective of the game is to end with the most stones.</p><p>Alice and Bob take turns, with Alice starting first.</p><p>On each player&#39;s turn, that player can take <strong>all the stones</strong> in the <strong>first</strong> <code>X</code> remaining piles, where <code>1 <= X <= 2M</code>. Then, we set <code>M = max(M, X)</code>. Initially, M = 1.</p><p>The game continues until all the stones have been taken.</p><p>Assuming Alice and Bob play optimally, return the maximum number of stones Alice can get.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">piles = [2,7,9,4,4]</span></p><p><strong>Output:</strong> <span class=\"example-io\">10</span></p><p><strong>Explanation:</strong></p><ul><li>If Alice takes one pile at the beginning, Bob takes two piles, then Alice takes 2 piles again. Alice can get <code>2 + 4 + 4 = 10</code> stones in total.</li><li>If Alice takes two piles at the beginning, then Bob can take all three piles left. In this case, Alice get <code>2 + 7 = 9</code> stones in total.</li></ul><p>So we return 10 since it&#39;s larger.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">piles = [1,2,3,4,5,100]</span></p><p><strong>Output:</strong> <span class=\"example-io\">104</span></p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= piles.length <= 100</code></li><li><code>1 <= piles[i] <= 10<sup>4</sup></code></li></ul>",
-  "translatedContent": "<p>Alice 和 Bob 继续他们的石子游戏。许多堆石子 <strong>排成一行</strong>，每堆都有正整数颗石子 <code>piles[i]</code>。游戏以谁手中的石子最多来决出胜负。</p><p>Alice 和 Bob 轮流进行，Alice 先开始。最初，<code>M = 1</code>。</p><p>在每个玩家的回合中，该玩家可以拿走剩下的 <strong>前</strong> <code>X</code> 堆的所有石子，其中 <code>1 <= X <= 2M</code>。然后，令 <code>M = max(M, X)</code>。</p><p>游戏一直持续到所有石子都被拿走。</p><p>假设 Alice 和 Bob 都发挥出最佳水平，返回 Alice 可以得到的最大数量的石头。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>piles = [2,7,9,4,4]<strong>输出：</strong>10<strong>解释：</strong>如果一开始 Alice 取了一堆，Bob 取了两堆，然后 Alice 再取两堆。Alice 可以得到 2 + 4 + 4 = 10 堆。如果 Alice 一开始拿走了两堆，那么 Bob 可以拿走剩下的三堆。在这种情况下，Alice 得到 2 + 7 = 9 堆。返回 10，因为它更大。</pre><p><strong>示例 2:</strong></p><pre><strong>输入：</strong>piles = [1,2,3,4,5,100]<strong>输出：</strong>104</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= piles.length <= 100</code></li><li><meta charset=\"UTF-8\" /><code>1 <= piles[i] <= 10<sup>4</sup></code></li></ul>",
-  "difficulty": "Medium",
+  "id": "1510",
+  "title": "Stone Game IV",
+  "title_zh": "石子游戏 IV",
+  "slug": "stone-game-iv",
+  "link": "https://leetcode.cn/problems/stone-game-iv/",
+  "content": "<p>Alice and Bob take turns playing a game, with Alice starting first.</p><p>Initially, there are <code>n</code> stones in a pile. On each player&#39;s turn, that player makes a <em>move</em> consisting of removing <strong>any</strong> non-zero <strong>square number</strong> of stones in the pile.</p><p>Also, if a player cannot make a move, he/she loses the game.</p><p>Given a positive integer <code>n</code>, return <code>true</code> if and only if Alice wins the game otherwise return <code>false</code>, assuming both players play optimally.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> n = 1<strong>Output:</strong> true<strong>Explanation: </strong>Alice can remove 1 stone winning the game because Bob doesn&#39;t have any moves.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> n = 2<strong>Output:</strong> false<strong>Explanation: </strong>Alice can only remove 1 stone, after that Bob removes the last one winning the game (2 -> 1 -> 0).</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> n = 4<strong>Output:</strong> true<strong>Explanation:</strong> n is already a perfect square, Alice can win with one move, removing 4 stones (4 -> 0).</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= n <= 10<sup>5</sup></code></li></ul>",
+  "translatedContent": "<p>Alice 和 Bob 两个人轮流玩一个游戏，Alice 先手。</p><p>一开始，有 <code>n</code> 个石子堆在一起。每个人轮流操作，正在操作的玩家可以从石子堆里拿走 <strong>任意</strong> 非零 <strong>平方数</strong> 个石子。</p><p>如果石子堆里没有石子了，则无法操作的玩家输掉游戏。</p><p>给你正整数 <code>n</code> ，且已知两个人都采取最优策略。如果 Alice 会赢得比赛，那么返回 <code>True</code> ，否则返回 <code>False</code> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>n = 1<strong>输出：</strong>true<strong>解释：</strong>Alice 拿走 1 个石子并赢得胜利，因为 Bob 无法进行任何操作。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>n = 2<strong>输出：</strong>false<strong>解释：</strong>Alice 只能拿走 1 个石子，然后 Bob 拿走最后一个石子并赢得胜利（2 -> 1 -> 0）。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>n = 4<strong>输出：</strong>true<strong>解释：</strong>n 已经是一个平方数，Alice 可以一次全拿掉 4 个石子并赢得胜利（4 -> 0）。</pre><p><strong>示例 4：</strong></p><pre><strong>输入：</strong>n = 7<strong>输出：</strong>false<strong>解释：</strong>当 Bob 采取最优策略时，Alice 无法赢得比赛。如果 Alice 一开始拿走 4 个石子， Bob 会拿走 1 个石子，然后 Alice 只能拿走 1 个石子，Bob 拿走最后一个石子并赢得胜利（7 -> 3 -> 2 -> 1 -> 0）。如果 Alice 一开始拿走 1 个石子， Bob 会拿走 4 个石子，然后 Alice 只能拿走 1 个石子，Bob 拿走最后一个石子并赢得胜利（7 -> 6 -> 2 -> 1 -> 0）。</pre><p><strong>示例 5：</strong></p><pre><strong>输入：</strong>n = 17<strong>输出：</strong>false<strong>解释：</strong>如果 Bob 采取最优策略，Alice 无法赢得胜利。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= n <= 10^5</code></li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
     {
       "name": "Minimax",
       "slug": "minimax-algorithm",
       "translatedName": "极小化极大"
-    },
-    {
-      "name": "Array",
-      "slug": "array",
-      "translatedName": "数组"
     },
     {
       "name": "Math",
@@ -34,9 +29,14 @@
       "translatedName": "博弈"
     },
     {
-      "name": "Prefix Sum",
-      "slug": "prefix-sum",
-      "translatedName": "前缀和"
+      "name": "Nim 游戏",
+      "slug": "nim-game",
+      "translatedName": null
+    },
+    {
+      "name": "Sprague–Grundy ",
+      "slug": "sprague-grundy-theorem",
+      "translatedName": null
     },
     {
       "name": "零和博弈",
@@ -44,5 +44,5 @@
       "translatedName": null
     }
   ],
-  "date": "2026-08-09"
+  "date": "2026-08-10"
 }
