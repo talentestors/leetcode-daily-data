@@ -1,23 +1,13 @@
 {
-  "id": "2029",
-  "title": "Stone Game IX",
-  "title_zh": "石子游戏 IX",
-  "slug": "stone-game-ix",
-  "link": "https://leetcode.cn/problems/stone-game-ix/",
-  "content": "<p>Alice and Bob continue their games with stones. There is a row of n stones, and each stone has an associated value. You are given an integer array <code>stones</code>, where <code>stones[i]</code> is the <strong>value</strong> of the <code>i<sup>th</sup></code> stone.</p><p>Alice and Bob take turns, with <strong>Alice</strong> starting first. On each turn, the player may remove any stone from <code>stones</code>. The player who removes a stone <strong>loses</strong> if the <strong>sum</strong> of the values of <strong>all removed stones</strong> is divisible by <code>3</code>. Bob will win automatically if there are no remaining stones (even if it is Alice&#39;s turn).</p><p>Assuming both players play <strong>optimally</strong>, return <code>true</code> <em>if Alice wins and</em> <code>false</code> <em>if Bob wins</em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> stones = [2,1]<strong>Output:</strong> true<strong>Explanation:</strong> The game will be played as follows:- Turn 1: Alice can remove either stone.- Turn 2: Bob removes the remaining stone. The sum of the removed stones is 1 + 2 = 3 and is divisible by 3. Therefore, Bob loses and Alice wins the game.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> stones = [2]<strong>Output:</strong> false<strong>Explanation:</strong> Alice will remove the only stone, and the sum of the values on the removed stones is 2. Since all the stones are removed and the sum of values is not divisible by 3, Bob wins the game.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> stones = [5,1,2,4,3]<strong>Output:</strong> false<strong>Explanation:</strong> Bob will always win. One possible way for Bob to win is shown below:- Turn 1: Alice can remove the second stone with value 1. Sum of removed stones = 1.- Turn 2: Bob removes the fifth stone with value 3. Sum of removed stones = 1 + 3 = 4.- Turn 3: Alices removes the fourth stone with value 4. Sum of removed stones = 1 + 3 + 4 = 8.- Turn 4: Bob removes the third stone with value 2. Sum of removed stones = 1 + 3 + 4 + 2 = 10.- Turn 5: Alice removes the first stone with value 5. Sum of removed stones = 1 + 3 + 4 + 2 + 5 = 15.Alice loses the game because the sum of the removed stones (15) is divisible by 3. Bob wins the game.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= stones.length <= 10<sup>5</sup></code></li><li><code>1 <= stones[i] <= 10<sup>4</sup></code></li></ul>",
-  "translatedContent": "<p>Alice 和 Bob 再次设计了一款新的石子游戏。现有一行 n 个石子，每个石子都有一个关联的数字表示它的价值。给你一个整数数组 <code>stones</code> ，其中 <code>stones[i]</code> 是第 <code>i</code> 个石子的价值。</p><p>Alice 和 Bob 轮流进行自己的回合，<strong>Alice</strong> 先手。每一回合，玩家需要从 <code>stones</code> 中移除任一石子。</p><ul><li>如果玩家移除石子后，导致 <strong>所有已移除石子</strong> 的价值 <strong>总和</strong> 可以被 3 整除，那么该玩家就 <strong>输掉游戏</strong> 。</li><li>如果不满足上一条，且移除后没有任何剩余的石子，那么 Bob 将会直接获胜（即便是在 Alice 的回合）。</li></ul><p>假设两位玩家均采用 <strong>最佳</strong> 决策。如果 Alice 获胜，返回 <code>true</code> ；如果 Bob 获胜，返回 <code>false</code> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>stones = [2,1]<strong>输出：</strong>true<strong>解释：</strong>游戏进行如下：- 回合 1：Alice 可以移除任意一个石子。- 回合 2：Bob 移除剩下的石子。 已移除的石子的值总和为 1 + 2 = 3 且可以被 3 整除。因此，Bob 输，Alice 获胜。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>stones = [2]<strong>输出：</strong>false<strong>解释：</strong>Alice 会移除唯一一个石子，已移除石子的值总和为 2 。 由于所有石子都已移除，且值总和无法被 3 整除，Bob 获胜。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>stones = [5,1,2,4,3]<strong>输出：</strong>false<strong>解释：</strong>Bob 总会获胜。其中一种可能的游戏进行方式如下：- 回合 1：Alice 可以移除值为 1 的第 2 个石子。已移除石子值总和为 1 。- 回合 2：Bob 可以移除值为 3 的第 5 个石子。已移除石子值总和为 = 1 + 3 = 4 。- 回合 3：Alices 可以移除值为 4 的第 4 个石子。已移除石子值总和为 = 1 + 3 + 4 = 8 。- 回合 4：Bob 可以移除值为 2 的第 3 个石子。已移除石子值总和为 = 1 + 3 + 4 + 2 = 10.- 回合 5：Alice 可以移除值为 5 的第 1 个石子。已移除石子值总和为 = 1 + 3 + 4 + 2 + 5 = 15.Alice 输掉游戏，因为已移除石子值总和（15）可以被 3 整除，Bob 获胜。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= stones.length <= 10<sup>5</sup></code></li><li><code>1 <= stones[i] <= 10<sup>4</sup></code></li></ul>",
-  "difficulty": "Medium",
+  "id": "1563",
+  "title": "Stone Game V",
+  "title_zh": "石子游戏 V",
+  "slug": "stone-game-v",
+  "link": "https://leetcode.cn/problems/stone-game-v/",
+  "content": "<p>There are several stones <strong>arranged in a row</strong>, and each stone has an associated value which is an integer given in the array <code>stoneValue</code>.</p><p>In each round of the game, Alice divides the row into <strong>two non-empty rows</strong> (i.e. left row and right row), then Bob calculates the value of each row which is the sum of the values of all the stones in this row. Bob throws away the row which has the maximum value, and Alice&#39;s score increases by the value of the remaining row. If the value of the two rows are equal, Bob lets Alice decide which row will be thrown away. The next round starts with the remaining row.</p><p>The game ends when there is only <strong>one stone remaining</strong>. Alice&#39;s score is initially <strong>zero</strong>.</p><p>Return <i>the maximum score that Alice can obtain</i>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> stoneValue = [6,2,3,4,5,5]<strong>Output:</strong> 18<strong>Explanation:</strong> In the first round, Alice divides the row to [6,2,3], [4,5,5]. The left row has the value 11 and the right row has value 14. Bob throws away the right row and Alice&#39;s score is now 11.In the second round Alice divides the row to [6], [2,3]. This time Bob throws away the left row and Alice&#39;s score becomes 16 (11 + 5).The last round Alice has only one choice to divide the row which is [2], [3]. Bob throws away the right row and Alice&#39;s score is now 18 (16 + 2). The game ends because only one stone is remaining in the row.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> stoneValue = [7,7,7,7,7,7,7]<strong>Output:</strong> 28</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> stoneValue = [4]<strong>Output:</strong> 0</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= stoneValue.length <= 500</code></li><li><code>1 <= stoneValue[i] <= 10<sup>6</sup></code></li></ul>",
+  "translatedContent": "<p>几块石子 <strong>排成一行</strong> ，每块石子都有一个关联值，关联值为整数，由数组 <code>stoneValue</code> 给出。</p><p>游戏中的每一轮：Alice 会将这行石子分成两个 <strong>非空行</strong>（即，左侧行和右侧行）；Bob 负责计算每一行的值，即此行中所有石子的值的总和。Bob 会丢弃值最大的行，Alice 的得分为剩下那行的值（每轮累加）。如果两行的值相等，Bob 让 Alice 决定丢弃哪一行。下一轮从剩下的那一行开始。</p><p>只 <strong>剩下一块石子</strong> 时，游戏结束。Alice 的分数最初为 <strong><code>0</code></strong> 。</p><p>返回 <strong>Alice 能够获得的最大分数</strong><em> 。</em></p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>stoneValue = [6,2,3,4,5,5]<strong>输出：</strong>18<strong>解释：</strong>在第一轮中，Alice 将行划分为 [6，2，3]，[4，5，5] 。左行的值是 11 ，右行的值是 14 。Bob 丢弃了右行，Alice 的分数现在是 11 。在第二轮中，Alice 将行分成 [6]，[2，3] 。这一次 Bob 扔掉了左行，Alice 的分数变成了 16（11 + 5）。最后一轮 Alice 只能将行分成 [2]，[3] 。Bob 扔掉右行，Alice 的分数现在是 18（16 + 2）。游戏结束，因为这行只剩下一块石头了。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>stoneValue = [7,7,7,7,7,7,7]<strong>输出：</strong>28</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>stoneValue = [4]<strong>输出：</strong>0</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= stoneValue.length <= 500</code></li><li><code>1 <= stoneValue[i] <= 10<sup>6</sup></code></li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
-    {
-      "name": "Greedy",
-      "slug": "greedy",
-      "translatedName": "贪心"
-    },
-    {
-      "name": "Minimax",
-      "slug": "minimax-algorithm",
-      "translatedName": "极小化极大"
-    },
     {
       "name": "Array",
       "slug": "array",
@@ -29,25 +19,15 @@
       "translatedName": "数学"
     },
     {
-      "name": "Counting",
-      "slug": "counting",
-      "translatedName": "计数"
+      "name": "Dynamic Programming",
+      "slug": "dynamic-programming",
+      "translatedName": "动态规划"
     },
     {
       "name": "Game Theory",
       "slug": "game-theory",
       "translatedName": "博弈"
-    },
-    {
-      "name": "Nim 游戏",
-      "slug": "nim-game",
-      "translatedName": null
-    },
-    {
-      "name": "零和博弈",
-      "slug": "zero-sum-game",
-      "translatedName": null
     }
   ],
-  "date": "2026-08-16"
+  "date": "2026-08-17"
 }
