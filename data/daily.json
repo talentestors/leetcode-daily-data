@@ -1,12 +1,12 @@
 {
-  "id": "1563",
-  "title": "Stone Game V",
-  "title_zh": "石子游戏 V",
-  "slug": "stone-game-v",
-  "link": "https://leetcode.cn/problems/stone-game-v/",
-  "content": "<p>There are several stones <strong>arranged in a row</strong>, and each stone has an associated value which is an integer given in the array <code>stoneValue</code>.</p><p>In each round of the game, Alice divides the row into <strong>two non-empty rows</strong> (i.e. left row and right row), then Bob calculates the value of each row which is the sum of the values of all the stones in this row. Bob throws away the row which has the maximum value, and Alice&#39;s score increases by the value of the remaining row. If the value of the two rows are equal, Bob lets Alice decide which row will be thrown away. The next round starts with the remaining row.</p><p>The game ends when there is only <strong>one stone remaining</strong>. Alice&#39;s score is initially <strong>zero</strong>.</p><p>Return <i>the maximum score that Alice can obtain</i>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> stoneValue = [6,2,3,4,5,5]<strong>Output:</strong> 18<strong>Explanation:</strong> In the first round, Alice divides the row to [6,2,3], [4,5,5]. The left row has the value 11 and the right row has value 14. Bob throws away the right row and Alice&#39;s score is now 11.In the second round Alice divides the row to [6], [2,3]. This time Bob throws away the left row and Alice&#39;s score becomes 16 (11 + 5).The last round Alice has only one choice to divide the row which is [2], [3]. Bob throws away the right row and Alice&#39;s score is now 18 (16 + 2). The game ends because only one stone is remaining in the row.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> stoneValue = [7,7,7,7,7,7,7]<strong>Output:</strong> 28</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> stoneValue = [4]<strong>Output:</strong> 0</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= stoneValue.length <= 500</code></li><li><code>1 <= stoneValue[i] <= 10<sup>6</sup></code></li></ul>",
-  "translatedContent": "<p>几块石子 <strong>排成一行</strong> ，每块石子都有一个关联值，关联值为整数，由数组 <code>stoneValue</code> 给出。</p><p>游戏中的每一轮：Alice 会将这行石子分成两个 <strong>非空行</strong>（即，左侧行和右侧行）；Bob 负责计算每一行的值，即此行中所有石子的值的总和。Bob 会丢弃值最大的行，Alice 的得分为剩下那行的值（每轮累加）。如果两行的值相等，Bob 让 Alice 决定丢弃哪一行。下一轮从剩下的那一行开始。</p><p>只 <strong>剩下一块石子</strong> 时，游戏结束。Alice 的分数最初为 <strong><code>0</code></strong> 。</p><p>返回 <strong>Alice 能够获得的最大分数</strong><em> 。</em></p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>stoneValue = [6,2,3,4,5,5]<strong>输出：</strong>18<strong>解释：</strong>在第一轮中，Alice 将行划分为 [6，2，3]，[4，5，5] 。左行的值是 11 ，右行的值是 14 。Bob 丢弃了右行，Alice 的分数现在是 11 。在第二轮中，Alice 将行分成 [6]，[2，3] 。这一次 Bob 扔掉了左行，Alice 的分数变成了 16（11 + 5）。最后一轮 Alice 只能将行分成 [2]，[3] 。Bob 扔掉右行，Alice 的分数现在是 18（16 + 2）。游戏结束，因为这行只剩下一块石头了。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>stoneValue = [7,7,7,7,7,7,7]<strong>输出：</strong>28</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>stoneValue = [4]<strong>输出：</strong>0</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= stoneValue.length <= 500</code></li><li><code>1 <= stoneValue[i] <= 10<sup>6</sup></code></li></ul>",
-  "difficulty": "Hard",
+  "id": "3471",
+  "title": "Find the Largest Almost Missing Integer",
+  "title_zh": "找出最大的几近缺失整数",
+  "slug": "find-the-largest-almost-missing-integer",
+  "link": "https://leetcode.cn/problems/find-the-largest-almost-missing-integer/",
+  "content": "<p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p><p>An integer <code>x</code> is <strong>almost missing</strong> from <code>nums</code> if <code>x</code> appears in <em>exactly</em> one subarray of size <code>k</code> within <code>nums</code>.</p><p>Return the <b>largest</b> <strong>almost missing</strong> integer from <code>nums</code>. If no such integer exists, return <code>-1</code>.</p>A <strong>subarray</strong> is a contiguous sequence of elements within an array.<p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [3,9,2,1,7], k = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\">7</span></p><p><strong>Explanation:</strong></p><ul><li>1 appears in 2 subarrays of size 3: <code>[9, 2, 1]</code> and <code>[2, 1, 7]</code>.</li><li>2 appears in 3 subarrays of size 3: <code>[3, 9, 2]</code>, <code>[9, 2, 1]</code>, <code>[2, 1, 7]</code>.</li><li index=\"2\">3 appears in 1 subarray of size 3: <code>[3, 9, 2]</code>.</li><li index=\"3\">7 appears in 1 subarray of size 3: <code>[2, 1, 7]</code>.</li><li index=\"4\">9 appears in 2 subarrays of size 3: <code>[3, 9, 2]</code>, and <code>[9, 2, 1]</code>.</li></ul><p>We return 7 since it is the largest integer that appears in exactly one subarray of size <code>k</code>.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [3,9,7,2,1,7], k = 4</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p><p><strong>Explanation:</strong></p><ul><li>1 appears in 2 subarrays of size 4: <code>[9, 7, 2, 1]</code>, <code>[7, 2, 1, 7]</code>.</li><li>2 appears in 3 subarrays of size 4: <code>[3, 9, 7, 2]</code>, <code>[9, 7, 2, 1]</code>, <code>[7, 2, 1, 7]</code>.</li><li>3 appears in 1 subarray of size 4: <code>[3, 9, 7, 2]</code>.</li><li>7 appears in 3 subarrays of size 4: <code>[3, 9, 7, 2]</code>, <code>[9, 7, 2, 1]</code>, <code>[7, 2, 1, 7]</code>.</li><li>9 appears in 2 subarrays of size 4: <code>[3, 9, 7, 2]</code>, <code>[9, 7, 2, 1]</code>.</li></ul><p>We return 3 since it is the largest and only integer that appears in exactly one subarray of size <code>k</code>.</p></div><p><strong class=\"example\">Example 3:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [0,0], k = 1</span></p><p><strong>Output:</strong> <span class=\"example-io\">-1</span></p><p><strong>Explanation:</strong></p><p>There is no integer that appears in only one subarray of size 1.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 50</code></li><li><code>0 <= nums[i] <= 50</code></li><li><code>1 <= k <= nums.length</code></li></ul>",
+  "translatedContent": "<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> 。</p><p>如果整数 <code>x</code> 恰好仅出现在 <code>nums</code> 中的一个大小为 <code>k</code> 的子数组中，则认为 <code>x</code> 是 <code>nums</code> 中的几近缺失（<strong>almost missing</strong>）整数。</p><p>返回 <code>nums</code> 中 <strong>最大的几近缺失</strong> 整数，如果不存在这样的整数，返回 <code>-1</code> 。</p><strong>子数组</strong> 是数组中的一个连续元素序列。<p> </p><p><b>示例 1：</b></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>nums = [3,9,2,1,7], k = 3</span></p><p><span class=\"example-io\"><b>输出：</b>7</span></p><p><b>解释：</b></p><ul><li>1 出现在两个大小为 3 的子数组中：<code>[9, 2, 1]</code>、<code>[2, 1, 7]</code></li><li>2 出现在三个大小为 3 的子数组中：<code>[3, 9, 2]</code>、<code>[9, 2, 1]</code>、<code>[2, 1, 7]</code></li><li index=\"2\">3 出现在一个大小为 3 的子数组中：<code>[3, 9, 2]</code></li><li index=\"3\">7 出现在一个大小为 3 的子数组中：<code>[2, 1, 7]</code></li><li index=\"4\">9 出现在两个大小为 3 的子数组中：<code>[3, 9, 2]</code>、<code>[9, 2, 1]</code></li></ul><p>返回 7 ，因为它满足题意的所有整数中最大的那个。</p></div><p><b>示例 2：</b></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>nums = [3,9,7,2,1,7], k = 4</span></p><p><span class=\"example-io\"><b>输出：</b>3</span></p><p><b>解释：</b></p><ul><li>1 出现在两个大小为 4 的子数组中：<code>[9, 7, 2, 1]</code>、<code>[7, 2, 1, 7]</code></li><li>2 出现在三个大小为 4 的子数组中：<code>[3, 9, 7, 2]</code>、<code>[9, 7, 2, 1]</code>、<code>[7, 2, 1, 7]</code></li><li>3 出现在一个大小为 4 的子数组中：<code>[3, 9, 7, 2]</code></li><li>7 出现在三个大小为 4 的子数组中：<code>[3, 9, 7, 2]</code>、<code>[9, 7, 2, 1]</code>、<code>[7, 2, 1, 7]</code></li><li>9 出现在两个大小为 4 的子数组中：<code>[3, 9, 7, 2]</code>、<code>[9, 7, 2, 1]</code></li></ul><p>返回 3 ，因为它满足题意的所有整数中最大的那个。</p></div><p><b>示例 3：</b></p><div class=\"example-block\"><p><span class=\"example-io\"><b>输入：</b>nums = [0,0], k = 1</span></p><p><span class=\"example-io\"><b>输出：</b>-1</span></p><p><b>解释：</b></p><p>不存在满足题意的整数。</p></div><p> </p><p><b>提示：</b></p><ul><li><code>1 <= nums.length <= 50</code></li><li><code>0 <= nums[i] <= 50</code></li><li><code>1 <= k <= nums.length</code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
     {
       "name": "Array",
@@ -14,20 +14,10 @@
       "translatedName": "数组"
     },
     {
-      "name": "Math",
-      "slug": "math",
-      "translatedName": "数学"
-    },
-    {
-      "name": "Dynamic Programming",
-      "slug": "dynamic-programming",
-      "translatedName": "动态规划"
-    },
-    {
-      "name": "Game Theory",
-      "slug": "game-theory",
-      "translatedName": "博弈"
+      "name": "Hash Table",
+      "slug": "hash-table",
+      "translatedName": "哈希表"
     }
   ],
-  "date": "2026-08-17"
+  "date": "2026-08-18"
 }
