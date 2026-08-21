@@ -1,23 +1,43 @@
 {
-  "id": "3069",
-  "title": "Distribute Elements Into Two Arrays I",
-  "title_zh": "将元素分配到两个数组中 I",
-  "slug": "distribute-elements-into-two-arrays-i",
-  "link": "https://leetcode.cn/problems/distribute-elements-into-two-arrays-i/",
-  "content": "<p>You are given a <strong>1-indexed</strong> array of <strong>distinct</strong> integers <code>nums</code> of length <code>n</code>.</p><p>You need to distribute all the elements of <code>nums</code> between two arrays <code>arr1</code> and <code>arr2</code> using <code>n</code> operations. In the first operation, append <code>nums[1]</code> to <code>arr1</code>. In the second operation, append <code>nums[2]</code> to <code>arr2</code>. Afterwards, in the <code>i<sup>th</sup></code> operation:</p><ul><li>If the last element of <code>arr1</code> is<strong> greater</strong> than the last element of <code>arr2</code>, append <code>nums[i]</code> to <code>arr1</code>. Otherwise, append <code>nums[i]</code> to <code>arr2</code>.</li></ul><p>The array <code>result</code> is formed by concatenating the arrays <code>arr1</code> and <code>arr2</code>. For example, if <code>arr1 == [1,2,3]</code> and <code>arr2 == [4,5,6]</code>, then <code>result = [1,2,3,4,5,6]</code>.</p><p>Return <em>the array</em> <code>result</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums = [2,1,3]<strong>Output:</strong> [2,3,1]<strong>Explanation:</strong> After the first 2 operations, arr1 = [2] and arr2 = [1].In the 3<sup>rd</sup> operation, as the last element of arr1 is greater than the last element of arr2 (2 > 1), append nums[3] to arr1.After 3 operations, arr1 = [2,3] and arr2 = [1].Hence, the array result formed by concatenation is [2,3,1].</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums = [5,4,3,8]<strong>Output:</strong> [5,3,4,8]<strong>Explanation:</strong> After the first 2 operations, arr1 = [5] and arr2 = [4].In the 3<sup>rd</sup> operation, as the last element of arr1 is greater than the last element of arr2 (5 > 4), append nums[3] to arr1, hence arr1 becomes [5,3].In the 4<sup>th</sup> operation, as the last element of arr2 is greater than the last element of arr1 (4 > 3), append nums[4] to arr2, hence arr2 becomes [4,8].After 4 operations, arr1 = [5,3] and arr2 = [4,8].Hence, the array result formed by concatenation is [5,3,4,8].</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>3 <= n <= 50</code></li><li><code>1 <= nums[i] <= 100</code></li><li>All elements in <code>nums</code> are distinct.</li></ul>",
-  "translatedContent": "<p>给你一个下标从 <strong>1</strong> 开始、包含<strong> 不同 </strong>整数的数组 <code>nums</code> ，数组长度为 <code>n</code> 。</p><p>你需要通过 <code>n</code> 次操作，将 <code>nums</code> 中的所有元素分配到两个数组 <code>arr1</code> 和 <code>arr2</code> 中。在第一次操作中，将 <code>nums[1]</code> 追加到 <code>arr1</code> 。在第二次操作中，将 <code>nums[2]</code> 追加到 <code>arr2</code> 。之后，在第 <code>i</code> 次操作中：</p><ul><li>如果 <code>arr1</code> 的最后一个元素 <strong>大于 </strong><code>arr2</code> 的最后一个元素，就将 <code>nums[i]</code> 追加到 <code>arr1</code> 。否则，将 <code>nums[i]</code> 追加到 <code>arr2</code> 。</li></ul><p>通过连接数组 <code>arr1</code> 和 <code>arr2</code> 形成数组 <code>result</code> 。例如，如果 <code>arr1 == [1,2,3]</code> 且 <code>arr2 == [4,5,6]</code> ，那么 <code>result = [1,2,3,4,5,6]</code> 。</p><p>返回数组 <code>result</code> 。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><pre><strong>输入：</strong>nums = [2,1,3]<strong>输出：</strong>[2,3,1]<strong>解释：</strong>在前两次操作后，arr1 = [2] ，arr2 = [1] 。在第 3 次操作中，由于 arr1 的最后一个元素大于 arr2 的最后一个元素（2 > 1），将 nums[3] 追加到 arr1 。3 次操作后，arr1 = [2,3] ，arr2 = [1] 。因此，连接形成的数组 result 是 [2,3,1] 。</pre><p><strong class=\"example\">示例 2：</strong></p><pre><strong>输入：</strong>nums = [5,4,3,8]<strong>输出：</strong>[5,3,4,8]<strong>解释：</strong>在前两次操作后，arr1 = [5] ，arr2 = [4] 。在第 3 次操作中，由于 arr1 的最后一个元素大于 arr2 的最后一个元素（5 > 4），将 nums[3] 追加到 arr1 ，因此 arr1 变为 [5,3] 。在第 4 次操作中，由于 arr2 的最后一个元素大于 arr1 的最后一个元素（4 > 3），将 nums[4] 追加到 arr2 ，因此 arr2 变为 [4,8] 。4 次操作后，arr1 = [5,3] ，arr2 = [4,8] 。因此，连接形成的数组 result 是 [5,3,4,8] 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>3 <= n <= 50</code></li><li><code>1 <= nums[i] <= 100</code></li><li><code>nums</code>中的所有元素都互不相同。</li></ul>",
-  "difficulty": "Easy",
+  "id": "3116",
+  "title": "Kth Smallest Amount With Single Denomination Combination",
+  "title_zh": "单面值组合的第 K 小金额",
+  "slug": "kth-smallest-amount-with-single-denomination-combination",
+  "link": "https://leetcode.cn/problems/kth-smallest-amount-with-single-denomination-combination/",
+  "content": "<p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>k</code>.</p><p>You have an infinite number of coins of each denomination. However, you are <strong>not allowed</strong> to combine coins of different denominations.</p><p>Return the <code>k<sup>th</sup></code> <strong>smallest</strong> amount that can be made using these coins.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>Input:</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">coins = [3,6,9], k = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\"> 9</span></p><p><strong>Explanation:</strong> The given coins can make the following amounts:<br />Coin 3 produces multiples of 3: 3, 6, 9, 12, 15, etc.<br />Coin 6 produces multiples of 6: 6, 12, 18, 24, etc.<br />Coin 9 produces multiples of 9: 9, 18, 27, 36, etc.<br />All of the coins combined produce: 3, 6, <u><strong>9</strong></u>, 12, 15, etc.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>Input:</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\"> coins = [5,2], k = 7</span></p><p><strong>Output:</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\"> 12 </span></p><p><strong>Explanation:</strong> The given coins can make the following amounts:<br />Coin 5 produces multiples of 5: 5, 10, 15, 20, etc.<br />Coin 2 produces multiples of 2: 2, 4, 6, 8, 10, 12, etc.<br />All of the coins combined produce: 2, 4, 5, 6, 8, 10, <u><strong>12</strong></u>, 14, 15, etc.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= coins.length <= 15</code></li><li><code>1 <= coins[i] <= 25</code></li><li><code>1 <= k <= 2 * 10<sup>9</sup></code></li><li><code>coins</code> contains pairwise distinct integers.</li></ul>",
+  "translatedContent": "<p>给你一个整数数组 <code>coins</code> 表示不同面额的硬币，另给你一个整数 <code>k</code> 。</p><p>你有无限量的每种面额的硬币。但是，你<strong> 不能 </strong>组合使用不同面额的硬币。</p><p>返回使用这些硬币能制造的<strong> 第 </strong><code>k<sup>th</sup></code><strong> 小</strong> 金额。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>输入：</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">coins = [3,6,9], k = 3</span></p><p><strong>输出：</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">9</span></p><p><strong>解释：</strong>给定的硬币可以制造以下金额：<br />3元硬币产生3的倍数：3, 6, 9, 12, 15等。<br />6元硬币产生6的倍数：6, 12, 18, 24等。<br />9元硬币产生9的倍数：9, 18, 27, 36等。<br />所有硬币合起来可以产生：3, 6, <u><strong>9</strong></u>, 12, 15等。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>输入：</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">coins = [5,2], k = 7</span></p><p><strong>输出：</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">12</span></p><p><strong>解释：</strong>给定的硬币可以制造以下金额：<br />5元硬币产生5的倍数：5, 10, 15, 20等。<br />2元硬币产生2的倍数：2, 4, 6, 8, 10, 12等。<br />所有硬币合起来可以产生：2, 4, 5, 6, 8, 10, <u><strong>12</strong></u>, 14, 15等。</p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= coins.length <= 15</code></li><li><code>1 <= coins[i] <= 25</code></li><li><code>1 <= k <= 2 * 10<sup>9</sup></code></li><li><code>coins</code> 包含两两不同的整数。</li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
+    {
+      "name": "Bit Manipulation",
+      "slug": "bit-manipulation",
+      "translatedName": "位运算"
+    },
     {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
     },
     {
-      "name": "Simulation",
-      "slug": "simulation",
-      "translatedName": "模拟"
+      "name": "Math",
+      "slug": "math",
+      "translatedName": "数学"
+    },
+    {
+      "name": "Binary Search",
+      "slug": "binary-search",
+      "translatedName": "二分查找"
+    },
+    {
+      "name": "Combinatorics",
+      "slug": "combinatorics",
+      "translatedName": "组合数学"
+    },
+    {
+      "name": "Number Theory",
+      "slug": "number-theory",
+      "translatedName": "数论"
     }
   ],
-  "date": "2026-08-20"
+  "date": "2026-08-21"
 }
