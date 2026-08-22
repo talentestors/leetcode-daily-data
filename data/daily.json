@@ -1,43 +1,18 @@
 {
-  "id": "3116",
-  "title": "Kth Smallest Amount With Single Denomination Combination",
-  "title_zh": "单面值组合的第 K 小金额",
-  "slug": "kth-smallest-amount-with-single-denomination-combination",
-  "link": "https://leetcode.cn/problems/kth-smallest-amount-with-single-denomination-combination/",
-  "content": "<p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>k</code>.</p><p>You have an infinite number of coins of each denomination. However, you are <strong>not allowed</strong> to combine coins of different denominations.</p><p>Return the <code>k<sup>th</sup></code> <strong>smallest</strong> amount that can be made using these coins.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>Input:</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">coins = [3,6,9], k = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\"> 9</span></p><p><strong>Explanation:</strong> The given coins can make the following amounts:<br />Coin 3 produces multiples of 3: 3, 6, 9, 12, 15, etc.<br />Coin 6 produces multiples of 6: 6, 12, 18, 24, etc.<br />Coin 9 produces multiples of 9: 9, 18, 27, 36, etc.<br />All of the coins combined produce: 3, 6, <u><strong>9</strong></u>, 12, 15, etc.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>Input:</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\"> coins = [5,2], k = 7</span></p><p><strong>Output:</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\"> 12 </span></p><p><strong>Explanation:</strong> The given coins can make the following amounts:<br />Coin 5 produces multiples of 5: 5, 10, 15, 20, etc.<br />Coin 2 produces multiples of 2: 2, 4, 6, 8, 10, 12, etc.<br />All of the coins combined produce: 2, 4, 5, 6, 8, 10, <u><strong>12</strong></u>, 14, 15, etc.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= coins.length <= 15</code></li><li><code>1 <= coins[i] <= 25</code></li><li><code>1 <= k <= 2 * 10<sup>9</sup></code></li><li><code>coins</code> contains pairwise distinct integers.</li></ul>",
-  "translatedContent": "<p>给你一个整数数组 <code>coins</code> 表示不同面额的硬币，另给你一个整数 <code>k</code> 。</p><p>你有无限量的每种面额的硬币。但是，你<strong> 不能 </strong>组合使用不同面额的硬币。</p><p>返回使用这些硬币能制造的<strong> 第 </strong><code>k<sup>th</sup></code><strong> 小</strong> 金额。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>输入：</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">coins = [3,6,9], k = 3</span></p><p><strong>输出：</strong> <span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">9</span></p><p><strong>解释：</strong>给定的硬币可以制造以下金额：<br />3元硬币产生3的倍数：3, 6, 9, 12, 15等。<br />6元硬币产生6的倍数：6, 12, 18, 24等。<br />9元硬币产生9的倍数：9, 18, 27, 36等。<br />所有硬币合起来可以产生：3, 6, <u><strong>9</strong></u>, 12, 15等。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\" style=\"    border-color: var(--border-tertiary);    border-left-width: 2px;    color: var(--text-secondary);    font-size: .875rem;    margin-bottom: 1rem;    margin-top: 1rem;    overflow: visible;    padding-left: 1rem;\"><p><strong>输入：</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">coins = [5,2], k = 7</span></p><p><strong>输出：</strong><span class=\"example-io\" style=\"    font-family: Menlo,sans-serif;    font-size: 0.85rem;\">12</span></p><p><strong>解释：</strong>给定的硬币可以制造以下金额：<br />5元硬币产生5的倍数：5, 10, 15, 20等。<br />2元硬币产生2的倍数：2, 4, 6, 8, 10, 12等。<br />所有硬币合起来可以产生：2, 4, 5, 6, 8, 10, <u><strong>12</strong></u>, 14, 15等。</p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= coins.length <= 15</code></li><li><code>1 <= coins[i] <= 25</code></li><li><code>1 <= k <= 2 * 10<sup>9</sup></code></li><li><code>coins</code> 包含两两不同的整数。</li></ul>",
-  "difficulty": "Hard",
+  "id": "3622",
+  "title": "Check Divisibility by Digit Sum and Product",
+  "title_zh": "判断整除性",
+  "slug": "check-divisibility-by-digit-sum-and-product",
+  "link": "https://leetcode.cn/problems/check-divisibility-by-digit-sum-and-product/",
+  "content": "<p>You are given a positive integer <code>n</code>. Determine whether <code>n</code> is divisible by the <strong>sum </strong>of the following two values:</p><ul><li><p>The <strong>digit sum</strong> of <code>n</code> (the sum of its digits).</p></li><li><p>The <strong>digit</strong> <strong>product</strong> of <code>n</code> (the product of its digits).</p></li></ul><p>Return <code>true</code> if <code>n</code> is divisible by this sum; otherwise, return <code>false</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">n = 99</span></p><p><strong>Output:</strong> <span class=\"example-io\">true</span></p><p><strong>Explanation:</strong></p><p>Since 99 is divisible by the sum (9 + 9 = 18) plus product (9 * 9 = 81) of its digits (total 99), the output is true.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">n = 23</span></p><p><strong>Output:</strong> <span class=\"example-io\">false</span></p><p><strong>Explanation:</strong></p><p>Since 23 is not divisible by the sum (2 + 3 = 5) plus product (2 * 3 = 6) of its digits (total 11), the output is false.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= n <= 10<sup>6</sup></code></li></ul>",
+  "translatedContent": "<p>给你一个正整数 <code>n</code>。请判断 <code>n</code> 是否可以被以下两值之和 <strong>整除</strong>：</p><ul><li><p><code>n</code> 的 <strong>数字和</strong>（即其各个位数之和）。</p></li><li><p><code>n</code> 的 <strong>数字积</strong>（即其各个位数之积）。</p></li></ul><p>如果 <code>n</code> 能被该和整除，返回 <code>true</code>；否则，返回 <code>false</code>。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">n = 99</span></p><p><strong>输出：</strong> <span class=\"example-io\">true</span></p><p><strong>解释：</strong></p><p>因为 99 可以被其数字和 (9 + 9 = 18) 与数字积 (9 * 9 = 81) 之和 (18 + 81 = 99) 整除，因此输出为 true。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">n = 23</span></p><p><strong>输出：</strong> <span class=\"example-io\">false</span></p><p><strong>解释：</strong></p><p>因为 23 无法被其数字和 (2 + 3 = 5) 与数字积 (2 * 3 = 6) 之和 (5 + 6 = 11) 整除，因此输出为 false。</p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= n <= 10<sup>6</sup></code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
-    {
-      "name": "Bit Manipulation",
-      "slug": "bit-manipulation",
-      "translatedName": "位运算"
-    },
-    {
-      "name": "Array",
-      "slug": "array",
-      "translatedName": "数组"
-    },
     {
       "name": "Math",
       "slug": "math",
       "translatedName": "数学"
-    },
-    {
-      "name": "Binary Search",
-      "slug": "binary-search",
-      "translatedName": "二分查找"
-    },
-    {
-      "name": "Combinatorics",
-      "slug": "combinatorics",
-      "translatedName": "组合数学"
-    },
-    {
-      "name": "Number Theory",
-      "slug": "number-theory",
-      "translatedName": "数论"
     }
   ],
-  "date": "2026-08-21"
+  "date": "2026-08-22"
 }
