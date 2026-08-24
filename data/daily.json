@@ -1,17 +1,22 @@
 {
-  "id": "1927",
-  "title": "Sum Game",
-  "title_zh": "求和游戏",
-  "slug": "sum-game",
-  "link": "https://leetcode.cn/problems/sum-game/",
-  "content": "<p>Alice and Bob take turns playing a game, with <strong>Alice</strong><strong> starting first</strong>.</p><p>You are given a string <code>num</code> of <strong>even length</strong> consisting of digits and <code>&#39;?&#39;</code> characters. On each turn, a player will do the following if there is still at least one <code>&#39;?&#39;</code> in <code>num</code>:</p><ol><li>Choose an index <code>i</code> where <code>num[i] == &#39;?&#39;</code>.</li><li>Replace <code>num[i]</code> with any digit between <code>&#39;0&#39;</code> and <code>&#39;9&#39;</code>.</li></ol><p>The game ends when there are no more <code>&#39;?&#39;</code> characters in <code>num</code>.</p><p>For Bob to win, the sum of the digits in the first half of <code>num</code> must be <strong>equal</strong> to the sum of the digits in the second half. For Alice to win, the sums must <strong>not be equal</strong>.</p><ul><li>For example, if the game ended with <code>num = \"243801\"</code>, then Bob wins because <code>2+4+3 = 8+0+1</code>. If the game ended with <code>num = \"243803\"</code>, then Alice wins because <code>2+4+3 != 8+0+3</code>.</li></ul><p>Assuming Alice and Bob play <strong>optimally</strong>, return <code>true</code> <em>if Alice will win and </em><code>false</code> <em>if Bob will win</em>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> num = \"5023\"<strong>Output:</strong> false<strong>Explanation:</strong> There are no moves to be made.The sum of the first half is equal to the sum of the second half: 5 + 0 = 2 + 3.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> num = \"25??\"<strong>Output:</strong> true<strong>Explanation: </strong>Alice can replace one of the &#39;?&#39;s with &#39;9&#39; and it will be impossible for Bob to make the sums equal.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> num = \"?3295???\"<strong>Output:</strong> false<strong>Explanation:</strong> It can be proven that Bob will always win. One possible outcome is:- Alice replaces the first &#39;?&#39; with &#39;9&#39;. num = \"93295???\".- Bob replaces one of the &#39;?&#39; in the right half with &#39;9&#39;. num = \"932959??\".- Alice replaces one of the &#39;?&#39; in the right half with &#39;2&#39;. num = \"9329592?\".- Bob replaces the last &#39;?&#39; in the right half with &#39;7&#39;. num = \"93295927\".Bob wins because 9 + 3 + 2 + 9 = 5 + 9 + 2 + 7.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>2 <= num.length <= 10<sup>5</sup></code></li><li><code>num.length</code> is <strong>even</strong>.</li><li><code>num</code> consists of only digits and <code>&#39;?&#39;</code>.</li></ul>",
-  "translatedContent": "<p>Alice 和 Bob 玩一个游戏，两人轮流行动，<strong>Alice 先手</strong> 。</p><p>给你一个 <strong>偶数长度</strong> 的字符串 <code>num</code> ，每一个字符为数字字符或者 <code>'?'</code> 。每一次操作中，如果 <code>num</code> 中至少有一个 <code>'?'</code> ，那么玩家可以执行以下操作：</p><ol><li>选择一个下标 <code>i</code> 满足 <code>num[i] == '?'</code> 。</li><li>将 <code>num[i]</code> 用 <code>'0'</code> 到 <code>'9'</code> 之间的一个数字字符替代。</li></ol><p>当 <code>num</code> 中没有<span style=\"\"> </span><code>'?'</code> 时，游戏结束。</p><p>Bob 获胜的条件是 <code>num</code> 中前一半数字的和 <strong>等于</strong> 后一半数字的和。Alice 获胜的条件是前一半的和与后一半的和 <strong>不相等</strong> 。</p><ul><li>比方说，游戏结束时 <code>num = \"243801\"</code> ，那么 Bob 获胜，因为 <code>2+4+3 = 8+0+1</code> 。如果游戏结束时 <code>num = \"243803\"</code> ，那么 Alice 获胜，因为 <code>2+4+3 != 8+0+3</code> 。</li></ul><p>在 Alice 和 Bob 都采取 <strong>最优</strong> 策略的前提下，如果 Alice 获胜，请返回 <code>true</code> ，如果 Bob 获胜，请返回 <code>false</code> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>num = \"5023\"<b>输出：</b>false<b>解释：</b>num 中没有 '?' ，没法进行任何操作。前一半的和等于后一半的和：5 + 0 = 2 + 3 。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>num = \"25??\"<b>输出：</b>true<strong>解释：</strong>Alice 可以将两个 '?' 中的一个替换为 '9' ，Bob 无论如何都无法使前一半的和等于后一半的和。</pre><p><strong>示例 3：</strong></p><pre><b>输入：</b>num = \"?3295???\"<b>输出：</b>false<b>解释：</b>Bob 总是能赢。一种可能的结果是：- Alice 将第一个 '?' 用 '9' 替换。num = \"93295???\" 。- Bob 将后面一半中的一个 '?' 替换为 '9' 。num = \"932959??\" 。- Alice 将后面一半中的一个 '?' 替换为 '2' 。num = \"9329592?\" 。- Bob 将后面一半中最后一个 '?' 替换为 '7' 。num = \"93295927\" 。Bob 获胜，因为 9 + 3 + 2 + 9 = 5 + 9 + 2 + 7 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>2 <= num.length <= 10<sup>5</sup></code></li><li><code>num.length</code> 是 <strong>偶数</strong> 。</li><li><code>num</code> 只包含数字字符和 <code>'?'</code> 。</li></ul>",
-  "difficulty": "Medium",
+  "id": "1872",
+  "title": "Stone Game VIII",
+  "title_zh": "石子游戏 VIII",
+  "slug": "stone-game-viii",
+  "link": "https://leetcode.cn/problems/stone-game-viii/",
+  "content": "<p>Alice and Bob take turns playing a game, with <strong>Alice starting first</strong>.</p><p>There are <code>n</code> stones arranged in a row. On each player&#39;s turn, while the number of stones is <strong>more than one</strong>, they will do the following:</p><ol><li>Choose an integer <code>x > 1</code>, and <strong>remove</strong> the leftmost <code>x</code> stones from the row.</li><li>Add the <strong>sum</strong> of the <strong>removed</strong> stones&#39; values to the player&#39;s score.</li><li>Place a <strong>new stone</strong>, whose value is equal to that sum, on the left side of the row.</li></ol><p>The game stops when <strong>only</strong> <strong>one</strong> stone is left in the row.</p><p>The <strong>score difference</strong> between Alice and Bob is <code>(Alice&#39;s score - Bob&#39;s score)</code>. Alice&#39;s goal is to <strong>maximize</strong> the score difference, and Bob&#39;s goal is the <strong>minimize</strong> the score difference.</p><p>Given an integer array <code>stones</code> of length <code>n</code> where <code>stones[i]</code> represents the value of the <code>i<sup>th</sup></code> stone <strong>from the left</strong>, return <em>the <strong>score difference</strong> between Alice and Bob if they both play <strong>optimally</strong>.</em></p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> stones = [-1,2,-3,4,-5]<strong>Output:</strong> 5<strong>Explanation:</strong>- Alice removes the first 4 stones, adds (-1) + 2 + (-3) + 4 = 2 to her score, and places a stone of  value 2 on the left. stones = [2,-5].- Bob removes the first 2 stones, adds 2 + (-5) = -3 to his score, and places a stone of value -3 on  the left. stones = [-3].The difference between their scores is 2 - (-3) = 5.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> stones = [7,-6,5,10,5,-2,-6]<strong>Output:</strong> 13<strong>Explanation:</strong>- Alice removes all stones, adds 7 + (-6) + 5 + 10 + 5 + (-2) + (-6) = 13 to her score, and places a  stone of value 13 on the left. stones = [13].The difference between their scores is 13 - 0 = 13.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> stones = [-10,-12]<strong>Output:</strong> -22<strong>Explanation:</strong>- Alice can only make one move, which is to remove both stones. She adds (-10) + (-12) = -22 to her  score and places a stone of value -22 on the left. stones = [-22].The difference between their scores is (-22) - 0 = -22.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>n == stones.length</code></li><li><code>2 <= n <= 10<sup>5</sup></code></li><li><code>-10<sup>4</sup> <= stones[i] <= 10<sup>4</sup></code></li></ul>",
+  "translatedContent": "<p>Alice 和 Bob 玩一个游戏，两人轮流操作， <strong>Alice 先手</strong> 。</p><p>总共有 <code>n</code> 个石子排成一行。轮到某个玩家的回合时，如果石子的数目 <strong>大于 1</strong> ，他将执行以下操作：</p><ol><li>选择一个整数 <code>x > 1</code> ，并且 <strong>移除</strong> 最左边的 <code>x</code> 个石子。</li><li>将<strong> 移除</strong> 的石子价值之 <strong>和</strong> 累加到该玩家的分数中。</li><li>将一个 <strong>新的石子</strong> 放在最左边，且新石子的值为被移除石子值之和。</li></ol><p>当只剩下 <strong>一个</strong> 石子时，游戏结束。</p><p>Alice 和 Bob 的 <strong>分数之差</strong> 为 <code>(Alice 的分数 - Bob 的分数)</code> 。 Alice 的目标是<strong> 最大化</strong> 分数差，Bob 的目标是 <strong>最小化</strong> 分数差。</p><p>给你一个长度为 <code>n</code> 的整数数组 <code>stones</code> ，其中 <code>stones[i]</code> 是 <strong>从左边起</strong> 第 <code>i</code> 个石子的价值。请你返回在双方都采用 <strong>最优</strong> 策略的情况下，Alice 和 Bob 的 <strong>分数之差</strong> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>stones = [-1,2,-3,4,-5]<b>输出：</b>5<strong>解释：</strong>- Alice 移除最左边的 4 个石子，得分增加 (-1) + 2 + (-3) + 4 = 2 ，并且将一个价值为 2 的石子放在最左边。stones = [2,-5] 。- Bob 移除最左边的 2 个石子，得分增加 2 + (-5) = -3 ，并且将一个价值为 -3 的石子放在最左边。stones = [-3] 。两者分数之差为 2 - (-3) = 5 。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>stones = [7,-6,5,10,5,-2,-6]<b>输出：</b>13<b>解释：</b>- Alice 移除所有石子，得分增加 7 + (-6) + 5 + 10 + 5 + (-2) + (-6) = 13 ，并且将一个价值为 13 的石子放在最左边。stones = [13] 。两者分数之差为 13 - 0 = 13 。</pre><p><strong>示例 3：</strong></p><pre><b>输入：</b>stones = [-10,-12]<b>输出：</b>-22<strong>解释：</strong>- Alice 只有一种操作，就是移除所有石子。得分增加 (-10) + (-12) = -22 ，并且将一个价值为 -22 的石子放在最左边。stones = [-22] 。两者分数之差为 (-22) - 0 = -22 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>n == stones.length</code></li><li><code>2 <= n <= 10<sup>5</sup></code></li><li><code>-10<sup>4</sup> <= stones[i] <= 10<sup>4</sup></code></li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
     {
-      "name": "Greedy",
-      "slug": "greedy",
-      "translatedName": "贪心"
+      "name": "Minimax",
+      "slug": "minimax-algorithm",
+      "translatedName": "极小化极大"
+    },
+    {
+      "name": "Array",
+      "slug": "array",
+      "translatedName": "数组"
     },
     {
       "name": "Math",
@@ -19,15 +24,25 @@
       "translatedName": "数学"
     },
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
+      "name": "Dynamic Programming",
+      "slug": "dynamic-programming",
+      "translatedName": "动态规划"
     },
     {
       "name": "Game Theory",
       "slug": "game-theory",
       "translatedName": "博弈"
+    },
+    {
+      "name": "Prefix Sum",
+      "slug": "prefix-sum",
+      "translatedName": "前缀和"
+    },
+    {
+      "name": "零和博弈",
+      "slug": "zero-sum-game",
+      "translatedName": null
     }
   ],
-  "date": "2026-08-23"
+  "date": "2026-08-24"
 }
