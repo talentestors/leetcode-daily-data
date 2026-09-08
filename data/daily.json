@@ -1,23 +1,18 @@
 {
-  "id": "940",
-  "title": "Distinct Subsequences II",
-  "title_zh": "不同的子序列 II",
-  "slug": "distinct-subsequences-ii",
-  "link": "https://leetcode.cn/problems/distinct-subsequences-ii/",
-  "content": "<p>Given a string s, return <em>the number of <strong>distinct non-empty subsequences</strong> of</em> <code>s</code>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>A <strong>subsequence</strong> of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., <code>\"ace\"</code> is a subsequence of <code>\"<u>a</u>b<u>c</u>d<u>e</u>\"</code> while <code>\"aec\"</code> is not.<p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"abc\"<strong>Output:</strong> 7<strong>Explanation:</strong> The 7 distinct subsequences are \"a\", \"b\", \"c\", \"ab\", \"ac\", \"bc\", and \"abc\".</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"aba\"<strong>Output:</strong> 6<strong>Explanation:</strong> The 6 distinct subsequences are \"a\", \"b\", \"ab\", \"aa\", \"ba\", and \"aba\".</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> s = \"aaa\"<strong>Output:</strong> 3<strong>Explanation:</strong> The 3 distinct subsequences are \"a\", \"aa\" and \"aaa\".</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 2000</code></li><li><code>s</code> consists of lowercase English letters.</li></ul>",
-  "translatedContent": "<p>给定一个字符串 <code>s</code>，计算 <code>s</code> 的 <strong>不同非空子序列</strong> 的个数。因为结果可能很大，所以返回答案需要对<strong> </strong><strong><code>10^9 + 7</code> 取余</strong> 。</p><p>字符串的 <strong>子序列</strong> 是经由原字符串删除一些（也可能不删除）字符但不改变剩余字符相对位置的一个新字符串。</p><ul><li>例如，<code>\"ace\"</code> 是 <code>\"<em><strong>a</strong></em>b<em><strong>c</strong></em>d<em><strong>e</strong></em>\"</code> 的一个子序列，但 <code>\"aec\"</code> 不是。</li></ul><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>s = \"abc\"<strong>输出：</strong>7<strong>解释：</strong>7 个不同的子序列分别是 \"a\", \"b\", \"c\", \"ab\", \"ac\", \"bc\", 以及 \"abc\"。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>s = \"aba\"<strong>输出：</strong>6<strong>解释：</strong>6 个不同的子序列分别是 \"a\", \"b\", \"ab\", \"ba\", \"aa\" 以及 \"aba\"。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>s = \"aaa\"<strong>输出：</strong>3<strong>解释：</strong>3 个不同的子序列分别是 \"a\", \"aa\" 以及 \"aaa\"。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 2000</code></li><li><code>s</code> 仅由小写英文字母组成</li></ul><p> </p>",
-  "difficulty": "Hard",
+  "id": "3870",
+  "title": "Count Commas in Range",
+  "title_zh": "统计范围内的逗号",
+  "slug": "count-commas-in-range",
+  "link": "https://leetcode.cn/problems/count-commas-in-range/",
+  "content": "<p>You are given an integer <code>n</code>.</p><p>Return the <strong>total</strong> number of commas used when writing all integers from <code>[1, n]</code> (inclusive) in <strong>standard</strong> number formatting.</p><p>In <strong>standard</strong> formatting:</p><ul><li>A comma is inserted after <strong>every three</strong> digits from the right.</li><li>Numbers with <strong>fewer</strong> than 4 digits contain no commas.</li></ul><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">n = 1002</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p><p><strong>Explanation:</strong></p><p>The numbers <code>\"1,000\"</code>, <code>\"1,001\"</code>, and <code>\"1,002\"</code> each contain one comma, giving a total of 3.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">n = 998</span></p><p><strong>Output:</strong> <span class=\"example-io\">0</span></p><p><strong>Explanation:</strong></p><p>All numbers from 1 to 998 have fewer than four digits. Therefore, no commas are used.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= n <= 10<sup>5</sup></code></li></ul>",
+  "translatedContent": "<p>给你一个整数 <code>n</code>。</p><p>返回将所有从 <code>[1, n]</code>（包含两端）范围内的整数以 <strong>标准 </strong>数字格式书写时所用到的<strong> 逗号总数</strong>。</p><p>在<strong> 标准 </strong>格式中：</p><ul><li>从右边开始，每 <strong>三位 </strong>数字后插入一个逗号。</li><li>位数 <strong>少于四位 </strong>的数字不包含逗号。</li></ul><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">n = 1002</span></p><p><strong>输出：</strong> <span class=\"example-io\">3</span></p><p><strong>解释：</strong></p><p>数字 <code>\"1,000\"</code>、<code>\"1,001\"</code> 和 <code>\"1,002\"</code> 每个都包含一个逗号，总计 3 个逗号。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">n = 998</span></p><p><strong>输出：</strong> <span class=\"example-io\">0</span></p><p><strong>解释：</strong></p><p>从 1 到 998 的所有数字位数都少于四位，因此没有使用逗号。</p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= n <= 10<sup>5</sup></code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
-    },
-    {
-      "name": "Dynamic Programming",
-      "slug": "dynamic-programming",
-      "translatedName": "动态规划"
+      "name": "Math",
+      "slug": "math",
+      "translatedName": "数学"
     }
   ],
-  "date": "2026-09-07"
+  "date": "2026-09-08"
 }
