@@ -1,12 +1,12 @@
 {
-  "id": "1190",
-  "title": "Reverse Substrings Between Each Pair of Parentheses",
-  "title_zh": "反转每对括号间的子串",
-  "slug": "reverse-substrings-between-each-pair-of-parentheses",
-  "link": "https://leetcode.cn/problems/reverse-substrings-between-each-pair-of-parentheses/",
-  "content": "<p>You are given a string <code>s</code> that consists of lower case English letters and brackets.</p><p>Reverse the strings in each pair of matching parentheses, starting from the innermost one.</p><p>Your result should <strong>not</strong> contain any brackets.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"(abcd)\"<strong>Output:</strong> \"dcba\"</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"(u(love)i)\"<strong>Output:</strong> \"iloveu\"<strong>Explanation:</strong> The substring \"love\" is reversed first, then the whole string is reversed.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> s = \"(ed(et(oc))el)\"<strong>Output:</strong> \"leetcode\"<strong>Explanation:</strong> First, we reverse the substring \"oc\", then \"etco\", and finally, the whole string.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 2000</code></li><li><code>s</code> only contains lower case English characters and parentheses.</li><li>It is guaranteed that all parentheses are balanced.</li></ul>",
-  "translatedContent": "<p>给出一个字符串 <code>s</code>（仅含有小写英文字母和括号）。</p><p>请你按照从括号内到外的顺序，逐层反转每对匹配括号中的字符串，并返回最终的结果。</p><p>注意，您的结果中 <strong>不应</strong> 包含任何括号。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>s = \"(abcd)\"<strong>输出：</strong>\"dcba\"</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>s = \"(u(love)i)\"<strong>输出：</strong>\"iloveu\"<strong>解释：</strong>先反转子字符串 \"love\" ，然后反转整个字符串。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>s = \"(ed(et(oc))el)\"<strong>输出：</strong>\"leetcode\"<strong>解释：</strong>先反转子字符串 \"oc\" ，接着反转 \"etco\" ，然后反转整个字符串。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 2000</code></li><li><code>s</code> 中只有小写英文字母和括号</li><li>题目测试用例确保所有括号都是成对出现的</li></ul>",
-  "difficulty": "Medium",
+  "id": "1614",
+  "title": "Maximum Nesting Depth of the Parentheses",
+  "title_zh": "括号的最大嵌套深度",
+  "slug": "maximum-nesting-depth-of-the-parentheses",
+  "link": "https://leetcode.cn/problems/maximum-nesting-depth-of-the-parentheses/",
+  "content": "<p>Given a <strong>valid parentheses string</strong> <code>s</code>, return the <strong>nesting depth</strong> of<em> </em><code>s</code>. The nesting depth is the <strong>maximum</strong> number of nested parentheses.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">s = \"(1+(2*3)+((8)/4))+1\"</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p><p><strong>Explanation:</strong></p><p>Digit 8 is inside of 3 nested parentheses in the string.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">s = \"(1)+((2))+(((3)))\"</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p><p><strong>Explanation:</strong></p><p>Digit 3 is inside of 3 nested parentheses in the string.</p></div><p><strong class=\"example\">Example 3:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">s = \"()(())((()()))\"</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 100</code></li><li><code>s</code> consists of digits <code>0-9</code> and characters <code>&#39;+&#39;</code>, <code>&#39;-&#39;</code>, <code>&#39;*&#39;</code>, <code>&#39;/&#39;</code>, <code>&#39;(&#39;</code>, and <code>&#39;)&#39;</code>.</li><li>It is guaranteed that parentheses expression <code>s</code> is a VPS.</li></ul>",
+  "translatedContent": "<p>给定 <strong>有效括号字符串</strong> <code>s</code>，返回 <code>s</code> 的 <strong>嵌套深度</strong>。嵌套深度是嵌套括号的 <strong>最大</strong> 数量。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong>s = \"(1+(2*3)+((<strong>8</strong>)/4))+1\"</p><p><strong>输出：</strong>3</p><p><strong>解释：</strong>数字 8 在嵌套的 3 层括号中。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong>s = \"(1)+((2))+(((<strong>3</strong>)))\"</p><p><strong>输出：</strong>3</p><p><strong>解释：</strong>数字 3 在嵌套的 3 层括号中。</p></div><p><strong class=\"example\">示例 3：</strong></p><div class=\"example-block\"><p><strong>输入：</strong><span class=\"example-io\">s = \"()(())((()()))\"</span></p><p><strong>输出：</strong><span class=\"example-io\">3</span></p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 100</code></li><li><code>s</code> 由数字 <code>0-9</code> 和字符 <code>'+'</code>、<code>'-'</code>、<code>'*'</code>、<code>'/'</code>、<code>'('</code>、<code>')'</code> 组成</li><li>题目数据保证括号字符串 <code>s</code> 是 <strong>有效的括号字符串</strong></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
     {
       "name": "Stack",
@@ -24,5 +24,5 @@
       "translatedName": null
     }
   ],
-  "date": "2026-09-27"
+  "date": "2026-09-28"
 }
