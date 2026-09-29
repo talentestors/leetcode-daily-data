@@ -1,22 +1,27 @@
 {
-  "id": "1614",
-  "title": "Maximum Nesting Depth of the Parentheses",
-  "title_zh": "括号的最大嵌套深度",
-  "slug": "maximum-nesting-depth-of-the-parentheses",
-  "link": "https://leetcode.cn/problems/maximum-nesting-depth-of-the-parentheses/",
-  "content": "<p>Given a <strong>valid parentheses string</strong> <code>s</code>, return the <strong>nesting depth</strong> of<em> </em><code>s</code>. The nesting depth is the <strong>maximum</strong> number of nested parentheses.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">s = \"(1+(2*3)+((8)/4))+1\"</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p><p><strong>Explanation:</strong></p><p>Digit 8 is inside of 3 nested parentheses in the string.</p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">s = \"(1)+((2))+(((3)))\"</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p><p><strong>Explanation:</strong></p><p>Digit 3 is inside of 3 nested parentheses in the string.</p></div><p><strong class=\"example\">Example 3:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">s = \"()(())((()()))\"</span></p><p><strong>Output:</strong> <span class=\"example-io\">3</span></p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 100</code></li><li><code>s</code> consists of digits <code>0-9</code> and characters <code>&#39;+&#39;</code>, <code>&#39;-&#39;</code>, <code>&#39;*&#39;</code>, <code>&#39;/&#39;</code>, <code>&#39;(&#39;</code>, and <code>&#39;)&#39;</code>.</li><li>It is guaranteed that parentheses expression <code>s</code> is a VPS.</li></ul>",
-  "translatedContent": "<p>给定 <strong>有效括号字符串</strong> <code>s</code>，返回 <code>s</code> 的 <strong>嵌套深度</strong>。嵌套深度是嵌套括号的 <strong>最大</strong> 数量。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong>s = \"(1+(2*3)+((<strong>8</strong>)/4))+1\"</p><p><strong>输出：</strong>3</p><p><strong>解释：</strong>数字 8 在嵌套的 3 层括号中。</p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong>s = \"(1)+((2))+(((<strong>3</strong>)))\"</p><p><strong>输出：</strong>3</p><p><strong>解释：</strong>数字 3 在嵌套的 3 层括号中。</p></div><p><strong class=\"example\">示例 3：</strong></p><div class=\"example-block\"><p><strong>输入：</strong><span class=\"example-io\">s = \"()(())((()()))\"</span></p><p><strong>输出：</strong><span class=\"example-io\">3</span></p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 100</code></li><li><code>s</code> 由数字 <code>0-9</code> 和字符 <code>'+'</code>、<code>'-'</code>、<code>'*'</code>、<code>'/'</code>、<code>'('</code>、<code>')'</code> 组成</li><li>题目数据保证括号字符串 <code>s</code> 是 <strong>有效的括号字符串</strong></li></ul>",
-  "difficulty": "Easy",
+  "id": "2267",
+  "title": " Check if There Is a Valid Parentheses String Path",
+  "title_zh": "检查是否有合法括号字符串路径",
+  "slug": "check-if-there-is-a-valid-parentheses-string-path",
+  "link": "https://leetcode.cn/problems/check-if-there-is-a-valid-parentheses-string-path/",
+  "content": "<p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>. It is <strong>valid</strong> if <strong>any</strong> of the following conditions is <strong>true</strong>:</p><ul><li>It is <code>()</code>.</li><li>It can be written as <code>AB</code> (<code>A</code> concatenated with <code>B</code>), where <code>A</code> and <code>B</code> are valid parentheses strings.</li><li>It can be written as <code>(A)</code>, where <code>A</code> is a valid parentheses string.</li></ul><p>You are given an <code>m x n</code> matrix of parentheses <code>grid</code>. A <strong>valid parentheses string path</strong> in the grid is a path satisfying <strong>all</strong> of the following conditions:</p><ul><li>The path starts from the upper left cell <code>(0, 0)</code>.</li><li>The path ends at the bottom-right cell <code>(m - 1, n - 1)</code>.</li><li>The path only ever moves <strong>down</strong> or <strong>right</strong>.</li><li>The resulting parentheses string formed by the path is <strong>valid</strong>.</li></ul><p>Return <code>true</code> <em>if there exists a <strong>valid parentheses string path</strong> in the grid.</em> Otherwise, return <code>false</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2022/03/15/example1drawio.png\" style=\"width: 521px; height: 300px;\" /><pre><strong>Input:</strong> grid = [[\"(\",\"(\",\"(\"],[\")\",\"(\",\")\"],[\"(\",\"(\",\")\"],[\"(\",\"(\",\")\"]]<strong>Output:</strong> true<strong>Explanation:</strong> The above diagram shows two possible paths that form valid parentheses strings.The first path shown results in the valid parentheses string \"()(())\".The second path shown results in the valid parentheses string \"((()))\".Note that there may be other valid parentheses string paths.</pre><p><strong class=\"example\">Example 2:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2022/03/15/example2drawio.png\" style=\"width: 165px; height: 165px;\" /><pre><strong>Input:</strong> grid = [[\")\",\")\"],[\"(\",\"(\"]]<strong>Output:</strong> false<strong>Explanation:</strong> The two possible paths form the parentheses strings \"))(\" and \")((\". Since neither of them are valid parentheses strings, we return false.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>1 <= m, n <= 100</code></li><li><code>grid[i][j]</code> is either <code>&#39;(&#39;</code> or <code>&#39;)&#39;</code>.</li></ul>",
+  "translatedContent": "<p>一个括号字符串是一个 <strong>非空</strong> 且只包含 <code>'('</code> 和 <code>')'</code> 的字符串。如果下面 <strong>任意</strong> 条件为 <strong>真</strong> ，那么这个括号字符串就是 <strong>合法的</strong> 。</p><ul><li>字符串是 <code>()</code> 。</li><li>字符串可以表示为 <code>AB</code>（<code>A</code> 连接 <code>B</code>），<code>A</code> 和 <code>B</code> 都是合法括号序列。</li><li>字符串可以表示为 <code>(A)</code> ，其中 <code>A</code> 是合法括号序列。</li></ul><p>给你一个 <code>m x n</code> 的括号网格图矩阵 <code>grid</code> 。网格图中一个 <strong>合法括号路径</strong> 是满足以下所有条件的一条路径：</p><ul><li>路径开始于左上角格子 <code>(0, 0)</code> 。</li><li>路径结束于右下角格子 <code>(m - 1, n - 1)</code> 。</li><li>路径每次只会向 <strong>下</strong> 或者向 <strong>右</strong> 移动。</li><li>路径经过的格子组成的括号字符串是<strong> 合法</strong> 的。</li></ul><p>如果网格图中存在一条 <strong>合法括号路径</strong> ，请返回 <code>true</code> ，否则返回 <code>false</code> 。</p><p> </p><p><strong>示例 1：</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2022/03/15/example1drawio.png\" style=\"width: 521px; height: 300px;\" /></p><pre><b>输入：</b>grid = [[\"(\",\"(\",\"(\"],[\")\",\"(\",\")\"],[\"(\",\"(\",\")\"],[\"(\",\"(\",\")\"]]<b>输出：</b>true<b>解释：</b>上图展示了两条路径，它们都是合法括号字符串路径。第一条路径得到的合法字符串是 \"()(())\" 。第二条路径得到的合法字符串是 \"((()))\" 。注意可能有其他的合法括号字符串路径。</pre><p><strong>示例 2：</strong></p><p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2022/03/15/example2drawio.png\" style=\"width: 165px; height: 165px;\" /></p><pre><b>输入：</b>grid = [[\")\",\")\"],[\"(\",\"(\"]]<b>输出：</b>false<b>解释：</b>两条可行路径分别得到 \"))(\" 和 \")((\" 。由于它们都不是合法括号字符串，我们返回 false 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>1 <= m, n <= 100</code></li><li><code>grid[i][j]</code> 要么是 <code>'('</code> ，要么是 <code>')'</code> 。</li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
     {
-      "name": "Stack",
-      "slug": "stack",
-      "translatedName": "栈"
+      "name": "Array",
+      "slug": "array",
+      "translatedName": "数组"
     },
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
+      "name": "Dynamic Programming",
+      "slug": "dynamic-programming",
+      "translatedName": "动态规划"
+    },
+    {
+      "name": "Matrix",
+      "slug": "matrix",
+      "translatedName": "矩阵"
     },
     {
       "name": "括号序列",
@@ -24,5 +29,5 @@
       "translatedName": null
     }
   ],
-  "date": "2026-09-28"
+  "date": "2026-09-29"
 }
