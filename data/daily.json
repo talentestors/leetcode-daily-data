@@ -1,17 +1,17 @@
 {
-  "id": "301",
-  "title": "Remove Invalid Parentheses",
-  "title_zh": "删除无效的括号",
-  "slug": "remove-invalid-parentheses",
-  "link": "https://leetcode.cn/problems/remove-invalid-parentheses/",
-  "content": "<p>Given a string <code>s</code> that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid.</p><p>Return <em>a list of <strong>unique strings</strong> that are valid with the minimum number of removals</em>. You may return the answer in <strong>any order</strong>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"()())()\"<strong>Output:</strong> [\"(())()\",\"()()()\"]</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"(a)())()\"<strong>Output:</strong> [\"(a())()\",\"(a)()()\"]</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> s = \")(\"<strong>Output:</strong> [\"\"]</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 25</code></li><li><code>s</code> consists of lowercase English letters and parentheses <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>.</li><li>There will be at most <code>20</code> parentheses in <code>s</code>.</li></ul>",
-  "translatedContent": "<p>给你一个由若干括号和字母组成的字符串 <code>s</code> ，删除最小数量的无效括号，使得输入的字符串有效。</p><p>返回所有可能的结果。答案可以按 <strong>任意顺序</strong> 返回。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>s = \"()())()\"<strong>输出：</strong>[\"(())()\",\"()()()\"]</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>s = \"(a)())()\"<strong>输出：</strong>[\"(a())()\",\"(a)()()\"]</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>s = \")(\"<strong>输出：</strong>[\"\"]</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 25</code></li><li><code>s</code> 由小写英文字母以及括号 <code>'('</code> 和 <code>')'</code> 组成</li><li><code>s</code> 中至多含 <code>20</code> 个括号</li></ul>",
-  "difficulty": "Hard",
+  "id": "1021",
+  "title": "Remove Outermost Parentheses",
+  "title_zh": "删除最外层的括号",
+  "slug": "remove-outermost-parentheses",
+  "link": "https://leetcode.cn/problems/remove-outermost-parentheses/",
+  "content": "<p>A valid parentheses string is either empty <code>\"\"</code>, <code>\"(\" + A + \")\"</code>, or <code>A + B</code>, where <code>A</code> and <code>B</code> are valid parentheses strings, and <code>+</code> represents string concatenation.</p><ul><li>For example, <code>\"\"</code>, <code>\"()\"</code>, <code>\"(())()\"</code>, and <code>\"(()(()))\"</code> are all valid parentheses strings.</li></ul><p>A valid parentheses string <code>s</code> is primitive if it is nonempty, and there does not exist a way to split it into <code>s = A + B</code>, with <code>A</code> and <code>B</code> nonempty valid parentheses strings.</p><p>Given a valid parentheses string <code>s</code>, consider its primitive decomposition: <code>s = P<sub>1</sub> + P<sub>2</sub> + ... + P<sub>k</sub></code>, where <code>P<sub>i</sub></code> are primitive valid parentheses strings.</p><p>Return <code>s</code> <em>after removing the outermost parentheses of every primitive string in the primitive decomposition of </em><code>s</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"(()())(())\"<strong>Output:</strong> \"()()()\"<strong>Explanation:</strong> The input string is \"(()())(())\", with primitive decomposition \"(()())\" + \"(())\".After removing outer parentheses of each part, this is \"()()\" + \"()\" = \"()()()\".</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"(()())(())(()(()))\"<strong>Output:</strong> \"()()()()(())\"<strong>Explanation:</strong> The input string is \"(()())(())(()(()))\", with primitive decomposition \"(()())\" + \"(())\" + \"(()(()))\".After removing outer parentheses of each part, this is \"()()\" + \"()\" + \"()(())\" = \"()()()()(())\".</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> s = \"()()\"<strong>Output:</strong> \"\"<strong>Explanation:</strong> The input string is \"()()\", with primitive decomposition \"()\" + \"()\".After removing outer parentheses of each part, this is \"\" + \"\" = \"\".</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s[i]</code> is either <code>&#39;(&#39;</code> or <code>&#39;)&#39;</code>.</li><li><code>s</code> is a valid parentheses string.</li></ul>",
+  "translatedContent": "<p>有效括号字符串为空 <code>\"\"</code>、<code>\"(\" + A + \")\"</code> 或 <code>A + B</code> ，其中 <code>A</code> 和 <code>B</code> 都是有效的括号字符串，<code>+</code> 代表字符串的连接。</p><ul><li>例如，<code>\"\"</code>，<code>\"()\"</code>，<code>\"(())()\"</code> 和 <code>\"(()(()))\"</code> 都是有效的括号字符串。</li></ul><p>如果有效字符串 <code>s</code> 非空，且不存在将其拆分为 <code>s = A + B</code> 的方法，我们称其为<strong>原语（primitive）</strong>，其中 <code>A</code> 和 <code>B</code> 都是非空有效括号字符串。</p><p>给出一个非空有效字符串 <code>s</code>，考虑将其进行原语化分解，使得：<code>s = P_1 + P_2 + ... + P_k</code>，其中 <code>P_i</code> 是有效括号字符串原语。</p><p>对 <code>s</code> 进行原语化分解，删除分解中每个原语字符串的最外层括号，返回 <code>s</code> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>s = \"(()())(())\"<strong>输出：</strong>\"()()()\"<strong>解释：</strong>输入字符串为 \"(()())(())\"，原语化分解得到 \"(()())\" + \"(())\"，删除每个部分中的最外层括号后得到 \"()()\" + \"()\" = \"()()()\"。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>s = \"(()())(())(()(()))\"<strong>输出：</strong>\"()()()()(())\"<strong>解释：</strong>输入字符串为 \"(()())(())(()(()))\"，原语化分解得到 \"(()())\" + \"(())\" + \"(()(()))\"，删除每个部分中的最外层括号后得到 \"()()\" + \"()\" + \"()(())\" = \"()()()()(())\"。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>s = \"()()\"<strong>输出：</strong>\"\"<strong>解释：</strong>输入字符串为 \"()()\"，原语化分解得到 \"()\" + \"()\"，删除每个部分中的最外层括号后得到 \"\" + \"\" = \"\"。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s[i]</code> 为 <code>'('</code> 或 <code>')'</code></li><li><code>s</code> 是一个有效括号字符串</li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
     {
-      "name": "Breadth-First Search",
-      "slug": "breadth-first-search",
-      "translatedName": "广度优先搜索"
+      "name": "Stack",
+      "slug": "stack",
+      "translatedName": "栈"
     },
     {
       "name": "String",
@@ -19,10 +19,10 @@
       "translatedName": "字符串"
     },
     {
-      "name": "Backtracking",
-      "slug": "backtracking",
-      "translatedName": "回溯"
+      "name": "括号序列",
+      "slug": "bracket-sequences",
+      "translatedName": null
     }
   ],
-  "date": "2026-10-07"
+  "date": "2026-10-08"
 }
