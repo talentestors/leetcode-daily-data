@@ -1,33 +1,38 @@
 {
-  "id": "1541",
-  "title": "Minimum Insertions to Balance a Parentheses String",
-  "title_zh": "平衡括号字符串的最少插入次数",
-  "slug": "minimum-insertions-to-balance-a-parentheses-string",
-  "link": "https://leetcode.cn/problems/minimum-insertions-to-balance-a-parentheses-string/",
-  "content": "<p>Given a parentheses string <code>s</code> containing only the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>. A parentheses string is <strong>balanced</strong> if:</p><ul><li>Any left parenthesis <code>&#39;(&#39;</code> must have a corresponding two consecutive right parenthesis <code>&#39;))&#39;</code>.</li><li>Left parenthesis <code>&#39;(&#39;</code> must go before the corresponding two consecutive right parenthesis <code>&#39;))&#39;</code>.</li></ul><p>In other words, we treat <code>&#39;(&#39;</code> as an opening parenthesis and <code>&#39;))&#39;</code> as a closing parenthesis.</p><ul><li>For example, <code>\"())\"</code>, <code>\"())(())))\"</code> and <code>\"(())())))\"</code> are balanced, <code>\")()\"</code>, <code>\"()))\"</code> and <code>\"(()))\"</code> are not balanced.</li></ul><p>You can insert the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code> at any position of the string to balance it if needed.</p><p>Return <em>the minimum number of insertions</em> needed to make <code>s</code> balanced.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> s = \"(()))\"<strong>Output:</strong> 1<strong>Explanation:</strong> The second &#39;(&#39; has two matching &#39;))&#39;, but the first &#39;(&#39; has only &#39;)&#39; matching. We need to add one more &#39;)&#39; at the end of the string to be \"(())))\" which is balanced.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> s = \"())\"<strong>Output:</strong> 0<strong>Explanation:</strong> The string is already balanced.</pre><p><strong class=\"example\">Example 3:</strong></p><pre><strong>Input:</strong> s = \"))())(\"<strong>Output:</strong> 3<strong>Explanation:</strong> Add &#39;(&#39; to match the first &#39;))&#39;, Add &#39;))&#39; to match the last &#39;(&#39;.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= s.length <= 10<sup>5</sup></code></li><li><code>s</code> consists of <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code> only.</li></ul>",
-  "translatedContent": "<p>给你一个括号字符串 <code>s</code> ，它只包含字符 <code>&#39;(&#39;</code> 和 <code>&#39;)&#39;</code> 。一个括号字符串被称为平衡的当它满足：</p><ul><li>任何左括号 <code>&#39;(&#39;</code> 必须对应两个连续的右括号 <code>&#39;))&#39;</code> 。</li><li>左括号 <code>&#39;(&#39;</code> 必须在对应的连续两个右括号 <code>&#39;))&#39;</code> 之前。</li></ul><p>比方说 <code>\"())\"</code>， <code>\"())(())))\"</code> 和 <code>\"(())())))\"</code> 都是平衡的， <code>\")()\"</code>， <code>\"()))\"</code> 和 <code>\"(()))\"</code> 都是不平衡的。</p><p>你可以在任意位置插入字符 &#39;(&#39; 和 &#39;)&#39; 使字符串平衡。</p><p>请你返回让 <code>s</code> 平衡的最少插入次数。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>s = \"(()))\"<strong>输出：</strong>1<strong>解释：</strong>第二个左括号有与之匹配的两个右括号，但是第一个左括号只有一个右括号。我们需要在字符串结尾额外增加一个 &#39;)&#39; 使字符串变成平衡字符串 \"(())))\" 。</pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>s = \"())\"<strong>输出：</strong>0<strong>解释：</strong>字符串已经平衡了。</pre><p><strong>示例 3：</strong></p><pre><strong>输入：</strong>s = \"))())(\"<strong>输出：</strong>3<strong>解释：</strong>添加 &#39;(&#39; 去匹配最开头的 &#39;))&#39; ，然后添加 &#39;))&#39; 去匹配最后一个 &#39;(&#39; 。</pre><p><strong>示例 4：</strong></p><pre><strong>输入：</strong>s = \"((((((\"<strong>输出：</strong>12<strong>解释：</strong>添加 12 个 &#39;)&#39; 得到平衡字符串。</pre><p><strong>示例 5：</strong></p><pre><strong>输入：</strong>s = \")))))))\"<strong>输出：</strong>5<strong>解释：</strong>在字符串开头添加 4 个 &#39;(&#39; 并在结尾添加 1 个 &#39;)&#39; ，字符串变成平衡字符串 \"(((())))))))\" 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= s.length <= 10^5</code></li><li><code>s</code> 只包含 <code>&#39;(&#39;</code> 和 <code>&#39;)&#39;</code> 。</li></ul>",
+  "id": "2333",
+  "title": "Minimum Sum of Squared Difference",
+  "title_zh": "最小差值平方和",
+  "slug": "minimum-sum-of-squared-difference",
+  "link": "https://leetcode.cn/problems/minimum-sum-of-squared-difference/",
+  "content": "<p>You are given two positive <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, both of length <code>n</code>.</p><p>The <strong>sum of squared difference</strong> of arrays <code>nums1</code> and <code>nums2</code> is defined as the <strong>sum</strong> of <code>(nums1[i] - nums2[i])<sup>2</sup></code> for each <code>0 <= i < n</code>.</p><p>You are also given two positive integers <code>k1</code> and <code>k2</code>. You can modify any of the elements of <code>nums1</code> by <code>+1</code> or <code>-1</code> at most <code>k1</code> times. Similarly, you can modify any of the elements of <code>nums2</code> by <code>+1</code> or <code>-1</code> at most <code>k2</code> times.</p><p>Return <em>the minimum <strong>sum of squared difference</strong> after modifying array </em><code>nums1</code><em> at most </em><code>k1</code><em> times and modifying array </em><code>nums2</code><em> at most </em><code>k2</code><em> times</em>.</p><p><strong>Note</strong>: You are allowed to modify the array elements to become <strong>negative</strong> integers.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums1 = [1,2,3,4], nums2 = [2,10,20,19], k1 = 0, k2 = 0<strong>Output:</strong> 579<strong>Explanation:</strong> The elements in nums1 and nums2 cannot be modified because k1 = 0 and k2 = 0. The sum of square difference will be: (1 - 2)<sup>2 </sup>+ (2 - 10)<sup>2 </sup>+ (3 - 20)<sup>2 </sup>+ (4 - 19)<sup>2</sup> = 579.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums1 = [1,4,10,12], nums2 = [5,8,6,9], k1 = 1, k2 = 1<strong>Output:</strong> 43<strong>Explanation:</strong> One way to obtain the minimum sum of square difference is: - Increase nums1[0] once.- Increase nums2[2] once.The minimum of the sum of square difference will be: (2 - 5)<sup>2 </sup>+ (4 - 8)<sup>2 </sup>+ (10 - 7)<sup>2 </sup>+ (12 - 9)<sup>2</sup> = 43.Note that, there are other ways to obtain the minimum of the sum of square difference, but there is no way to obtain a sum smaller than 43.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>n == nums1.length == nums2.length</code></li><li><code>1 <= n <= 10<sup>5</sup></code></li><li><code>0 <= nums1[i], nums2[i] <= 10<sup>5</sup></code></li><li><code>0 <= k1, k2 <= 10<sup>9</sup></code></li></ul>",
+  "translatedContent": "<p>给你两个下标从 <strong>0</strong> 开始的整数数组 <code>nums1</code> 和 <code>nums2</code> ，长度为 <code>n</code> 。</p><p>数组 <code>nums1</code> 和 <code>nums2</code> 的 <strong>差值平方和</strong> 定义为所有满足 <code>0 <= i < n</code> 的 <code>(nums1[i] - nums2[i])<sup>2</sup></code> 之和。</p><p>同时给你两个正整数 <code>k1</code> 和 <code>k2</code> 。你可以将 <code>nums1</code> 中的任意元素 <code>+1</code> 或者 <code>-1</code> 至多 <code>k1</code> 次。类似的，你可以将 <code>nums2</code> 中的任意元素 <code>+1</code> 或者 <code>-1</code> 至多 <code>k2</code> 次。</p><p>请你返回修改数组<em> </em><code>nums1</code><em> </em>至多<em> </em><code>k1</code> 次且修改数组<em> </em><code>nums2</code> 至多 <code>k2</code><em> </em>次后的最小 <strong>差值平方和</strong> 。</p><p><strong>注意：</strong>你可以将数组中的元素变成 <strong>负</strong> 整数。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>nums1 = [1,2,3,4], nums2 = [2,10,20,19], k1 = 0, k2 = 0<b>输出：</b>579<b>解释：</b>nums1 和 nums2 中的元素不能修改，因为 k1 = 0 和 k2 = 0 。差值平方和为：(1 - 2)<sup>2 </sup>+ (2 - 10)<sup>2 </sup>+ (3 - 20)<sup>2 </sup>+ (4 - 19)<sup>2</sup> = 579 。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>nums1 = [1,4,10,12], nums2 = [5,8,6,9], k1 = 1, k2 = 1<b>输出：</b>43<b>解释：</b>一种得到最小差值平方和的方式为：- 将 nums1[0] 增加一次。- 将 nums2[2] 增加一次。最小差值平方和为：(2 - 5)<sup>2 </sup>+ (4 - 8)<sup>2 </sup>+ (10 - 7)<sup>2 </sup>+ (12 - 9)<sup>2</sup> = 43 。注意，也有其他方式可以得到最小差值平方和，但没有得到比 43 更小答案的方案。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>n == nums1.length == nums2.length</code></li><li><code>1 <= n <= 10<sup>5</sup></code></li><li><code>0 <= nums1[i], nums2[i] <= 10<sup>5</sup></code></li><li><code>0 <= k1, k2 <= 10<sup>9</sup></code></li></ul>",
   "difficulty": "Medium",
   "topicTags": [
-    {
-      "name": "Stack",
-      "slug": "stack",
-      "translatedName": "栈"
-    },
     {
       "name": "Greedy",
       "slug": "greedy",
       "translatedName": "贪心"
     },
     {
-      "name": "String",
-      "slug": "string",
-      "translatedName": "字符串"
+      "name": "Array",
+      "slug": "array",
+      "translatedName": "数组"
     },
     {
-      "name": "括号序列",
-      "slug": "bracket-sequences",
-      "translatedName": null
+      "name": "Binary Search",
+      "slug": "binary-search",
+      "translatedName": "二分查找"
+    },
+    {
+      "name": "Sorting",
+      "slug": "sorting",
+      "translatedName": "排序"
+    },
+    {
+      "name": "Heap (Priority Queue)",
+      "slug": "heap-priority-queue",
+      "translatedName": "堆（优先队列）"
     }
   ],
-  "date": "2026-10-09"
+  "date": "2026-10-10"
 }
