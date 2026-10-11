@@ -1,38 +1,23 @@
 {
-  "id": "2333",
-  "title": "Minimum Sum of Squared Difference",
-  "title_zh": "最小差值平方和",
-  "slug": "minimum-sum-of-squared-difference",
-  "link": "https://leetcode.cn/problems/minimum-sum-of-squared-difference/",
-  "content": "<p>You are given two positive <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, both of length <code>n</code>.</p><p>The <strong>sum of squared difference</strong> of arrays <code>nums1</code> and <code>nums2</code> is defined as the <strong>sum</strong> of <code>(nums1[i] - nums2[i])<sup>2</sup></code> for each <code>0 <= i < n</code>.</p><p>You are also given two positive integers <code>k1</code> and <code>k2</code>. You can modify any of the elements of <code>nums1</code> by <code>+1</code> or <code>-1</code> at most <code>k1</code> times. Similarly, you can modify any of the elements of <code>nums2</code> by <code>+1</code> or <code>-1</code> at most <code>k2</code> times.</p><p>Return <em>the minimum <strong>sum of squared difference</strong> after modifying array </em><code>nums1</code><em> at most </em><code>k1</code><em> times and modifying array </em><code>nums2</code><em> at most </em><code>k2</code><em> times</em>.</p><p><strong>Note</strong>: You are allowed to modify the array elements to become <strong>negative</strong> integers.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums1 = [1,2,3,4], nums2 = [2,10,20,19], k1 = 0, k2 = 0<strong>Output:</strong> 579<strong>Explanation:</strong> The elements in nums1 and nums2 cannot be modified because k1 = 0 and k2 = 0. The sum of square difference will be: (1 - 2)<sup>2 </sup>+ (2 - 10)<sup>2 </sup>+ (3 - 20)<sup>2 </sup>+ (4 - 19)<sup>2</sup> = 579.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums1 = [1,4,10,12], nums2 = [5,8,6,9], k1 = 1, k2 = 1<strong>Output:</strong> 43<strong>Explanation:</strong> One way to obtain the minimum sum of square difference is: - Increase nums1[0] once.- Increase nums2[2] once.The minimum of the sum of square difference will be: (2 - 5)<sup>2 </sup>+ (4 - 8)<sup>2 </sup>+ (10 - 7)<sup>2 </sup>+ (12 - 9)<sup>2</sup> = 43.Note that, there are other ways to obtain the minimum of the sum of square difference, but there is no way to obtain a sum smaller than 43.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>n == nums1.length == nums2.length</code></li><li><code>1 <= n <= 10<sup>5</sup></code></li><li><code>0 <= nums1[i], nums2[i] <= 10<sup>5</sup></code></li><li><code>0 <= k1, k2 <= 10<sup>9</sup></code></li></ul>",
-  "translatedContent": "<p>给你两个下标从 <strong>0</strong> 开始的整数数组 <code>nums1</code> 和 <code>nums2</code> ，长度为 <code>n</code> 。</p><p>数组 <code>nums1</code> 和 <code>nums2</code> 的 <strong>差值平方和</strong> 定义为所有满足 <code>0 <= i < n</code> 的 <code>(nums1[i] - nums2[i])<sup>2</sup></code> 之和。</p><p>同时给你两个正整数 <code>k1</code> 和 <code>k2</code> 。你可以将 <code>nums1</code> 中的任意元素 <code>+1</code> 或者 <code>-1</code> 至多 <code>k1</code> 次。类似的，你可以将 <code>nums2</code> 中的任意元素 <code>+1</code> 或者 <code>-1</code> 至多 <code>k2</code> 次。</p><p>请你返回修改数组<em> </em><code>nums1</code><em> </em>至多<em> </em><code>k1</code> 次且修改数组<em> </em><code>nums2</code> 至多 <code>k2</code><em> </em>次后的最小 <strong>差值平方和</strong> 。</p><p><strong>注意：</strong>你可以将数组中的元素变成 <strong>负</strong> 整数。</p><p> </p><p><strong>示例 1：</strong></p><pre><b>输入：</b>nums1 = [1,2,3,4], nums2 = [2,10,20,19], k1 = 0, k2 = 0<b>输出：</b>579<b>解释：</b>nums1 和 nums2 中的元素不能修改，因为 k1 = 0 和 k2 = 0 。差值平方和为：(1 - 2)<sup>2 </sup>+ (2 - 10)<sup>2 </sup>+ (3 - 20)<sup>2 </sup>+ (4 - 19)<sup>2</sup> = 579 。</pre><p><strong>示例 2：</strong></p><pre><b>输入：</b>nums1 = [1,4,10,12], nums2 = [5,8,6,9], k1 = 1, k2 = 1<b>输出：</b>43<b>解释：</b>一种得到最小差值平方和的方式为：- 将 nums1[0] 增加一次。- 将 nums2[2] 增加一次。最小差值平方和为：(2 - 5)<sup>2 </sup>+ (4 - 8)<sup>2 </sup>+ (10 - 7)<sup>2 </sup>+ (12 - 9)<sup>2</sup> = 43 。注意，也有其他方式可以得到最小差值平方和，但没有得到比 43 更小答案的方案。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>n == nums1.length == nums2.length</code></li><li><code>1 <= n <= 10<sup>5</sup></code></li><li><code>0 <= nums1[i], nums2[i] <= 10<sup>5</sup></code></li><li><code>0 <= k1, k2 <= 10<sup>9</sup></code></li></ul>",
-  "difficulty": "Medium",
+  "id": "2778",
+  "title": "Sum of Squares of Special Elements ",
+  "title_zh": "特殊元素平方和",
+  "slug": "sum-of-squares-of-special-elements",
+  "link": "https://leetcode.cn/problems/sum-of-squares-of-special-elements/",
+  "content": "<p>You are given a <strong>1-indexed</strong> integer array <code>nums</code> of length <code>n</code>.</p><p>An element <code>nums[i]</code> of <code>nums</code> is called <strong>special</strong> if <code>i</code> divides <code>n</code>, i.e. <code>n % i == 0</code>.</p><p>Return <em>the <strong>sum of the squares</strong> of all <strong>special</strong> elements of </em><code>nums</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums = [1,2,3,4]<strong>Output:</strong> 21<strong>Explanation:</strong> There are exactly 3 special elements in nums: nums[1] since 1 divides 4, nums[2] since 2 divides 4, and nums[4] since 4 divides 4. Hence, the sum of the squares of all special elements of nums is nums[1] * nums[1] + nums[2] * nums[2] + nums[4] * nums[4] = 1 * 1 + 2 * 2 + 4 * 4 = 21.  </pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums = [2,7,1,19,18,3]<strong>Output:</strong> 63<strong>Explanation:</strong> There are exactly 4 special elements in nums: nums[1] since 1 divides 6, nums[2] since 2 divides 6, nums[3] since 3 divides 6, and nums[6] since 6 divides 6. Hence, the sum of the squares of all special elements of nums is nums[1] * nums[1] + nums[2] * nums[2] + nums[3] * nums[3] + nums[6] * nums[6] = 2 * 2 + 7 * 7 + 1 * 1 + 3 * 3 = 63. </pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length == n <= 50</code></li><li><code>1 <= nums[i] <= 50</code></li></ul>",
+  "translatedContent": "<p>给你一个下标从 <strong>1</strong> 开始、长度为 <code>n</code> 的整数数组 <code>nums</code> 。</p><p>对 <code>nums</code> 中的元素 <code>nums[i]</code> 而言，如果 <code>n</code> 能够被 <code>i</code> 整除，即 <code>n % i == 0</code> ，则认为 <code>nums[i]</code> 是一个 <strong>特殊元素</strong> 。</p><p>返回 <code>nums</code> 中所有 <strong>特殊元素</strong> 的 <strong>平方和</strong> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>nums = [1,2,3,4]<strong>输出：</strong>21<strong>解释：</strong>nums 中共有 3 个特殊元素：nums[1]，因为 4 被 1 整除；nums[2]，因为 4 被 2 整除；以及 nums[4]，因为 4 被 4 整除。 因此，nums 中所有特殊元素的平方和等于 nums[1] * nums[1] + nums[2] * nums[2] + nums[4] * nums[4] = 1 * 1 + 2 * 2 + 4 * 4 = 21 。  </pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>nums = [2,7,1,19,18,3]<strong>输出：</strong>63<strong>解释：</strong>nums 中共有 4 个特殊元素：nums[1]，因为 6 被 1 整除；nums[2] ，因为 6 被 2 整除；nums[3]，因为 6 被 3 整除；以及 nums[6]，因为 6 被 6 整除。 因此，nums 中所有特殊元素的平方和等于 nums[1] * nums[1] + nums[2] * nums[2] + nums[3] * nums[3] + nums[6] * nums[6] = 2 * 2 + 7 * 7 + 1 * 1 + 3 * 3 = 63 。 </pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums.length == n <= 50</code></li><li><code>1 <= nums[i] <= 50</code></li></ul>",
+  "difficulty": "Easy",
   "topicTags": [
-    {
-      "name": "Greedy",
-      "slug": "greedy",
-      "translatedName": "贪心"
-    },
     {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
     },
     {
-      "name": "Binary Search",
-      "slug": "binary-search",
-      "translatedName": "二分查找"
-    },
-    {
-      "name": "Sorting",
-      "slug": "sorting",
-      "translatedName": "排序"
-    },
-    {
-      "name": "Heap (Priority Queue)",
-      "slug": "heap-priority-queue",
-      "translatedName": "堆（优先队列）"
+      "name": "Enumeration",
+      "slug": "enumeration",
+      "translatedName": "枚举"
     }
   ],
-  "date": "2026-10-10"
+  "date": "2026-10-11"
 }
