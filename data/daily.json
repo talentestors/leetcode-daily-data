@@ -1,23 +1,33 @@
 {
-  "id": "2778",
-  "title": "Sum of Squares of Special Elements ",
-  "title_zh": "特殊元素平方和",
-  "slug": "sum-of-squares-of-special-elements",
-  "link": "https://leetcode.cn/problems/sum-of-squares-of-special-elements/",
-  "content": "<p>You are given a <strong>1-indexed</strong> integer array <code>nums</code> of length <code>n</code>.</p><p>An element <code>nums[i]</code> of <code>nums</code> is called <strong>special</strong> if <code>i</code> divides <code>n</code>, i.e. <code>n % i == 0</code>.</p><p>Return <em>the <strong>sum of the squares</strong> of all <strong>special</strong> elements of </em><code>nums</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums = [1,2,3,4]<strong>Output:</strong> 21<strong>Explanation:</strong> There are exactly 3 special elements in nums: nums[1] since 1 divides 4, nums[2] since 2 divides 4, and nums[4] since 4 divides 4. Hence, the sum of the squares of all special elements of nums is nums[1] * nums[1] + nums[2] * nums[2] + nums[4] * nums[4] = 1 * 1 + 2 * 2 + 4 * 4 = 21.  </pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums = [2,7,1,19,18,3]<strong>Output:</strong> 63<strong>Explanation:</strong> There are exactly 4 special elements in nums: nums[1] since 1 divides 6, nums[2] since 2 divides 6, nums[3] since 3 divides 6, and nums[6] since 6 divides 6. Hence, the sum of the squares of all special elements of nums is nums[1] * nums[1] + nums[2] * nums[2] + nums[3] * nums[3] + nums[6] * nums[6] = 2 * 2 + 7 * 7 + 1 * 1 + 3 * 3 = 63. </pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length == n <= 50</code></li><li><code>1 <= nums[i] <= 50</code></li></ul>",
-  "translatedContent": "<p>给你一个下标从 <strong>1</strong> 开始、长度为 <code>n</code> 的整数数组 <code>nums</code> 。</p><p>对 <code>nums</code> 中的元素 <code>nums[i]</code> 而言，如果 <code>n</code> 能够被 <code>i</code> 整除，即 <code>n % i == 0</code> ，则认为 <code>nums[i]</code> 是一个 <strong>特殊元素</strong> 。</p><p>返回 <code>nums</code> 中所有 <strong>特殊元素</strong> 的 <strong>平方和</strong> 。</p><p> </p><p><strong>示例 1：</strong></p><pre><strong>输入：</strong>nums = [1,2,3,4]<strong>输出：</strong>21<strong>解释：</strong>nums 中共有 3 个特殊元素：nums[1]，因为 4 被 1 整除；nums[2]，因为 4 被 2 整除；以及 nums[4]，因为 4 被 4 整除。 因此，nums 中所有特殊元素的平方和等于 nums[1] * nums[1] + nums[2] * nums[2] + nums[4] * nums[4] = 1 * 1 + 2 * 2 + 4 * 4 = 21 。  </pre><p><strong>示例 2：</strong></p><pre><strong>输入：</strong>nums = [2,7,1,19,18,3]<strong>输出：</strong>63<strong>解释：</strong>nums 中共有 4 个特殊元素：nums[1]，因为 6 被 1 整除；nums[2] ，因为 6 被 2 整除；nums[3]，因为 6 被 3 整除；以及 nums[6]，因为 6 被 6 整除。 因此，nums 中所有特殊元素的平方和等于 nums[1] * nums[1] + nums[2] * nums[2] + nums[3] * nums[3] + nums[6] * nums[6] = 2 * 2 + 7 * 7 + 1 * 1 + 3 * 3 = 63 。 </pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums.length == n <= 50</code></li><li><code>1 <= nums[i] <= 50</code></li></ul>",
-  "difficulty": "Easy",
+  "id": "2897",
+  "title": "Apply Operations on Array to Maximize Sum of Squares",
+  "title_zh": "对数组执行操作使平方和最大",
+  "slug": "apply-operations-on-array-to-maximize-sum-of-squares",
+  "link": "https://leetcode.cn/problems/apply-operations-on-array-to-maximize-sum-of-squares/",
+  "content": "<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>.</p><p>You can do the following operation on the array <strong>any</strong> number of times:</p><ul><li>Choose any two distinct indices <code>i</code> and <code>j</code> and <strong>simultaneously</strong> update the values of <code>nums[i]</code> to <code>(nums[i] AND nums[j])</code> and <code>nums[j]</code> to <code>(nums[i] OR nums[j])</code>. Here, <code>OR</code> denotes the bitwise <code>OR</code> operation, and <code>AND</code> denotes the bitwise <code>AND</code> operation.</li></ul><p>You have to choose <code>k</code> elements from the final array and calculate the sum of their <strong>squares</strong>.</p><p>Return <em>the <strong>maximum</strong> sum of squares you can achieve</em>.</p><p>Since the answer can be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums = [2,6,5,8], k = 2<strong>Output:</strong> 261<strong>Explanation:</strong> We can do the following operations on the array:- Choose i = 0 and j = 3, then change nums[0] to (2 AND 8) = 0 and nums[3] to (2 OR 8) = 10. The resulting array is nums = [0,6,5,10].- Choose i = 2 and j = 3, then change nums[2] to (5 AND 10) = 0 and nums[3] to (5 OR 10) = 15. The resulting array is nums = [0,6,0,15].We can choose the elements 15 and 6 from the final array. The sum of squares is 15<sup>2</sup> + 6<sup>2</sup> = 261.It can be shown that this is the maximum value we can get.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums = [4,5,4,7], k = 3<strong>Output:</strong> 90<strong>Explanation:</strong> We do not need to apply any operations.We can choose the elements 7, 5, and 4 with a sum of squares: 7<sup>2</sup> + 5<sup>2</sup> + 4<sup>2</sup> = 90.It can be shown that this is the maximum value we can get.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= k <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li></ul>",
+  "translatedContent": "<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> 和一个 <strong>正</strong> 整数 <code>k</code> 。</p><p>你可以对数组执行以下操作 <strong>任意次</strong> ：</p><ul><li>选择两个互不相同的下标 <code>i</code> 和 <code>j</code> ，<strong>同时</strong> 将 <code>nums[i]</code> 更新为 <code>(nums[i] AND nums[j])</code> 且将 <code>nums[j]</code> 更新为 <code>(nums[i] OR nums[j])</code> ，<code>OR</code> 表示按位 <strong>或</strong> 运算，<code>AND</code> 表示按位 <strong>与</strong> 运算。</li></ul><p>你需要从最终的数组里选择 <code>k</code> 个元素，并计算它们的 <strong>平方</strong> 之和。</p><p>请你返回你可以得到的 <strong>最大</strong> 平方和。</p><p>由于答案可能会很大，将答案对 <code>10<sup>9</sup> + 7</code> <strong>取余</strong> 后返回。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><pre><b>输入：</b>nums = [2,6,5,8], k = 2<b>输出：</b>261<b>解释：</b>我们可以对数组执行以下操作：- 选择 i = 0 和 j = 3 ，同时将 nums[0] 变为 (2 AND 8) = 0 且 nums[3] 变为 (2 OR 8) = 10 ，结果数组为 nums = [0,6,5,10] 。- 选择 i = 2 和 j = 3 ，同时将 nums[2] 变为 (5 AND 10) = 0 且 nums[3] 变为 (5 OR 10) = 15 ，结果数组为 nums = [0,6,0,15] 。从最终数组里选择元素 15 和 6 ，平方和为 15<sup>2</sup> + 6<sup>2</sup> = 261 。261 是可以得到的最大结果。</pre><p><strong class=\"example\">示例 2：</strong></p><pre><b>输入：</b>nums = [4,5,4,7], k = 3<b>输出：</b>90<b>解释：</b>不需要执行任何操作。选择元素 7 ，5 和 4 ，平方和为 7<sup>2</sup> + 5<sup>2</sup> + 4<sup>2</sup> = 90 。90 是可以得到的最大结果。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= k <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li></ul>",
+  "difficulty": "Hard",
   "topicTags": [
+    {
+      "name": "Greedy",
+      "slug": "greedy",
+      "translatedName": "贪心"
+    },
+    {
+      "name": "Bit Manipulation",
+      "slug": "bit-manipulation",
+      "translatedName": "位运算"
+    },
     {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
     },
     {
-      "name": "Enumeration",
-      "slug": "enumeration",
-      "translatedName": "枚举"
+      "name": "Hash Table",
+      "slug": "hash-table",
+      "translatedName": "哈希表"
     }
   ],
-  "date": "2026-10-11"
+  "date": "2026-10-12"
 }
