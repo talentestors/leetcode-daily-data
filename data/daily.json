@@ -1,12 +1,12 @@
 {
-  "id": "2897",
-  "title": "Apply Operations on Array to Maximize Sum of Squares",
-  "title_zh": "对数组执行操作使平方和最大",
-  "slug": "apply-operations-on-array-to-maximize-sum-of-squares",
-  "link": "https://leetcode.cn/problems/apply-operations-on-array-to-maximize-sum-of-squares/",
-  "content": "<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>.</p><p>You can do the following operation on the array <strong>any</strong> number of times:</p><ul><li>Choose any two distinct indices <code>i</code> and <code>j</code> and <strong>simultaneously</strong> update the values of <code>nums[i]</code> to <code>(nums[i] AND nums[j])</code> and <code>nums[j]</code> to <code>(nums[i] OR nums[j])</code>. Here, <code>OR</code> denotes the bitwise <code>OR</code> operation, and <code>AND</code> denotes the bitwise <code>AND</code> operation.</li></ul><p>You have to choose <code>k</code> elements from the final array and calculate the sum of their <strong>squares</strong>.</p><p>Return <em>the <strong>maximum</strong> sum of squares you can achieve</em>.</p><p>Since the answer can be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><pre><strong>Input:</strong> nums = [2,6,5,8], k = 2<strong>Output:</strong> 261<strong>Explanation:</strong> We can do the following operations on the array:- Choose i = 0 and j = 3, then change nums[0] to (2 AND 8) = 0 and nums[3] to (2 OR 8) = 10. The resulting array is nums = [0,6,5,10].- Choose i = 2 and j = 3, then change nums[2] to (5 AND 10) = 0 and nums[3] to (5 OR 10) = 15. The resulting array is nums = [0,6,0,15].We can choose the elements 15 and 6 from the final array. The sum of squares is 15<sup>2</sup> + 6<sup>2</sup> = 261.It can be shown that this is the maximum value we can get.</pre><p><strong class=\"example\">Example 2:</strong></p><pre><strong>Input:</strong> nums = [4,5,4,7], k = 3<strong>Output:</strong> 90<strong>Explanation:</strong> We do not need to apply any operations.We can choose the elements 7, 5, and 4 with a sum of squares: 7<sup>2</sup> + 5<sup>2</sup> + 4<sup>2</sup> = 90.It can be shown that this is the maximum value we can get.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= k <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li></ul>",
-  "translatedContent": "<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> 和一个 <strong>正</strong> 整数 <code>k</code> 。</p><p>你可以对数组执行以下操作 <strong>任意次</strong> ：</p><ul><li>选择两个互不相同的下标 <code>i</code> 和 <code>j</code> ，<strong>同时</strong> 将 <code>nums[i]</code> 更新为 <code>(nums[i] AND nums[j])</code> 且将 <code>nums[j]</code> 更新为 <code>(nums[i] OR nums[j])</code> ，<code>OR</code> 表示按位 <strong>或</strong> 运算，<code>AND</code> 表示按位 <strong>与</strong> 运算。</li></ul><p>你需要从最终的数组里选择 <code>k</code> 个元素，并计算它们的 <strong>平方</strong> 之和。</p><p>请你返回你可以得到的 <strong>最大</strong> 平方和。</p><p>由于答案可能会很大，将答案对 <code>10<sup>9</sup> + 7</code> <strong>取余</strong> 后返回。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><pre><b>输入：</b>nums = [2,6,5,8], k = 2<b>输出：</b>261<b>解释：</b>我们可以对数组执行以下操作：- 选择 i = 0 和 j = 3 ，同时将 nums[0] 变为 (2 AND 8) = 0 且 nums[3] 变为 (2 OR 8) = 10 ，结果数组为 nums = [0,6,5,10] 。- 选择 i = 2 和 j = 3 ，同时将 nums[2] 变为 (5 AND 10) = 0 且 nums[3] 变为 (5 OR 10) = 15 ，结果数组为 nums = [0,6,0,15] 。从最终数组里选择元素 15 和 6 ，平方和为 15<sup>2</sup> + 6<sup>2</sup> = 261 。261 是可以得到的最大结果。</pre><p><strong class=\"example\">示例 2：</strong></p><pre><b>输入：</b>nums = [4,5,4,7], k = 3<b>输出：</b>90<b>解释：</b>不需要执行任何操作。选择元素 7 ，5 和 4 ，平方和为 7<sup>2</sup> + 5<sup>2</sup> + 4<sup>2</sup> = 90 。90 是可以得到的最大结果。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= k <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li></ul>",
-  "difficulty": "Hard",
+  "id": "3727",
+  "title": "Maximum Alternating Sum of Squares",
+  "title_zh": "最大交替平方和",
+  "slug": "maximum-alternating-sum-of-squares",
+  "link": "https://leetcode.cn/problems/maximum-alternating-sum-of-squares/",
+  "content": "<p>You are given an integer array <code>nums</code>. You may <strong>rearrange the elements</strong> in any order.</p><p>The <strong>alternating score</strong> of an array <code>arr</code> is defined as:</p><ul><li><code>score = arr[0]<sup>2</sup> - arr[1]<sup>2</sup> + arr[2]<sup>2</sup> - arr[3]<sup>2</sup> + ...</code></li></ul><p>Return an integer denoting the <strong>maximum possible alternating score</strong> of <code>nums</code> after rearranging its elements.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [1,2,3]</span></p><p><strong>Output:</strong> <span class=\"example-io\">12</span></p><p><strong>Explanation:</strong></p><p>A possible rearrangement for <code>nums</code> is <code>[2,1,3]</code>, which gives the maximum alternating score among all possible rearrangements.</p><p>The alternating score is calculated as:</p><p><code>score = 2<sup>2</sup> - 1<sup>2</sup> + 3<sup>2</sup> = 4 - 1 + 9 = 12</code></p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [1,-1,2,-2,3,-3]</span></p><p><strong>Output:</strong> <span class=\"example-io\">16</span></p><p><strong>Explanation:</strong></p><p>A possible rearrangement for <code>nums</code> is <code>[-3,-1,-2,1,3,2]</code>, which gives the maximum alternating score among all possible rearrangements.</p><p>The alternating score is calculated as:</p><p><code>score = (-3)<sup>2</sup> - (-1)<sup>2</sup> + (-2)<sup>2</sup> - (1)<sup>2</sup> + (3)<sup>2</sup> - (2)<sup>2</sup> = 9 - 1 + 4 - 1 + 9 - 4 = 16</code></p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>-4 * 10<sup>4</sup> <= nums[i] <= 4 * 10<sup>4</sup></code></li></ul>",
+  "translatedContent": "<p>给你一个整数数组 <code>nums</code>。你可以以任意顺序 <strong>重新排列元素 </strong>。</p><p>数组 <code>arr</code> 的 <strong>交替得分 </strong>定义为：</p><ul><li><code>score = arr[0]<sup>2</sup> - arr[1]<sup>2</sup> + arr[2]<sup>2</sup> - arr[3]<sup>2</sup> + ...</code></li></ul><p>在对 <code>nums</code> 重新排列后，返回其 <strong>最大可能的交替得分</strong>。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">nums = [1,2,3]</span></p><p><strong>输出：</strong> <span class=\"example-io\">12</span></p><p><strong>解释：</strong></p><p><code>nums</code> 的一种可行重排为 <code>[2,1,3]</code>，该排列在所有可能重排中给出了最大交替得分。</p><p>交替得分计算如下：</p><p><code>score = 2<sup>2</sup> - 1<sup>2</sup> + 3<sup>2</sup> = 4 - 1 + 9 = 12</code></p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">nums = [1,-1,2,-2,3,-3]</span></p><p><strong>输出：</strong> <span class=\"example-io\">16</span></p><p><strong>解释：</strong></p><p><code>nums</code> 的一种可行重排为 <code>[-3,-1,-2,1,3,2]</code>，该排列在所有可能重排中给出了最大交替得分。</p><p>交替得分计算如下：</p><p><code>score = (-3)<sup>2</sup> - (-1)<sup>2</sup> + (-2)<sup>2</sup> - (1)<sup>2</sup> + (3)<sup>2</sup> - (2)<sup>2</sup> = 9 - 1 + 4 - 1 + 9 - 4 = 16</code></p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>-4 * 10<sup>4</sup> <= nums[i] <= 4 * 10<sup>4</sup></code></li></ul>",
+  "difficulty": "Medium",
   "topicTags": [
     {
       "name": "Greedy",
@@ -14,20 +14,15 @@
       "translatedName": "贪心"
     },
     {
-      "name": "Bit Manipulation",
-      "slug": "bit-manipulation",
-      "translatedName": "位运算"
-    },
-    {
       "name": "Array",
       "slug": "array",
       "translatedName": "数组"
     },
     {
-      "name": "Hash Table",
-      "slug": "hash-table",
-      "translatedName": "哈希表"
+      "name": "Sorting",
+      "slug": "sorting",
+      "translatedName": "排序"
     }
   ],
-  "date": "2026-10-12"
+  "date": "2026-10-13"
 }
