@@ -1,23 +1,13 @@
 {
-  "id": "2916",
-  "title": "Subarrays Distinct Element Sum of Squares II",
-  "title_zh": "子数组不同元素数目的平方和 II",
-  "slug": "subarrays-distinct-element-sum-of-squares-ii",
-  "link": "https://leetcode.cn/problems/subarrays-distinct-element-sum-of-squares-ii/",
-  "content": "<p>You are given a <strong>0-indexed </strong>integer array <code>nums</code>.</p><p>The <strong>distinct count</strong> of a subarray of <code>nums</code> is defined as:</p><ul><li>Let <code>nums[i..j]</code> be a subarray of <code>nums</code> consisting of all the indices from <code>i</code> to <code>j</code> such that <code>0 <= i <= j < nums.length</code>. Then the number of distinct values in <code>nums[i..j]</code> is called the distinct count of <code>nums[i..j]</code>.</li></ul><p>Return <em>the sum of the <strong>squares</strong> of <strong>distinct counts</strong> of all subarrays of </em><code>nums</code>.</p><p>Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p><p>A subarray is a contiguous <strong>non-empty</strong> sequence of elements within an array.</p><p> </p><p><strong>Example 1:</strong></p><pre><strong>Input:</strong> nums = [1,2,1]<strong>Output:</strong> 15<strong>Explanation:</strong> Six possible subarrays are:[1]: 1 distinct value[2]: 1 distinct value[1]: 1 distinct value[1,2]: 2 distinct values[2,1]: 2 distinct values[1,2,1]: 2 distinct valuesThe sum of the squares of the distinct counts in all subarrays is equal to 1<sup>2</sup> + 1<sup>2</sup> + 1<sup>2</sup> + 2<sup>2</sup> + 2<sup>2</sup> + 2<sup>2</sup> = 15.</pre><p><strong>Example 2:</strong></p><pre><strong>Input:</strong> nums = [2,2]<strong>Output:</strong> 3<strong>Explanation:</strong> Three possible subarrays are:[2]: 1 distinct value[2]: 1 distinct value[2,2]: 1 distinct valueThe sum of the squares of the distinct counts in all subarrays is equal to 1<sup>2</sup> + 1<sup>2</sup> + 1<sup>2</sup> = 3.</pre><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>5</sup></code></li></ul>",
-  "translatedContent": "<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> 。</p><p>定义 <code>nums</code> 一个子数组的 <strong>不同计数</strong> 值如下：</p><ul><li>令 <code>nums[i..j]</code> 表示 <code>nums</code> 中所有下标在 <code>i</code> 到 <code>j</code> 范围内的元素构成的子数组（满足 <code>0 <= i <= j < nums.length</code> ），那么我们称子数组 <code>nums[i..j]</code> 中不同值的数目为 <code>nums[i..j]</code> 的不同计数。</li></ul><p>请你返回 <code>nums</code> 中所有子数组的 <strong>不同计数</strong> 的 <strong>平方</strong> 和。</p><p>由于答案可能会很大，请你将它对 <code>10<sup>9</sup> + 7</code> <strong>取余</strong> 后返回。</p><p>子数组指的是一个数组里面一段连续 <strong>非空</strong> 的元素序列。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><pre><b>输入：</b>nums = [1,2,1]<b>输出：</b>15<b>解释：</b>六个子数组分别为：[1]: 1 个互不相同的元素。[2]: 1 个互不相同的元素。[1]: 1 个互不相同的元素。[1,2]: 2 个互不相同的元素。[2,1]: 2 个互不相同的元素。[1,2,1]: 2 个互不相同的元素。所有不同计数的平方和为 1<sup>2</sup> + 1<sup>2</sup> + 1<sup>2</sup> + 2<sup>2</sup> + 2<sup>2</sup> + 2<sup>2</sup> = 15 。</pre><p><strong class=\"example\">示例 2：</strong></p><pre><b>输入：</b>nums = [2,2]<b>输出：3</b><strong>解释：</strong>三个子数组分别为：[2]: 1 个互不相同的元素。[2]: 1 个互不相同的元素。[2,2]: 1 个互不相同的元素。所有不同计数的平方和为 1<sup>2</sup> + 1<sup>2</sup> + 1<sup>2</sup> = 3 。</pre><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>5</sup></code></li></ul>",
-  "difficulty": "Hard",
+  "id": "3551",
+  "title": "Minimum Swaps to Sort by Digit Sum",
+  "title_zh": "数位和排序需要的最小交换次数",
+  "slug": "minimum-swaps-to-sort-by-digit-sum",
+  "link": "https://leetcode.cn/problems/minimum-swaps-to-sort-by-digit-sum/",
+  "content": "<p>You are given an array <code>nums</code> of <strong>distinct</strong> positive integers. You need to sort the array in <strong>increasing</strong> order based on the sum of the digits of each number. If two numbers have the same digit sum, the <strong>smaller</strong> number appears first in the sorted order.</p><p>Return the <strong>minimum</strong> number of swaps required to rearrange <code>nums</code> into this sorted order.</p><p>A <strong>swap</strong> is defined as exchanging the values at two distinct positions in the array.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [37,100]</span></p><p><strong>Output:</strong> <span class=\"example-io\">1</span></p><p><strong>Explanation:</strong></p><ul><li>Compute the digit sum for each integer: <code>[3 + 7 = 10, 1 + 0 + 0 = 1] &rarr; [10, 1]</code></li><li>Sort the integers based on digit sum: <code>[100, 37]</code>. Swap <code>37</code> with <code>100</code> to obtain the sorted order.</li><li>Thus, the minimum number of swaps required to rearrange <code>nums</code> is 1.</li></ul></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [22,14,33,7]</span></p><p><strong>Output:</strong> <span class=\"example-io\">0</span></p><p><strong>Explanation:</strong></p><ul><li>Compute the digit sum for each integer: <code>[2 + 2 = 4, 1 + 4 = 5, 3 + 3 = 6, 7 = 7] &rarr; [4, 5, 6, 7]</code></li><li>Sort the integers based on digit sum: <code>[22, 14, 33, 7]</code>. The array is already sorted.</li><li>Thus, the minimum number of swaps required to rearrange <code>nums</code> is 0.</li></ul></div><p><strong class=\"example\">Example 3:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">nums = [18,43,34,16]</span></p><p><strong>Output:</strong> <span class=\"example-io\">2</span></p><p><strong>Explanation:</strong></p><ul><li>Compute the digit sum for each integer: <code>[1 + 8 = 9, 4 + 3 = 7, 3 + 4 = 7, 1 + 6 = 7] &rarr; [9, 7, 7, 7]</code></li><li>Sort the integers based on digit sum: <code>[16, 34, 43, 18]</code>. Swap <code>18</code> with <code>16</code>, and swap <code>43</code> with <code>34</code> to obtain the sorted order.</li><li>Thus, the minimum number of swaps required to rearrange <code>nums</code> is 2.</li></ul></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li><li><code>nums</code> consists of <strong>distinct</strong> positive integers.</li></ul>",
+  "translatedContent": "<p>给你一个由 <strong>互不相同</strong> 的正整数组成的数组 <code>nums</code>，需要根据每个数字的数位和（即每一位数字相加求和）按 <strong>升序 </strong>对数组进行排序。如果两个数字的数位和相等，则较小的数字排在前面。</p><p>返回将 <code>nums</code> 排列为上述排序顺序所需的 <strong>最小 </strong>交换次数。</p><p>一次 <strong>交换 </strong>定义为交换数组中两个不同位置的值。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入:</strong> <span class=\"example-io\">nums = [37,100]</span></p><p><strong>输出:</strong> <span class=\"example-io\">1</span></p><p><strong>解释:</strong></p><ul><li>计算每个整数的数位和：<code>[3 + 7 = 10, 1 + 0 + 0 = 1] → [10, 1]</code></li><li>根据数位和排序：<code>[100, 37]</code>。将 <code>37</code> 与 <code>100</code> 交换，得到排序后的数组。</li><li>因此，将 <code>nums</code> 排列为排序顺序所需的最小交换次数为 1。</li></ul></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入:</strong> <span class=\"example-io\">nums = [22,14,33,7]</span></p><p><strong>输出:</strong> <span class=\"example-io\">0</span></p><p><strong>解释:</strong></p><ul><li>计算每个整数的数位和：<code>[2 + 2 = 4, 1 + 4 = 5, 3 + 3 = 6, 7 = 7] → [4, 5, 6, 7]</code></li><li>根据数位和排序：<code>[22, 14, 33, 7]</code>。数组已经是排序好的。</li><li>因此，将 <code>nums</code> 排列为排序顺序所需的最小交换次数为 0。</li></ul></div><p><strong class=\"example\">示例 3：</strong></p><div class=\"example-block\"><p><strong>输入:</strong> <span class=\"example-io\">nums = [18,43,34,16]</span></p><p><strong>输出:</strong> <span class=\"example-io\">2</span></p><p><strong>解释:</strong></p><ul><li>计算每个整数的数位和：<code>[1 + 8 = 9, 4 + 3 = 7, 3 + 4 = 7, 1 + 6 = 7] → [9, 7, 7, 7]</code></li><li>根据数位和排序：<code>[16, 34, 43, 18]</code>。将 <code>18</code> 与 <code>16</code> 交换，再将 <code>43</code> 与 <code>34</code> 交换，得到排序后的数组。</li><li>因此，将 <code>nums</code> 排列为排序顺序所需的最小交换次数为 2。</li></ul></div><p> </p><p><strong>提示:</strong></p><ul><li><code>1 <= nums.length <= 10<sup>5</sup></code></li><li><code>1 <= nums[i] <= 10<sup>9</sup></code></li><li><code>nums</code> 由 <strong>互不相同</strong> 的正整数组成。</li></ul>",
+  "difficulty": "Medium",
   "topicTags": [
-    {
-      "name": "Binary Indexed Tree",
-      "slug": "binary-indexed-tree",
-      "translatedName": "树状数组"
-    },
-    {
-      "name": "Segment Tree",
-      "slug": "segment-tree",
-      "translatedName": "线段树"
-    },
     {
       "name": "Array",
       "slug": "array",
@@ -27,7 +17,12 @@
       "name": "Hash Table",
       "slug": "hash-table",
       "translatedName": "哈希表"
+    },
+    {
+      "name": "Sorting",
+      "slug": "sorting",
+      "translatedName": "排序"
     }
   ],
-  "date": "2026-10-16"
+  "date": "2026-10-17"
 }
