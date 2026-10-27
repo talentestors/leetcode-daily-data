@@ -1,38 +1,12 @@
 {
-  "id": "3619",
-  "title": "Count Islands With Total Value Divisible by K",
-  "title_zh": "总价值可以被 K 整除的岛屿数目",
-  "slug": "count-islands-with-total-value-divisible-by-k",
-  "link": "https://leetcode.cn/problems/count-islands-with-total-value-divisible-by-k/",
-  "content": "<p>You are given an <code>m x n</code> matrix <code>grid</code> and a positive integer <code>k</code>. An <strong>island</strong> is a group of <strong>positive</strong> integers (representing land) that are <strong>4-directionally</strong> connected (horizontally or vertically).</p><p>The <strong>total value</strong> of an island is the sum of the values of all cells in the island.</p><p>Return the number of islands with a total value <strong>divisible by</strong> <code>k</code>.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2025/03/06/example1griddrawio-1.png\" style=\"width: 200px; height: 200px;\" /><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">grid = [[0,2,1,0,0],[0,5,0,0,5],[0,0,1,0,0],[0,1,4,7,0],[0,2,0,0,8]], k = 5</span></p><p><strong>Output:</strong> <span class=\"example-io\">2</span></p><p><strong>Explanation:</strong></p><p>The grid contains four islands. The islands highlighted in blue have a total value that is divisible by 5, while the islands highlighted in red do not.</p></div><p><strong class=\"example\">Example 2:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2025/03/06/example2griddrawio.png\" style=\"width: 200px; height: 150px;\" /><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">grid = [[3,0,3,0], [0,3,0,3], [3,0,3,0]], k = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\">6</span></p><p><strong>Explanation:</strong></p><p>The grid contains six islands, each with a total value that is divisible by 3.</p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>1 <= m, n <= 1000</code></li><li><code>1 <= m * n <= 10<sup>5</sup></code></li><li><code>0 <= grid[i][j] <= 10<sup>6</sup></code></li><li><code>1 <= k <= 10<sup>6</sup></code></li></ul>",
-  "translatedContent": "<p>给你一个 <code>m x n</code> 的矩阵 <code>grid</code> 和一个正整数 <code>k</code>。一个 <strong>岛屿 </strong>是由 <strong>正 </strong>整数（表示陆地）组成的，并且陆地间 <strong>四周 </strong>连通（水平或垂直）。</p><p>一个岛屿的总价值是该岛屿中所有单元格的值之和。</p><p>返回总价值可以被 <code>k</code> <strong>整除 </strong>的岛屿数量。</p><p> </p><p><strong class=\"example\">示例 1:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2025/03/06/example1griddrawio-1.png\" style=\"width: 200px; height: 200px;\" /><div class=\"example-block\"><p><strong>输入:</strong> <span class=\"example-io\">grid = [[0,2,1,0,0],[0,5,0,0,5],[0,0,1,0,0],[0,1,4,7,0],[0,2,0,0,8]], k = 5</span></p><p><strong>输出:</strong> <span class=\"example-io\">2</span></p><p><strong>解释:</strong></p><p>网格中包含四个岛屿。蓝色高亮显示的岛屿的总价值可以被 5 整除，而红色高亮显示的岛屿则不能。</p></div><p><strong class=\"example\">示例 2:</strong></p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2025/03/06/example2griddrawio.png\" style=\"width: 200px; height: 150px;\" /><div class=\"example-block\"><p><strong>输入:</strong> <span class=\"example-io\">grid = [[3,0,3,0], [0,3,0,3], [3,0,3,0]], k = 3</span></p><p><strong>输出:</strong> <span class=\"example-io\">6</span></p><p><strong>解释:</strong></p><p>网格中包含六个岛屿，每个岛屿的总价值都可以被 3 整除。</p></div><p> </p><p><strong>提示:</strong></p><ul><li><code>m == grid.length</code></li><li><code>n == grid[i].length</code></li><li><code>1 <= m, n <= 1000</code></li><li><code>1 <= m * n <= 10<sup>5</sup></code></li><li><code>0 <= grid[i][j] <= 10<sup>6</sup></code></li><li><code>1 <= k < = 10<sup>6</sup></code></li></ul>",
-  "difficulty": "Medium",
-  "topicTags": [
-    {
-      "name": "Depth-First Search",
-      "slug": "depth-first-search",
-      "translatedName": "深度优先搜索"
-    },
-    {
-      "name": "Breadth-First Search",
-      "slug": "breadth-first-search",
-      "translatedName": "广度优先搜索"
-    },
-    {
-      "name": "Union Find",
-      "slug": "union-find",
-      "translatedName": "并查集"
-    },
-    {
-      "name": "Array",
-      "slug": "array",
-      "translatedName": "数组"
-    },
-    {
-      "name": "Matrix",
-      "slug": "matrix",
-      "translatedName": "矩阵"
-    }
-  ],
-  "date": "2026-10-26"
+  "id": "3963",
+  "title": "Create Grid With Exactly One Path",
+  "title_zh": "构造恰好一条路径的网格",
+  "slug": "create-grid-with-exactly-one-path",
+  "link": "https://leetcode.cn/problems/create-grid-with-exactly-one-path/",
+  "content": "<p>You are given two integers <code>m</code> and <code>n</code>, representing the number of rows and columns of a grid.</p><p>Construct <strong>any</strong> <code>m x n</code> grid consisting only of the characters <code>&#39;.&#39;</code> and <code>&#39;#&#39;</code>, where:</p><ul><li><code>&#39;.&#39;</code> represents a free cell.</li><li><code>&#39;#&#39;</code> represents an obstacle cell.</li></ul><p>A <strong>valid path</strong> is a sequence of free cells that:</p><ul><li>Starts at the top-left cell <code>(0, 0)</code>.</li><li>Ends at the bottom-right cell <code>(m - 1, n - 1)</code>.</li><li>Moves only:<ul><li>Right, from <code>(i, j)</code> to <code>(i, j + 1)</code>, or</li><li>Down, from <code>(i, j)</code> to <code>(i + 1, j)</code>.</li></ul></li></ul><p>Return any grid such that there is <strong>exactly one valid path</strong> from the top-left cell to the bottom-right cell.</p><p> </p><p><strong class=\"example\">Example 1:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">m = 2, n = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\">[\"..#\",\"#..\"]</span></p><p><strong>Explanation:</strong></p><p><img src=\"https://assets.leetcode.com/uploads/2026/05/26/screenshot-2026-05-26-at-61005pm.png\" style=\"width: 200px; height: 95px;\" /></p><p>The only valid path is: <code>(0,0) &rarr; (0,1) &rarr; (1,1) &rarr; (1,2)</code></p></div><p><strong class=\"example\">Example 2:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">m = 3, n = 3</span></p><p><strong>Output:</strong> <span class=\"example-io\">[\"..#\",\"#..\",\"##.\"]</span></p><p><strong>Explanation:</strong></p><p><img src=\"https://assets.leetcode.com/uploads/2026/05/26/screenshot-2026-05-26-at-61129pm.png\" style=\"width: 220px; height: 150px;\" /></p><p>The only valid path is: <code>(0,0) &rarr; (0,1) &rarr; (1,1) &rarr; (1,2) &rarr; (2,2)</code></p></div><p><strong class=\"example\">Example 3:</strong></p><div class=\"example-block\"><p><strong>Input:</strong> <span class=\"example-io\">m = 1, n = 4</span></p><p><strong>Output:</strong> <span class=\"example-io\">[\"....\"]</span></p><p><strong>Explanation:</strong></p><p>The only valid path is: <code>(0,0) &rarr; (0,1) &rarr; (0,2) &rarr; (0,3)</code></p></div><p> </p><p><strong>Constraints:</strong></p><ul><li><code>1 <= m, n <= 25</code></li></ul>",
+  "translatedContent": "<p>给你两个整数 <code>m</code> 和 <code>n</code>，分别表示网格的行数和列数。</p><p>请你构造 <strong>任意</strong> 一个只包含字符 <code>'.'</code> 和 <code>'#'</code> 的 <code>m x n</code> 网格，其中：</p><ul><li><code>'.'</code> 表示空单元格。</li><li><code>'#'</code> 表示障碍物单元格。</li></ul><p><strong>有效路径</strong> 是满足以下条件的空单元格序列：</p><ul><li>从左上角单元格 <code>(0, 0)</code> 开始。</li><li>在右下角单元格 <code>(m - 1, n - 1)</code> 结束。</li><li>只能向：<ul><li>右移动，从 <code>(i, j)</code> 到 <code>(i, j + 1)</code>，或者</li><li>下移动，从 <code>(i, j)</code> 到 <code>(i + 1, j)</code>。</li></ul></li></ul><p>返回任意一个从左上角到右下角 <strong>恰好只有一条有效路径</strong> 的网格。</p><p> </p><p><strong class=\"example\">示例 1：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">m = 2, n = 3</span></p><p><strong>输出：</strong> <span class=\"example-io\">[\"..#\",\"#..\"]</span></p><p><strong>解释：</strong></p><p><img src=\"https://assets.leetcode.com/uploads/2026/05/26/screenshot-2026-05-26-at-61005pm.png\" style=\"width: 200px; height: 95px;\" /></p><p>唯一的有效路径是：<code>(0,0) → (0,1) → (1,1) → (1,2)</code></p></div><p><strong class=\"example\">示例 2：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">m = 3, n = 3</span></p><p><strong>输出：</strong> <span class=\"example-io\">[\"..#\",\"#..\",\"##.\"]</span></p><p><strong>解释：</strong></p><p><img src=\"https://assets.leetcode.com/uploads/2026/05/26/screenshot-2026-05-26-at-61129pm.png\" style=\"width: 220px; height: 150px;\" /></p><p>唯一的有效路径是：<code>(0,0) → (0,1) → (1,1) → (1,2) → (2,2)</code></p></div><p><strong class=\"example\">示例 3：</strong></p><div class=\"example-block\"><p><strong>输入：</strong> <span class=\"example-io\">m = 1, n = 4</span></p><p><strong>输出：</strong> <span class=\"example-io\">[\"....\"]</span></p><p><strong>解释：</strong></p><p>唯一的有效路径是：<code>(0,0) → (0,1) → (0,2) → (0,3)</code></p></div><p> </p><p><strong>提示：</strong></p><ul><li><code>1 <= m, n <= 25</code></li></ul>",
+  "difficulty": "Easy",
+  "topicTags": [],
+  "date": "2026-10-27"
 }
