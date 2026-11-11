@@ -2,8 +2,8 @@ name: Daily Download
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '0 0 * * *' # 并发组的名字，随便起，就是一个"闸门"的标识
+  workflow_dispatch: # 闸门里有任务时，后来的怎么办
 
 permissions:
   contents: write
@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
 
@@ -34,6 +34,8 @@ jobs:
         run: |
           git config --local user.name "talentestors"
           git config --local user.email "355155100+talentestors@users.noreply.github.com"
+          # git config --local user.name "github-actions[bot]"
+          # git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add data/daily.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
